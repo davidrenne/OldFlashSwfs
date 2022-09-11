@@ -1,0 +1,11 @@
+Kyle M. Brown
+admin@mayvik.com
+www.mayvik.com
+
+flashform - captures data in the flash movie and post it to viewers using php.
+
+Instructions:
+1.Place the .swf, .html and .php files into the same directory.
+2.Direct your browser to the .html file
+3.Compete the 2 fields and press enter
+4.The data will be passed to the .php file and displayed to the user.

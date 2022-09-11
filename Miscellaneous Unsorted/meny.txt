@@ -1,0 +1,6 @@
+f1=Företaget
+&f2=Leffe & Familj
+&f3=Filer
+&f4=Hjälp
+&f5=Design
+&f6=Avsluta

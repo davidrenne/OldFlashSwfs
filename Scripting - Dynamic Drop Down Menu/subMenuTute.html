@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>subMenuTute</TITLE>
+</HEAD>
+<BODY bgcolor="#FF9900">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+var InternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+// Handle all the the FSCommand messages in a Flash movie
+function subMenuTute_DoFSCommand(command, args) {
+  var subMenuTuteObj = InternetExplorer ? subMenuTute : document.subMenuTute;
+  //
+  // Place your code here...
+  //
+}
+// Hook for Internet Explorer 
+if (navigator.appName && navigator.appName.indexOf("Microsoft") != -1 && 
+	  navigator.userAgent.indexOf("Windows") != -1 && navigator.userAgent.indexOf("Windows 3.1") == -1) {
+	document.write('<SCRIPT LANGUAGE=VBScript\> \n');
+	document.write('on error resume next \n');
+	document.write('Sub subMenuTute_FSCommand(ByVal command, ByVal args)\n');
+	document.write('  call subMenuTute_DoFSCommand(command, args)\n');
+	document.write('end sub\n');
+	document.write('</SCRIPT\> \n');
+}
+//-->
+</SCRIPT>
+<!-- URL's used in the movie-->
+<!-- text used in the movie-->
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0"
+ ID=subMenuTute WIDTH=600 HEIGHT=500>
+ <PARAM NAME=movie VALUE="subMenuTute.swf"> <PARAM NAME=quality VALUE=high> <PARAM NAME=salign VALUE=LT> <PARAM NAME=bgcolor VALUE=#FF9900> <EMBED src="subMenuTute.swf" quality=high salign=LT bgcolor=#FF9900  WIDTH=600 HEIGHT=500	swLiveConnect=true NAME=subMenuTute TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED>
+</OBJECT>
+</BODY>
+</HTML>

@@ -1,0 +1,11 @@
+[DEFAULT]
+BASEURL=http://localhost/
+[DOC#5#6]
+BASEURL=http://localhost/leftframe.html
+ORIGURL=leftframe.html
+[DOC#5#7]
+BASEURL=http://localhost/main.html
+ORIGURL=main.html
+[InternetShortcut]
+URL=http://www.flashkit.com/
+Modified=E00CA839FF4CC001D9

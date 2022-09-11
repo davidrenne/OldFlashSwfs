@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<menu>
+	<value id="1">
+		<titolo>Home Page</titolo>
+		<testo>Vai alla pagina principale</testo>
+		<url>home.php</url>
+	</value>
+	<value id="2">
+		<titolo>Chi Siamo</titolo>
+		<testo>Una sintesi di quello che siamo</testo>
+		<url>who.php</url>
+	</value>
+	<value id="3">
+		<titolo>Contattaci</titolo>
+		<testo>Per maggiori informazioni</testo>
+		<url>feedback.php</url>
+	</value>
+	<value id="4">
+		<titolo>Prodotti</titolo>
+		<testo>Elenco delle attrezzature che trattiamo</testo>
+		<url>products.php</url>
+	</value>
+	<value id="5">
+		<titolo>Dove Siamo</titolo>
+		<testo>Vieni a trovarci appena possibile</testo>
+		<url>where.html</url>
+	</value>
+	<value id="6">
+		<titolo>Mission</titolo>
+		<testo>la nostra missione aziendale</testo>
+		<url>mission.html</url>
+	</value>
+	<value id="7">
+		<titolo>Lavoro</titolo>
+		<testo>Controlla le offerte di lavoro nella apposita pagina.</testo>
+		<url>job/lavoro.phtml</url>
+	</value>
+</menu>

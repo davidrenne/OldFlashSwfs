@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<HTML>
+<HEAD>
+	<TITLE>Flash Kit flashtrak User Guide</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#000099" TEXT="#000000" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="CENTER" bgcolor="#000000">
+	<tr>
+		<td>
+			<table width="100%" border="0" cellspacing="1" cellpadding="3" align="CENTER">
+			<tr bgcolor="#ffdb5a">
+				<td>
+
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" align="CENTER">
+						<tr>					
+							<td valign=middle>
+							<font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b>
+							flashtrak User Guide
+							</font></b>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+</TABLE>
+
+<body bgcolor="#000099">
+
+<P>
+ <DIV align=center>
+	<table width=400 bgcolor="#ffffff" cellspacing=3 cellpadding=0>
+	<tr>
+		<td>
+		<font color="#000000" face="Verdana, Arial, Helvetica, sans-serif" size="1">
+		<b>Quick guide: Using players and flashtraks data.</b>
+		<P>
+		Just cut and paste <b>player_mc MovieClip</b> from player.fla inside your movie.
+		you can set the variable 'datapath' in the querystring to load a specific data 
+		file, or by default load data.swf from the same folder.
+		<P>
+		The flashtraks data.swf that you download from Flash Kit contains the following information 
+		that you can access and use:
+		<P>
+		labels:
+		<UL><LI>'play' for play loop,
+		<LI>'mute' for mute loop,
+		</UL>
+		Variables:
+		<UL>
+		<LI>'load' variable, it set to 'yes' when all data loaded, so you can use this for check all data (sound) loaded.
+		<LI>'rows' variable, contain number of rows with eq data.
+		<LI>'data1','data2'...'data<SUB>n</SUB>' variables, contain the data for the peaks, 
+		organized format example: '0102030405060708' 8 values with 2 digits
+		each value. values from 00 to 99, so you can use it for showing any eq 
+		visualisation (bars, dots, osciloscope etc...)
+		<LI>'length' variable, loop length in sec.
+		<LI>'fulllen' variable, loop length in msec.
+		<LI>'step' variable, show step (in msec) for each data row.
+		</UL>
+		Usually you will use only 'load','rows','fulllen',data...' variables. Any questions please post in the 
+		<b><a href="http://www.flashkit.com/board/forumdisplay.php?forumid=6">Sounds and Music</a></b> forum!
+		</font>
+		</td>
+	</tr>
+</table>
+<P>
+<font color="#ffffff" face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>Link to Us</b></FONT>
+<BR>
+<font color="#ffffff" face="Verdana, Arial, Helvetica, sans-serif" size="1">Please use a button below if you want to link to us</FONT>
+<table cellspacing=30>
+<tr>
+	<td><img src="button_4.gif" width="88" height="31" alt="" border="0"></td>
+</tr>
+</table>
+
+</DIV>
+</body>
+</html>

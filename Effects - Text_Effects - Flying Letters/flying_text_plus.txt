@@ -1,0 +1,24 @@
+flying_text_plus.fla version 1.3
+
+by Jochen Schimmelpfennig 09/1999
+http://www.onlinegeneration.com
+jochen@midibase.com
+
+please note:
+The idea for the flying text effect was not invented by me.
+I found it at several sites across the web.
+My work was the developement of the rotation stuff.
+
+To thank all the people who provide the good tutorials on the web I want to
+give away this file for free.
+
+You may use and modify the actionscript as long as you make your own results public 
+just like this one. 
+
+If you link to my site http://www.onlinegeneration.com or mention it in your credits
+I would be very honoured!
+
+Cheers,
+
+Jochen
+Bonn, Germany

@@ -1,0 +1,135 @@
+Frame1:
+
+Start Drag ("/mc", lockcenter)
+Set Variable: "deltas_pos" = 0
+Load Movie ("mail_me.swf", "/loader")
+
+----------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+
+frame2:
+Set Variable: "x_pos" = GetProperty ("/mc",_x )
+Set Variable: "y_pos" = GetProperty ("/mc",_y )
+Set Variable: "deltax_pos" = (x_pos-600)/10
+Set Variable: "deltay_pos" = (y_pos-300)/10
+Set Property ("/block1", X Scale) = GetProperty ("/block1",_xscale)+deltas_pos
+Set Property ("/block1", Y Scale) = GetProperty ("/block1",_yscale)+deltas_pos
+Set Property ("/block2", X Scale) = GetProperty ("/block2",_xscale)+deltas_pos
+Set Property ("/block2", Y Scale) = GetProperty ("/block2",_yscale)+deltas_pos
+Set Property ("/block3", X Scale) = GetProperty ("/block3",_xscale)+deltas_pos
+Set Property ("/block3", Y Scale) = GetProperty ("/block3",_yscale)+deltas_pos
+Set Property ("/block4", X Scale) = GetProperty ("/block4",_xscale)+deltas_pos
+Set Property ("/block4", Y Scale) = GetProperty ("/block4",_yscale)+deltas_pos
+Set Property ("/block1", X Position) = GetProperty ("/block1",_x )+deltax_pos
+Set Property ("/block2", X Position) = GetProperty ("/block2",_x )+deltax_pos/2
+Set Property ("/block3", X Position) = GetProperty ("/block3",_x )+deltax_pos/3
+Set Property ("/block4", X Position) = GetProperty ("/block4",_x )+deltax_pos/4
+Set Property ("/block1", Y Position) = GetProperty ("/block1",_y)+deltay_pos
+Set Property ("/block2", Y Position) = GetProperty ("/block2",_y )+deltay_pos/2
+Set Property ("/block3", Y Position) = GetProperty ("/block3",_y)+deltay_pos/3
+Set Property ("/block4", Y Position) = GetProperty ("/block4",_y)+deltay_pos/4
+If (GetProperty ("/block1", _x )>900)
+      Set Property ("/block1", X Position) = -100
+End If
+If (GetProperty ("/block1", _x )<-100)
+      Set Property ("/block1", X Position) = 900
+End If
+If (GetProperty ("/block2", _x )>900)
+      Set Property ("/block2", X Position) = -100
+End If
+If (GetProperty ("/block2", _x )<-100)
+      Set Property ("/block2", X Position) = 900
+End If
+If (GetProperty ("/block3", _x )>900)
+      Set Property ("/block3", X Position) = -100
+End If
+If (GetProperty ("/block3", _x )<-100)
+      Set Property ("/block3", X Position) = 900
+End If
+If (GetProperty ("/block4", _x )>900)
+      Set Property ("/block4", X Position) = -100
+End If
+If (GetProperty ("/block4", _x )<-100)
+      Set Property ("/block4", X Position) = 900
+End If
+If (GetProperty ("/block1", _y )>700)
+      Set Property ("/block1", Y Position) = -100
+End If
+If (GetProperty ("/block1", _y )<-100)
+      Set Property ("/block1", Y Position) = 700
+End If
+If (GetProperty ("/block2", _y)>700)
+      Set Property ("/block2", Y Position) = -100
+End If
+If (GetProperty ("/block2", _y)<-100)
+      Set Property ("/block2", Y Position) = 700
+End If
+If (GetProperty ("/block3", _y)>700)
+      Set Property ("/block3", Y Position) = -100
+End If
+If (GetProperty ("/block3", _y )<-100)
+      Set Property ("/block3", Y Position) = 700
+End If
+If (GetProperty ("/block4", _y )>700)
+      Set Property ("/block4", Y Position) = -100
+End If
+If (GetProperty ("/block4", _y)<-100)
+      Set Property ("/block4", Y Position) = 700
+End If
+If (GetProperty ("/block1", _yscale)>=500)
+      Set Property ("/block1", Y Scale) = 500
+      Set Property ("/block1", X Scale) = 500
+End If
+If (GetProperty ("/block1", _yscale)<=100)
+      Set Property ("/block1", Y Scale) = 100
+      Set Property ("/block1", X Scale) = 100
+End If
+If (GetProperty ("/block2", _yscale)>=500)
+      Set Property ("/block2", Y Scale) = 500
+      Set Property ("/block2", X Scale) = 500
+End If
+If (GetProperty ("/block2", _yscale)<=100)
+      Set Property ("/block2", Y Scale) = 100
+      Set Property ("/block2", X Scale) = 100
+End If
+If (GetProperty ("/block3", _yscale)>=500)
+      Set Property ("/block3", Y Scale) = 500
+      Set Property ("/block3", X Scale) = 500
+End If
+If (GetProperty ("/block3", _yscale)<=100)
+      Set Property ("/block3", Y Scale) = 100
+      Set Property ("/block3", X Scale) = 100
+End If
+If (GetProperty ("/block4", _yscale)>=500)
+      Set Property ("/block4", Y Scale) = 500
+      Set Property ("/block4", X Scale) = 500
+End If
+If (GetProperty ("/block4", _yscale)<=100)
+      Set Property ("/block4", Y Scale) = 100
+      Set Property ("/block4", X Scale) = 100
+End If
+------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+Frame 3:
+Go to and Play (2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

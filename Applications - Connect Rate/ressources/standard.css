@@ -1,0 +1,27 @@
+
+BODY {font-family:Arial, Helvetica, sans-serif;color:#202060;font-size:10pt;font-weight:normal;background-color:#e8f0f8;margin-left:25;margin-right:25;}
+
+.MainHeading {color:#202060;font-family:Courier New, Courier, mono;font-weight:bold;font-size:18pt;text-decoration:none;}
+
+.InfoLink {color:#602020;font-family:Arial, Helvetica, sans-serif;font-size:9pt;text-decoration:none;}
+.InfoCategory {background-color:#FFFFFF;font-family:Arial, Helvetica, sans-serif;vertical-align:top;color:#26306F;font-weight:bold;font-size:9pt;}
+.InfoContent {background-color:#FFFFFF;font-family:Arial, Helvetica, sans-serif;vertical-align:top;color:#26306F;font-size:9pt;}
+
+.MenuHeading {color:#202060;font-family:Courier New, Courier, mono;font-weight:bold;font-size:14pt;text-decoration:none;}
+.MenuSub {color:#202060;font-family:Arial, Helvetica, sans-serif;text-decoration:none;}
+
+.Heading {font-family:Courier New, Courier, mono;font-weight:bold;font-size:14pt;text-decoration:none;}
+.Fett {font-family:Arial, Helvetica, sans-serif;font-weight:bold;}
+.Link {font-family:Arial, Helvetica, sans-serif;color:#602020;text-decoration:none;}
+.Anmerkung {font-family:Arial, Helvetica, sans-serif;font-size:8pt;}
+pre {border:1px solid #202060;padding:5px;background-color:#FFFFFF;color:#202060;font-family:Courier New, Courier, mono;font-size:9pt;white-space:pre}
+
+.Absatz {font-size:5pt}
+.ContentTrenner {font-size:20pt}
+.MenuTrenner {font-size:8pt}
+
+.FollowMenuHeading {color:#202060;font-family:Courier New, Courier, mono;font-weight:bold;font-size:16pt;text-decoration:none;}
+.FollowMenuSub {color:#202060;font-family:Arial, Helvetica, sans-serif;font-weight:bold;font-size:11pt;text-decoration:none;}
+.FollowMenuTrenner {font-size:6pt}
+
+A:hover {color:#AA0000;}

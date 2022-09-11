@@ -1,0 +1,1 @@
+date=<%=formatdatetime(now(),vblongdate)%>

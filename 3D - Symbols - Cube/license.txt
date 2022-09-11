@@ -1,0 +1,40 @@
+
+LICENSE AGREEMENT
+-----------------
+
+You should carefully read the following terms and conditions
+before using this application.  Unless you have a different 
+license agreement signed by Digital Vision Multimedia, your 
+use of this software indicates your acceptance of this license
+agreement.
+
+You understand and agree that this application was created by
+Digital Vision and Digital Vision is its sole author and holds
+all intelectual property rights, including but not limited to
+copyright, worldwide.
+
+Digital Vision grants you a non-exclusive license for this
+Flash application and its source code.
+
+You may use the application for personal purposes only.
+As such, you may study its source code, modify it or create
+derivative products based on it, and publish it on a personal
+web site.
+
+You may not, under any circumstances, modify and publish the
+application on an organization or company web site without a
+written agreement from Digital Vision.
+
+You may not sell the application (modified or not) to a third
+party and you may not redistribute it or make it available
+for download.
+
+You understand that the purpose of this application is
+educational and it should not be used foe entertainment,
+promotion or self promotion or commercial reasons.
+
+THIS APPLICATION IS PROVIDED "AS IS" AND WITHOUT ANY WARRANTIES
+WHETHER EXPRESSED OR IMPLIED.
+
+If you have any questions or comments, please contact us at
+dvinfo@media-division.com

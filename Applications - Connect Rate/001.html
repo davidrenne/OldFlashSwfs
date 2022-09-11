@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>Verbindungsgeschwindigkeit mit Flash4 messen</title>
+<!-- Die META-Angaben entsprechen den Angaben im "Info-Kasten" --> 
+<meta name="description" content="Verbindungsgeschwindigkeit messen, mit der ein Flashfilm geladen wird.">
+<meta name="author" content="Joscha Feth, JoschaFeth@gmx.de">
+<meta name="keywords" content="Flash, Verbindungsrate, Rate, KB/s, ConnectRater, Verbindungsgeschwindigkeit">
+<meta name="date" content="2000-2-23">
+<meta name="Doc-ID" content="33-001">
+<meta name="URL" content="http://www.flashworker.de/tutorial/33/001.html">
+<meta name="Version" content="1.0">
+<meta name="Änderungen" content="Neu erstellt">
+<meta name="Anforderungen" content="Flash oder Director Projektor">
+<meta name="Vorkenntnisse" content="keine">
+<meta name="Download" content="connectrater_for_tutorial.zip (32,8 KB)">
+<!-- Die Standard JavaScript-Routinen laden (Pfeilchen-Rollover Popup-Fenster etc.) --> 
+<script language="JavaScript" src="ressources/standard.js" type="text/javascript"></script>
+<!-- Die Standard Styles laden (Fonts, Absätze etc.) --> 
+<link rel=stylesheet type="text/css" href="ressources/standard.css">
+</head>
+
+<body background="ressources/hintergrund.gif" text="#202060" link="#602020" alink="#602020" vlink="#602020" bgcolor="#e8f0f8">
+<SCRIPT LANGUAGE="Javascript">
+<!--
+function newwin() {
+window.open("connectrater_for_tutorial.swf","Connectrater","toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizeable=0,width=180,height=200")
+}
+//-->
+</SCRIPT>
+<img src="ressources/spacer.gif" width=1 height=5 alt="" border="0"><br>
+<span class="MainHeading"> <!-- Tutorial-Überschrift START -->Verbindungsgeschwindigkeit 
+mit Flash4 messen<!-- Tutorial-Überschrift ENDE --><br>
+</span>
+
+<img src="ressources/spacer.gif" width=1 height=15 alt="" border="0"><br>
+
+<!-- Info-Tabelle START -->
+<table width="200" border="0" cellspacing="5" cellpadding="1" align="right">
+<tr><td bgcolor="#26306F">
+
+<table border="0" cellspacing="1" cellpadding="2">
+<tr><td class="InfoCategory">
+Thema:<br>
+</td>
+          <td class="InfoContent"> Verbindungsgeschwindigkeit mit Flash4 messen</td>
+        </tr>
+<tr><td class="InfoCategory">
+Description:<br>
+</td>
+          <td class="InfoContent"> Geschwindigkeit messen, mit der ein Flashfilm 
+            geladen wird.<br>
+</td></tr>
+<tr><td class="InfoCategory">
+Keywords:<br>
+</td>
+          <td class="InfoContent"> Flash, Verbindungsrate, Rate, KB/s, ConnectRater, 
+            Verbindungsgeschwindigkeit<br>
+</td></tr>
+<tr><td class="InfoCategory">
+Author:<br>
+</td>
+          <td class="InfoContent"> <a href="mailto:hobrecker@solutions-partner.de" class="InfoLink">Joscha 
+            Feth </a> </td>
+        </tr>
+<tr><td class="InfoCategory">
+Date:<br>
+</td>
+          <td class="InfoContent"> 23.02.2000<br>
+</td></tr>
+<tr><td class="InfoCategory">
+Doc-ID:<br>
+</td><td class="InfoContent">
+99-001<br>
+</td></tr>
+<tr><td class="InfoCategory">
+URL:<br>
+</td><td class="InfoContent">
+<a href="http://www.flashworker.de/tutorial/99/001.html" class="InfoLink">http://www.flashworker.de/tutorial/99/001.html</a><br>
+</td></tr>
+<tr><td class="InfoCategory">
+Version:<br>
+</td><td class="InfoContent">
+1.0<br>
+</td></tr>
+<tr><td class="InfoCategory">
+&Auml;nderungen:<br>
+</td>
+          <td class="InfoContent"> keine<br>
+</td></tr>
+<tr><td class="InfoCategory">
+Anforderungen:<br>
+</td>
+          <td class="InfoContent"> Flash 4<br>
+</td></tr>
+<tr><td class="InfoCategory">
+Vorkenntnisse:<br>
+</td>
+          <td class="InfoContent"> Basiswissen empfohlen, es wird aber alles ausf&uuml;hrlich 
+            erkl&auml;rt. <br>
+</td></tr>
+<tr><td class="InfoCategory">
+Download:<br>
+</td><td class="InfoContent">
+PC: "<a href="http://www.flashworker.de/tutorial/99/downloads/javascript_cgi.zip" class="InfoLink">javascript_cgi.zip</a>", 234 kB<br>
+MAC: "<a href="http://www.flashworker.de/tutorial/99/downloads/javascript_cgi.sit" class="InfoLink">javascript_cgi.sit</a>", 352 kB<br>
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+<!-- Info-Tabelle ENDE --> <!-- Menü START --> 
+<p><a href="#Einleitung" class="MenuHeading">Einleitung</a><br>
+  <span class="MenuTrenner"><br>
+  </span> <a href="#erstellen" class="MenuHeading">Erstellen eines Movieclips</a><br>
+  <span class="MenuTrenner"><a href="#aktionen_hinzf%FCgen"><br>
+  </a></span> <a href="#aktionen_hinzf%FCgen" class="MenuHeading">Hinzuf&uuml;gen 
+  der Aktionen</a></p>
+<p><a href="#anpassungen" class="MenuHeading">Anpassungen in der HTML-Seite</a><span class="MenuTrenner"> 
+  </span> </p>
+<p><a href="#hilfe" class="MenuHeading">Hilfe bei Problemen</a><br>
+  <!-- Menü ENDE --> <br>
+  <br>
+  <!-- Content START --> <!-- Menü-Punkt START --> <a name="Einleitung"></a> <span class="ContentTrenner"><br>
+  </span> <span class="Heading">Einleitung<br>
+  </span> <img src="ressources/1x1_blue.gif" width=100% height=3 alt="" border="0" vspace="2"><br>
+  In diesem Tutorial wird beschrieben, wie sich die Geschwindigkeit mit der ein 
+  Benutzer mit dem Internet bzw. dem Server verbunden ist, in Flash auslesen und 
+  weiterverwendet werden kann.</p>
+<p>ANMERKUNG: Der Connectrater funktioniert nicht offline, da dann die Geschwindigkeit 
+  der Festplatte angezeigt wird, genauso wenn er schon einmal aufgerufen wurde 
+  und noch im Cache oder im Speicher ist.</p>
+<p>Es wird Basiswissen empfohlen, aber nicht zwingend vorausgesetzt.</p>
+<p><a href="javascript:newwin();">Der fertige Connectrater zum Anschauen.</a><br>
+  <!-- Menü-Punkt ENDE und Top-Button START --> <img src="ressources/spacer.gif" width=1 height=3 alt="" border="0"><br>
+  <img src="ressources/1x1_blue.gif" width=100% height=1 alt="" border="0" hspace="0" vspace="0"><br>
+  <a href="#"><img src="ressources/button_top.gif" width=36 height=13 alt="" border=0 align="right" hspace=0 vspace=0></a><br>
+  <!-- Top-Button ENDE --> <!-- Menü-Punkt START --><a name="erstellen"></a> <span class="ContentTrenner"><br>
+  </span> <span class="Heading">Erstellen eines Movieclips<br>
+  </span> <img src="ressources/1x1_blue.gif" width=100% height=3 alt="" border="0" vspace="2"><br>
+  Als erstes brauchen wir ein Movie, mit der wir die Rate berechnen, es ist egal, 
+  wie dieser heisst, wieviele Frames er hat, oder auf welcher Ebene dieser liegt. 
+  Was wichtig ist, ist dass dieser Movieclip kein externes Flashfile ist, das 
+  mit Loadmovie ind den Film geladen wird, da die Connectrate auf dem Prinzip 
+  &quot;If Frame Loaded&quot; basiert und dies nicht auf ein externes File greift 
+  und dass der Film von der Dateigr&ouml;sse her nicht zu klein ist, da aus dieser 
+  Gr&ouml;&szlig;e nachher die Rate bestimmt wird. Wenn er zu klein ist, dann 
+  werden die Werte sehr ungenau, deshlab gilt der Satz, je mehr, desto besser.....optimal 
+  ist eine Gr&ouml;&szlig;e zwischen 15 und 20 KB, da der User dann nicht lange 
+  warten muss, aber auch keinen falschen Wert ausgegeben bekommt.</p>
+<p>1.Flash starten *g*</p>
+<p>2.Im Men&uuml; &quot;Datei&quot; den Punkt &quot;Neu&quot; w&auml;hlen.</p>
+<p>3.Erstelle zwei Ebenen mit 3 Frames, sowie auf Ebene2 3 leere Schl&uuml;sselbilder:</p>
+<p><img src="images/ebenen.gif" width="204" height="88"></p>
+<p>4.Im Men&uuml; &quot;Einf&uuml;gen&quot; den Punkt &quot;Neues Symbol&quot; 
+  w&auml;hlen, oder Strg+F8 dr&uuml;cken.</p>
+<p><img src="images/neues_symbol.gif" width="421" height="179"> </p>
+<p>5.Erstelle dein Movie, nach deinen W&uuml;nschen und ziehe es auf die Ebene 
+  mit den 3 durchgehenden Frames (hier:Ebene1).</p>
+<p><img src="images/ebene_mit_movie.gif" width="204" height="88"></p>
+<p><!-- Menü-Punkt ENDE und Top-Button START --> <img src="ressources/spacer.gif" width=1 height=3 alt="" border="0"><br>
+  <img src="ressources/1x1_blue.gif" width=100% height=1 alt="" border="0" hspace="0" vspace="0"><br>
+  <a href="#"><img src="ressources/button_top.gif" width=36 height=13 alt="" border=0 align="right" hspace=0 vspace=0></a><br>
+  <!-- Top-Button ENDE --></p>
+<p><span class="Heading"><a name="aktionen_hinzfügen"></a>Hinzuf&uuml;gen der 
+  Aktionen<br>
+  </span> <img src="ressources/1x1_blue.gif" width=100% height=3 alt="" border="0" vspace="2"></p>
+<p>Nun f&uuml;gen wir dem Fla die Funktionen hinzu, die seine Funktion ausmachen.</p>
+<p>1.Doppelklick auf das erste Schl&uuml;sselbild von Ebene2</p>
+<p><img src="images/aktionen1.gif" width="313" height="130"></p>
+<p>2.Dann m&uuml;ssen wir eine Bedingung einf&uuml;gen:</p>
+<p><img src="images/aktionen2.gif" width="230" height="87"> </p>
+<p>3.Nun f&uuml;gen wir die Funktion zu, die den Timer aufruft:</p>
+<table width="536" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="235"><img src="images/aktionen4.gif" width="235" height="181"></td>
+    <td width="221"><img src="images/aktionen5.gif"></td>
+    <td width="80"><img src="images/aktionen3.gif" width="221" height="79"></td>
+  </tr>
+</table>
+<p>Die Bedingung ist notwendig, da nachher zum ersten Frame im Movie zur&uuml;ckgesprungen 
+  wird und diese Aktion nicht noch einmal ausgef&uuml;hrt werden soll.</p>
+<p>4.Jetzt f&uuml;gen wir die Bedingung ein, die testet, ob das movie von vorher 
+  und der restliche Film schon geladen ist (bei diesem fla ist das in Frame 3 
+  der Fall, da wir ja nur 3 Frames haben) Man kann dies nat&uuml;rlich mit jedem 
+  beliebigen Frame machen und auch zu jedem beliebigen Farme springen.</p>
+<p><img src="images/aktionen6.gif" width="225" height="128"></p>
+<p>5.Nun m&uuml;ssen wir sicherstellen, dass wenn der Frame 3 nicht geladen ist, 
+  dass das Movie dies nochmals &uuml;berpr&uuml;ft, dazu erstellen wir in Frame 
+  2 auf der Ebene mit den 3 Schl&uuml;sselbildern (hier: Ebene2) folgende Aktion:</p>
+<p><img src="images/aktionen7.gif" width="398" height="175"></p>
+<p>6.Um die Rate auszugeben brauchen wir ein Textfeld mit einer Variablen, dieses 
+  erstellen wir im Frame 3 unseres Fla's, geben ihm die Variable &quot;rate&quot; 
+  (ohne Anf&uuml;hrungsstriche), begrenzen die Textl&auml;nge auf 4 Zeichen und 
+  f&uuml;gen bei &quot;Konturen&quot; einen Punkt hinzu (NICHT VERGESSEN, da sonst 
+  nat&uuml;rlich eine Zahl mit 4 Stellen ohne Punkt angezeigt wird), alle weiteren 
+  Einstellungen sind optional, aber empfehlenswert. HINWEIS: Mach das Textfeld 
+  auf 4 Zeichen genau lang, so dass weitere abgeschnitten werden, ich habe bei 
+  der Ausgabe der Rate auf &quot;Int()&quot; verzichtet, da dass die Ausgabe verf&auml;lscht....bei 
+  kleinen Zahlen um so mehr, und normalerweise haben viele Leute nicht mehr als 
+  5 KB/s.</p>
+<p>Ach ja, Die Textfeldeigenschaften lassen sich mit Strg+F aufrufen.</p>
+<table width="348" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="65"><img src="images/aktionen8.gif" width="65" height="354"></td>
+    <td width="204"> 
+      <p><img src="images/aktionen9.gif" width="203" height="86"></p>
+      <p>Dieses Textfeld muss ein feststehendes sein, da es sonst per Set Variable 
+        nicht editierbar ist!</p>
+    </td>
+    <td width="79"><img src="images/aktionen10.gif" width="462" height="386"></td>
+  </tr>
+</table>
+<p>7.Nun m&uuml;ssen Wir die Aktionen einf&uuml;gen, die die Rate in das Textfeld 
+  l&auml;dt, dies setzen wir in den drittenFrame auf der Ebene mit den Schl&uuml;sselbildern 
+  (hier:Ebene2). </p>
+<p><img src="images/aktionen11.gif" width="399" height="148"></p>
+<p>8.Die Aktionen lauten wie folgt:</p>
+<table width="536" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="235"><img src="images/aktionen12.gif" width="238" height="183"></td>
+    <td width="221"><img src="images/aktionen13.gif" width="238" height="183"></td>
+    <td width="80"><img src="images/aktionen14.gif" width="221" height="83"></td>
+  </tr>
+</table>
+<p>9.Nun passen wir den Wert f&uuml;r &quot;groesse&quot; dem unseres Movies an.</p>
+<p>GANZ WICHTIG: Als Größe musst du immer die KB-Zahl angeben, nie die Bytes.</p>
+<p>10.Fertig!</p>
+<p><!-- Menü-Punkt ENDE und Top-Button START --> <img src="ressources/spacer.gif" width=1 height=3 alt="" border="0"><br>
+  <img src="ressources/1x1_blue.gif" width=100% height=1 alt="" border="0" hspace="0" vspace="0"><br>
+  <a href="#"><img src="ressources/button_top.gif" width=36 height=13 alt="" border=0 align="right" hspace=0 vspace=0></a><br>
+  <!-- Top-Button ENDE --></p>
+<p><span class="Heading"><a name="anpassungen"></a>Anpassungen in der HTML-Seite<br>
+  </span> <img src="ressources/1x1_blue.gif" width=100% height=3 alt="" border="0" vspace="2"></p>
+<p>Damit der Film nicht in den Cache des Browsers geladen wird, m&uuml;sst ihr 
+  folgende Meta-Tags in die HTML-Seite einsetzen:</p>
+<p>
+  <textarea name="textfield" cols="50" rows="3">&lt;META HTTP-EQUIV=&quot;pragma&quot; CONTENT=&quot;no-cache&quot;&gt;
+&lt;META HTTP-EQUIV=&quot;Expires&quot; CONTENT=&quot;Tue, 01 Jan 1980 1:00:00 GMT&quot;&gt;</textarea>
+</p>
+<p>ANMERKUNG: Funktioniert nicht mit jedem Browser und nicht immer! (noch ziemlich 
+  buggy)</p>
+<p>Falls ihr eine bessere M&ouml;glichkeit kennt: <a href="mailto:JoschaFeth@gmx.de">JoschaFeth@gmx.de</a></p>
+<p><!-- Menü-Punkt ENDE und Top-Button START --> <img src="ressources/spacer.gif" width=1 height=3 alt="" border="0"><br>
+  <img src="ressources/1x1_blue.gif" width=100% height=1 alt="" border="0" hspace="0" vspace="0"><br>
+  <a href="#"><img src="ressources/button_top.gif" width=36 height=13 alt="" border=0 align="right" hspace=0 vspace=0></a><br>
+  <!-- Top-Button ENDE --></p>
+<p><span class="Heading"><a name="hilfe"></a>Hilfe bei Problemen<br>
+  </span> <img src="ressources/1x1_blue.gif" width=100% height=3 alt="" border="0" vspace="2"></p>
+<p>Hilfe bei Problemen:</p>
+<p>eMail:<a href="mailto:JoschaFeth@gmx.de">JoschaFeth@gmx.de</a></p>
+<p>Homepage: <a href="http://www.jofe.de">http://www.jofe.de</a></p>
+<p>Bitte sendet mir alle Verbesserungen zu!</p>
+<p><!-- Menü-Punkt ENDE und Top-Button START --> <img src="ressources/spacer.gif" width=1 height=3 alt="" border="0"><br>
+  <img src="ressources/1x1_blue.gif" width=100% height=1 alt="" border="0" hspace="0" vspace="0"><br>
+  <a href="#"><img src="ressources/button_top.gif" width=36 height=13 alt="" border=0 align="right" hspace=0 vspace=0></a><br>
+  <!-- Top-Button ENDE --></p>
+</body>
+</html>

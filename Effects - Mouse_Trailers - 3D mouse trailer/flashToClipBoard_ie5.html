@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Flash To Clipboard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="Javascript">
+<!--
+// Flash to Clipboard - IE 5 and above version
+// By drZoode (zoode@usa.net)
+// this version uses IE 5 and above specific clipboardData object 
+
+	function flashToClipBoard(flashInput) {
+// the argument of this function is passed from Flash
+var fromFlash = window.clipboardData.setData('Text', flashInput);
+}
+	function clipBoardToFlash() {
+var goToFlash = window.clipboardData.getData('Text');
+// we use a Flash Method to *simulate* the pasting effect
+// as this is a IE only exercise we do not care for Netscape friendly syntax
+window.movie.SetVariable("_root.text", goToFlash);
+}
+ //-->
+</script>
+</head>
+
+<body bgcolor="#999999" text="#000000">
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0"
+ WIDTH=500 HEIGHT=350 ID="movie">
+ <PARAM NAME=movie VALUE="clipboardIE5.swf"> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#999999> <EMBED src="clipboardIE5.swf" quality=high bgcolor=#999999  WIDTH=500 HEIGHT=350 TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED>
+</OBJECT>
+<p> NOTE: If the text you have copied in Flash has carriage returns you cannot copy it back to the clipboard.
+<p><b>Here is some text that you can copy to the clipboard</b>
+<br>(Choose Edit>Copy or right-click and copy).
+<br>
+<br>'Twas brillig, and the slithy toves
+<br>Did gyre and gimble in the wabe:
+<br>All mimsy were the borogoves,
+<br>And the mome raths outgrabe.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+&vraag1=Waar is sanka??
+
+&Aantwoord1=Nederland
+&Bantwoord1=Amerika
+&Cantwoord1=Curacuao
+&Dantwoord1=Antillen
+&var1=c&vraag2=Waar staat de Maystraat??
+
+&Aantwoord2=Duitsland
+&Bantwoord2=Nederland
+&Cantwoord2=Finland
+&Dantwoord2=Belgie
+&var2=b&vraag3=Wie zijn de bewoners van de maystraat??
+
+&Aantwoord3=Dave, Sanka, Afric, Karin
+&Bantwoord3=Dave, Sanka, John, Maurice
+&Cantwoord3=Bas, Karin, Maurice, Afric
+&Dantwoord3=Karin, Sanka, John, Maurice
+&var3=a&vraag4=Welke kleur heeft de lucht??
+
+&Aantwoord4=Blauw
+&Bantwoord4=Groen
+&Cantwoord4=Geel
+&Dantwoord4=Rood
+&var4=d&vraag5=Wie bedacht de Relativiteits Theorie??
+
+&Aantwoord5=Newton
+&Bantwoord5=Bohr
+&Cantwoord5=Einstein
+&Dantwoord5=Lorentz
+&var5=c&vraag6=Wat is de heden daagdse naam van H2O??
+
+&Aantwoord6=Water
+&Bantwoord6=Stikstof
+&Cantwoord6=Zuurstof
+&Dantwoord6=Waterstof
+&var6=a&vraag7=Wat is het kleinste elemetaire deeltje??
+
+&Aantwoord7=Elektron
+&Bantwoord7=Molecuul
+&Cantwoord7=Atoom
+&Dantwoord7=Quark
+&var7=d&vraag8=Welke apparaat bedoelen we met "Light Amplification by Stimulated Emission of Radiation"??
+
+&Aantwoord8=Maser
+&Bantwoord8=Laser
+&Cantwoord8=Computer
+&Dantwoord8=LED
+&var8=b&vraag9=Wie is Coco??
+
+&Aantwoord9=De Maystraat hond
+&Bantwoord9=De huistijger
+&Cantwoord9=De thuishijger
+&Dantwoord9=De huispoes
+&var9=c&vraag10=Wat doet Afric voor werk nu hij is afgestudeerd??
+
+&Aantwoord10=Leraar
+&Bantwoord10=Technisch Medewerker
+&Cantwoord10=Werkeloos
+&Dantwoord10=Webdesigner
+&var10=c&vraag11=Wat doet Dave voor eem studie aan de Technische Hogeschool Rijswijk??
+
+&Aantwoord11=Technische Bedrijfskunde
+&Bantwoord11=Electronica
+&Cantwoord11=Technische Natuurkunde
+&Dantwoord11=Bouwkunde
+&var11=b&vraag12=Waar werkt Sanka??
+
+&Aantwoord12=Mazzo Video
+&Bantwoord12=Ben
+&Cantwoord12=KPN
+&Dantwoord12=Siemens
+&var12=a&vraag13=Wat voor vakantiebaan heeft Dave??
+
+&Aantwoord13=Vakkenvuller
+&Bantwoord13=Verhuizer
+&Cantwoord13=Magazijn werker
+&Dantwoord13=Cassierre
+&var13=b&vraag14=In welke Hoofdfase van der Studie zit Karin na de Zomer??
+
+&Aantwoord14=Hoofdfase 1
+&Bantwoord14=Propedeuse
+&Cantwoord14=Stage
+&Dantwoord14=Hoofdfase 4
+&var14=d&vraag15=Wie heeft deze Website van Maystraat gemaakt??
+
+&Aantwoord15=Afric
+&Bantwoord15=Sanka
+&Cantwoord15=Dave
+&Dantwoord15=Karin
+&var15=a

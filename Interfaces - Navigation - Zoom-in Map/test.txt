@@ -1,0 +1,37 @@
+longtext=--- Borjan ---
+
+test.me@computers.com
+test.me@computers.com
+test.me@computers.com
+test.me@computers.com
+test.me@computers.com
+test.me@computers.com
+me.test@computers.se
+me.test@computers.se
+me.test@computers.se
+me.test@computers.se
+me.test@computers.se
+cold.finland@computers.fi
+cold.finland@computers.fi
+cold.finland@computers.fi
+cold.finland@computers.fi
+cold.finland@computers.fi
+cold.finland@computers.fi
+test.me@computers.com
+test.me@computers.com
+test.me@computers.com
+test.me@computers.com
+test.me@computers.com
+test.me@computers.com
+me.test@computers.se
+me.test@computers.se
+me.test@computers.se
+me.test@computers.se
+me.test@computers.se
+cold.finland@computers.fi
+cold.finland@computers.fi
+cold.finland@computers.fi
+cold.finland@computers.fi
+cold.finland@computers.fi
+cold.finland@computers.fi
+--- Slutet ---

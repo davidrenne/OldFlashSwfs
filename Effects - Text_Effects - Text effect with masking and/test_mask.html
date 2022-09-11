@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>test_mask</TITLE>
+<SCRIPT LANGUAGE="JavaScript1.2">
+	<!-- This script and many more are available free online at -->
+	<!-- The JavaScript Source!! http://javascript.internet.com -->
+	<!-- Modified by Flash kit  http://www.flashkit.com -->
+
+	function shake_xy(n) {
+	if (self.moveBy) {
+		for (i = 10; i > 0; i--) {
+			for (j = n; j > 0; j--) {
+			self.moveBy(0,i);
+			self.moveBy(i,0);
+			self.moveBy(0,-i);
+			self.moveBy(-i,0);
+		    }
+	      }
+	   }
+	}
+
+	function shake_x(n) {
+	if (self.moveBy) {
+		for (i = 10; i > 0; i--) {
+			for (j = n; j > 0; j--) {
+			self.moveBy(i,0);
+			self.moveBy(-i,0);
+		    }
+	      }
+	   }
+	}
+
+	function shake_y(n) {
+	if (self.moveBy) {
+		for (i = 10; i > 0; i--) {
+			for (j = n; j > 0; j--) {
+			self.moveBy(0,i);
+			self.moveBy(0,-i);
+		    }
+	      }
+	   }
+	}
+
+	//-->
+	</SCRIPT>
+
+</HEAD>
+<BODY bgcolor="#000000">
+<!-- URL's used in the movie-->
+<!-- text used in the movie-->
+<!--Author: Josh Seward www.E-Idyas.com --><OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0"
+ ID=test_mask WIDTH=100% HEIGHT=100%>
+ <PARAM NAME=movie VALUE="test_mask.swf"> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#000000> <EMBED src="test_mask.swf" quality=high bgcolor=#000000  WIDTH=100% HEIGHT=100% TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED>
+</OBJECT>
+</BODY>
+</HTML>

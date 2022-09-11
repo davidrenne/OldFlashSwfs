@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<radio>
+		<station name="JP" text="test">
+			<song>
+				<title>not that far sample</title>
+				<file>not that far samp.mp3</file>
+			</song>
+			<song>
+				<title>p9(2) sample</title>
+				<file>p9(2) samp.mp3</file>
+			</song>
+			<song>
+				<title>rip sample</title>
+				<file>rip samp.mp3</file>
+			</song>
+		</station>
+	</radio>

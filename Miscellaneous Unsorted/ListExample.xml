@@ -1,0 +1,73 @@
+<mainList>
+	<list no="1">
+		<title></title>
+		<font color="#666666"></font>
+		<txt> </txt>
+	</list>
+	<list no="1">
+		<title><b>All kinds of Cats</b></title>
+		<font color="#666666"><b>All kinds of Cats</b></font>
+		<txt>Cats are probably the smartest animals on Earth.</txt>
+	</list>
+	<list no="2">
+		<title><b>All Kinds Of Dogs</b></title>
+		<font color="#666666"><b>All Kinds Of Dogs</b></font>
+		<txt>Nothing is as loyal or steadfast as your family dog.</txt>
+	</list>
+	<list no="3">
+		<title></title>
+		<font color="#666666"></font>
+		<txt> </txt>
+	</list>
+		<list no="4">
+		<title><b>Calico</b></title>
+		<font color="#666666"><b>Calico</b></font>
+		<txt>Calico is a name for black and white mixtures.</txt>
+	</list>
+	<list no="5">
+		<title><b>Brown</b></title>
+		<font color="#666666"><b>Brown</b></font>
+		<txt>I am not a real big fan of Brown. The whole earth tone thing is beyond me.</txt>
+	</list>
+		<list no="3">
+		<title><b>Black</b></title>
+		<font color="#666666"><b>Black</b></font>
+		<txt>I have had both Black cats and Black Dogs</txt>
+	</list>		
+		<list no="4">
+		<title><b>Grey</b></title>
+		<font color="#666666"><b>Grey</b></font>
+		<txt>Grey dogs like greyhounds are regal looking while Grey cats are snuggly</txt>
+	</list>		
+		<list no="5">
+		<title><b>Green</b></title>
+		<font color="#666666"><b>Green</b></font>
+		<txt>Get Serious. Green Cats and dogs? Like a Chia pet? Save this one for the lizard.</txt>
+	</list>
+	<list no="6">
+		<title><b>Yellow</b></title>
+		<font color="#666666"><b>Yellow</b></font>
+		<txt>Yellow or off white tends to be a favorite for cats and dogs alike</txt>
+	</list>
+	<list no="7">
+		<title><b>Blue</b></title>
+		<font color="#666666"><b>Blue</b></font>
+		<txt>Unlike Green, certain cats and dogs do have a blueish tint to them. </txt>
+	</list>
+		<list no="7">
+		<title><b>White</b></title>
+		<font color="#666666"><b>White</b></font>
+		<txt>White. Pure and untouched. A good color for cats but not so much for dogs.</txt>
+	</list>
+		<list no="7">
+		<title></title>
+		<font color="#666666"></font>
+		<txt> </txt>
+	</list>
+		<list no="7">
+		<title><b>Advanced Search</b></title>
+		<font color="#666666"><b>Advanced Search</b></font>
+		<txt>If this were real this would give you some more search features</txt>
+	</list>
+												
+</mainList>

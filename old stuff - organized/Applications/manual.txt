@@ -1,0 +1,30 @@
+用户手册 
+如果要运行FlashForum 1.0，至少要具备以下环境：
+
+1. Windows 9x/NT 平台
+2. PWS或IIS 4.0及以上
+3. IE 4.0及以上 或 Netscape浏览器
+
+使用时，将具体程序复制到相关目录（如FlashForum)下，数据库所在目录（db目录）应该与其平级。
+
+另外只要修改ASP脚本中的   rstemp.PageSize=相应数字
+就可以自动调整FlashForum中每页显示的帖子数,无须修改Flash源文件,非常
+方便。 注意这时如果要调整Flash影片的大小,相应bbs.html中的影片大小参数
+也要修改。
+
+
+打开浏览器,按照http方式访问 bbs.html 即可。注意，不能以物理路径形式做访问，这样ASP脚本无法执行。
+
+所附的源文件应以相应方式打开，如Flash源文件(bbs.fla)应在Flash4.0或Flash5.0中打开；ASP脚本可用
+记事本，Visual InterDev 6.0 等打开；mdb数据库应在Access下打开。
+
+如要修改，订正本软件，请与 childin@sohu.com 联系
+  
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 

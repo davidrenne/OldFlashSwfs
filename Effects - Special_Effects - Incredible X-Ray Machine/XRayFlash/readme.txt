@@ -1,0 +1,1 @@
+John H. Campbellj_campbell@hotmail.comThis flash animation was a fun project using the set properties function for visibility combined with masking.It was created with Flash 5.0If you have any comments, e-mail me at the above address.

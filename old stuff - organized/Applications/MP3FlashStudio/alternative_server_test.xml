@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<server>
+
+<folder mouseClickSound="5" name="Alternative XML File Test">
+
+	<object name=""  />
+	<object name="a" /> 
+	<object name="b" /> 
+	<object name="c" /> 
+	<object name="d" /> 
+	<object name="e" /> 
+	<object name="f" /> 
+
+</folder>
+
+<folder mouseClickSound="5" name="Cool Sites" >
+	<folder mouseClickSound="5" name="Really really cool sites"  open="false">
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 		
+	</folder>
+	<folder mouseClickSound="5" name="Sites about cool stuff" >
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 		
+	</folder>
+	<folder mouseClickSound="5" name="Misc other sites" >
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 		
+	</folder>
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+</folder>
+
+</server>

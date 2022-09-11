@@ -1,0 +1,23 @@
+How to use?
+**********
+
+
+Copy the *.fla file to your .../Flash5/Libraries/  folder.
+
+Start Flash and open your movie where you want to add the preloader.
+Choose /Window/Common Libraries.
+Choose PreloaderV4_by_roele.
+After pop-up drag the PreloaderV4 movie to your Frame1 in scene.
+
+! Frame 1 must be empty on all Layers !
+
+Then add action stop to frame 1. 
+
+Now it shoud run ;-)
+
+if you have questions mail me .... roele33@hotmail.com
+
+
+***********************************************************************
+
+THX roele

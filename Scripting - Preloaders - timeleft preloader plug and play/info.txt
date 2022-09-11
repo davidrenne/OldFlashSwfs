@@ -1,0 +1,4 @@
+author kadazuro
+email  kadazuro@kardouz.com
+website http://www.kardouz.com
+Description: calculates bit rate and displays the time remaining for a total download.

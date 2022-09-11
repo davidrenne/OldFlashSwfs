@@ -1,0 +1,1 @@
+case7=Link  "This is example 7"

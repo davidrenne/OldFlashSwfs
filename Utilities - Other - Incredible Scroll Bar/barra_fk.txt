@@ -1,0 +1,34 @@
+Contents: A Scroll Bar
+Author: Thiago dos Santos Prado
+E-mail: thiagoprado@yahoo.com
+ICQ: 7030551
+
+* How to use:
+   Play the movie use the scroll bar as you are used to operate it
+   in Windows.
+   You can press one arrow and wait for a smoothly dislocating, you
+   can press in the middle of bar for a jump movement, drag the
+   moving bar or just giving simple clicks on the arrows.
+
+* Tip:
+   To create a window uses mask to give boundary to your movie clip.
+
+* Changing the Parameters:
+   If you are working with two bars (vertical, horizontal), give them different instance names;
+   In Clip Parameters you will adjust:
+   -> pos_atual (the current amount of scroll the bar should perform)
+   -> clip_associado (the instance name of the animation the bars will work on)
+   -> fator_deslocamento (in pixels, tells the amount of scroll in each single click in extreme arrows of the bar)
+   -> deslocamento_max (in pixels, tells the maximum scroll the bar could perform)
+   -> direcao ("vertical": scrolls in vertical, "horizontal": scrolls in horizontal)
+   -> taxa_repeticao (in frames, the time the bar should wait since the mouse is pressed on an arrow intending to dislocate it smoothly)
+   -> perc_minima (in percent - eg.: 0.25 - indicates how small the moving bar can be relative to the width/height of the bar without the arrows)
+   -> perc_maxima (in percent - eg.: 0.50 - indicates how big the moving bar can be relative to the width/height of the bar without the arrows)
+
+* Thanks to:
+   My friends (Angelo, Celso, Dharlan, Marlos, Pedro, Thiago C., Krishnamurti)
+   My girlfriend (Rafaella)
+   Everybody that believe and build up!
+
+* Special Thanks to:
+   My parents (Péricles, Luiza)

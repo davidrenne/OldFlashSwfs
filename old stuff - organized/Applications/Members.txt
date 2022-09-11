@@ -1,0 +1,4 @@
+memberData=aliroman,aliroman,aliroman@swish-db.com
+aliimran,pass123,aliimran@swish-db.com
+alikamran,pass12,ali_kamran_shirani@hotmail.com
+alinoman,nomi,ali_noman_khan@hotmail.com

@@ -1,0 +1,295 @@
+			//////////////// Flash XML Server 2 ///////////////
+			/////////////////// v. 1.1.3 /////////////////////
+			///////////////// DOCUMENTATION /////////////////
+
+// Intro to FXS2
+
+	Flash XML Server 2 (FXS2) is a continuation of the first FXS which was a traditional windows explorer-like tree system.FXS2 is radically different. It represents the win32 explorer with large icons. However, it also adds an additional, if optional, component, the tab. I suspect that many will choose not to use the tab option, as the explorer alone stands on it's own feet. But I thought it was cool and it is a great way to fit an incredibly large amount of information into a very very small area.
+	
+	The XML code from FXS1 will easily port to FXS2. Much of the code is exactly the same. 5 minutes worth of editing could easily do the job.
+	
+	For those not familiar with FXS1: basically the FXS series is an advanced menu system with some added features and flashy graphics and movement. To name a few: the above mentioned explorer systems, a bunch of components for customizing it, features and programming optimized to preform well with other server side applications like PHP, ASP and Perl to build incredibly flexible Flash applications, or dynamic web forums, chatrooms, etc, with great ease of use. 
+	
+	Also see  //   What's New    //  farther down.
+
+
+// Speed and user appreciation
+
+	It's easier to program than HTML. And it can carry a large number of links in an incredibly small area. 
+	Saving time and making the user experience all that much easier. 
+
+	Controlling the speed and spacing attributes provided can also add to a specific user experience. As well as multimedia functions, like sound and video.
+	
+	It looks and feels MUCH more impressive than static link interfaces.
+
+
+// Customizable
+
+	FXS2 is customizable in every way. The flash file and script are included. it is completely open-source. You can do with it what you please. Change the fonts, the colors, the icons, whatever.
+
+
+// FXS2 Use with Server-Side Languages
+
+	I implemented some neat little tags that could work well with flash web forums or whatever else. in particular the <tab /> tag contains the OPEN attribute, which allows you to specify the default state of the folder, already open? or closed? Also there is a LOCK attribute which allows you to lock any object or folder, which disables all actions. This would be good for login situations where data is restricted.
+
+	Also implemented into the Objects <object /> tag are the TYPE, FILE, CLIP, FRAME, URL and WINDOW attributes. Type is usually type="link" or type="target", but modifying the relatively simple code that deals with parameters would allow you to do anything with this. URL, to the link type, is the URL to get, and WINDOW is the name of the window the link will be browsed in. most of the time I set window="_blank". Internal (to flash) links are handled by the target type <object type="target" /> // see FXS XML Syntax Documentation
+
+
+// FXS Techie Talk
+
+	Much faster than HTML, Javascript or DHTML. In development and in usage.
+
+	Flash XML Server is recursive. Meaning, it can support an infinite number of folders, tabs and levels. The only limitation would be the speed of the computer it is running on, and the space allotted for it's use .
+	
+
+// Open-Source
+
+	Flash XML Server is bound by the GNU License (www.gnu.org). Use freely but if you add to the code please report it back and the Flash XML Server Architecture Review Board (a.k.a. me and my studioAH buddies) will look over it and determine if we want to include it in the next studioAH version. Or feature the way you've used it. Either way, you're free to use and distribute it however you wish, even make your own version!, as long as you report back what you're doing with it, just cause I'm curious and would like to know where it ends up :) 
+	
+	If you'd like to know what I'm specifically looking for in the next version see new_version_notes.txt or mail me cyte@studioah.com
+	
+	Also, please give credit where credit is due to the StudioAH crew (or myself, Cyte, for creating the original FXS-server_script.as, and .fla) and the XMLNitro crew (the xmlnitro.as file included) in the code somewhere if you distribute your own version.
+	
+	A link to StudioAH would also be greatly appreciated with it's use. But, of course, is not required.
+	
+
+// What's New?
+
+	Aside from the obvious changes I'd like to highlight some others.
+	
+	New locking strategy. You are now able to lock all objects within a tab. I have not added the ability to lock tabs. I thought it was not a good idea considering the inherent mobility of the tabs to begin with.
+	
+	Ok this is really cool and I'm sad that I didn't think of it before. But here it is:
+	
+	FXS2 will check to see whether you have specified a different xml file in the url. such as this.swf?x=newxml.xml
+	
+	This allows you to let your users only download your flash file ONCE but see many different data results.
+	
+	EXAMPLE of 2 different servers using the same swf but different xml files: 
+	
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="500" height="130">
+		<param name=movie value="server_template.swf?x=server.xml">
+		<param name=quality value=high>
+		<embed src="server_template.swf?x=server.xml" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="500" height="130">
+		</embed>
+		</object>
+		
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="500" height="130">
+		<param name=movie value="server_template.swf?x=server2.xml">
+		<param name=quality value=high>
+		<embed src="server_template.swf?x=server2.xml" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="500" height="130">
+		</embed>
+		</object>
+
+
+
+// FXS Component Documentation
+
+title component - 	takes it's text by default from the xml attribute name="". But can be changed at any time using the title.text = ""; command. // See "Universals" in XML Syntax Documentation
+
+icon component - 	has an ImageList clip inside which you'll find frames containing various icons. This way you can easily design icons, implement them, and assign them to objects by calling their frame's number using the default xml attribute icon="". but can also be changed at any time with this command: icon.ImageList.gotoAndStop(insert number here); // See "Universals" in XML Syntax Documentation
+
+tab component - 
+
+sounds component - 		exactly like the icon component only it allows you to specify which sounds are fired when the mouse is over the link or has clicked the link. access is sound="(true or false)" mouseOverSound="(soundlist frame num)" mouseClickSound="(soundlist frame num)" or can be changed at any time by this command: _root.SoundList.gotoAndStop(number here); // See "Universals" in XML Syntax Documentation
+
+scrolling components -		scrolling is mandatory and will happen automatically when the icons exceed the viewable stage (between open and closed tabs, or tab and rightmost of clip). You can however control the speed, and the scroll amount that it will "jump" when you hit the empty space or < > buttons.
+
+
+
+// FXS XML Syntax Documentation
+
+
+	I think everything here is pretty self explanatory. The Server tag is required. It can also help you set options and user preferences dynamically. Things such as speed, spacing, movieclip size, screen position, scrolling and sound. If you leave everything blank, or leave everything out completely, it will work with the default settings. However, the base <server> tag is still required.
+
+/////////////  ROOT
+
+<server>
+
+</server>
+
+<server
+	clipWidth = "500"  //the left boundary of the server
+	clipHeight = "200" //the lower boundary of the server
+	scrollSpeed="9"    //speed at which the icons catch up to the scroll. 10 is instant.
+	scrollJumps="150"  //the increment (in pixels) that the scroll "jumps" upon hitting empty space
+	backFolderTitle=".."             //title of back folders. also popular is "back"
+	scrollButtonIncrement="20"       //the increment (in pixels) that the scroll jumps upon < >
+	defaultFolderIconNumber="2"      //default folder icon in _root.objectTemplate.icon.ImageList
+	backFolderIconNumber="3"         //icon number (as above) used as the back button/folder/thing
+	tabStraightOrRounded="straight"  //hehe try using "rounded". it's cool.
+	iconHorizSpacing="8"             //horizontal spacing of icons
+	iconVertSpacing="35"             //vertical spacing of icons
+	tabSpeed="9.7"                   //tab speed. 10 is instant
+	linesOfTextAllowedInIconTitles="3"        //icon titles can have 1,2 or 3 lines allowed
+	topMargin="10"                            //margin at the top of the server
+	leftMargin="20"                           //left margin
+	rightMargin="0"                           //right margin
+	includeExtraLinesInIconMargins="false"    //as false, text might overlap but it usually works
+	whenToExecuteIconRefresh="end_of_slide"   //try "beginning_of_slide"
+	soundEnabled="true"                       //does not affect tab sounds
+	defaultOverSound="3"                      //
+	defaultClickSound="4"                     //
+	tabSoundEnabled="false"                   //tab sounds can be disabled separately
+	defaultTabOverSound="3"                   //
+	defaultTabClickSound="4"                  //
+	tabAllreadyOpenErrorSound="9"             //error sound for when an allready opened tab is clicked
+	backFolderOverSound="5"                   //sounds for the (blue) folder that goes back a level
+	backFolderClickSound="6"
+>
+
+</server>
+
+
+/////////////  TABS
+
+<tab name="tab 1">
+
+</tab>
+
+that's pretty much it. 
+
+NOTE: EVERYTHING that is not a tab, must reside in a tab. doing otherwise will product unpredictable results. if you do not want any tabs in your movie, make the tab invisible and adjust the margins. BUT you still have to put everything in between the <tab> </tab> tag. even though it would be invisible.
+
+ALSO NOTE: that universals also apply to the tabs
+
+/////////////  FOLDERS
+
+
+<folder />
+
+<folder>
+</folder>
+
+<folder name="Trash Bin">
+
+
+	Folders are easy to make and control in FXS2. simply putting <folder /> will suffice. That would be an empty folder though. This would be a folder with a sterile object inside:
+
+<folder>
+	<object />
+</folder>
+
+
+	Attributes can add more flavor to a folder, however. Check it:
+
+name is obvious, when empty or left out it will be <untitled> by default.
+
+icon - 		this references the number that is in your icon ImageList. See // FXS Components
+
+
+
+///////////// SPACERS
+
+<spacer />
+
+that is the only way to specify a spacer.
+
+a spacer acts in as an invisible, disabled icon. it is good for sitatuations where you want to position icons in certain places.
+
+
+
+/////////////  OBJECTS AND ACTIONS
+
+
+</object type="" />
+
+	that's the only way to specify an object. Attributes include:
+
+icon:
+
+	icon is an attribute that allows you to specify a number that represents an icon in a clip that resides in the objectTemplate. I have already added a spiffy set of old-school mac-esque icons, but if you wish to add your own (which I strongly encourage), go to _root.objectTemplate.icon.ImageList and browse the frames. 
+	
+	The number of the frame is the number you will use to identify the icon.
+	
+	EXAMPLE:
+	
+	<object icon="3">
+
+type :
+
+
+type = "link"
+
+	URL - the URL.
+
+	window - specifies the window the url goes into. usually window="_blank"
+	
+	EXAMPLE: 
+	
+	<object type="link" URL="http://www.studioah.com/" window="_blank" />
+	
+		
+type = "target"
+
+	Clip - the name of the clip to target. assume that _root. is already there. So if you wanted to target a clip on the main screen named "dummy" it would be clip="dummy". if you wanted to target something within dummy it would be clip="dummy.something"
+	
+	Frame - the frame number or frame name to target. frame="fname" or frame="2"
+	
+	EXAMPLE: 
+	
+	<object type="target" clip="dummy" frame="2" />
+
+type = "movie"
+
+	file - the name of the file and where it is located. Example: dummy.swf. Example 2: http://www.studioah.com/dummy.swf.
+	
+	clip - the target clip to import the movie into.
+	
+	EXAMPLE:
+	
+	<object type="movie" file="dummy.swf" clip="dummy" />
+	
+	NOTE: You are not able to import a movie to a LEVEL because the script already uses level sorting. Not to mention any additional interface elements. This would be a good feature to add if you feel like messing with the code yourself, but it would be hard to eliminate all potential for error.
+
+
+
+///////////////  UNIVERSALS
+
+	Universals are what I call the attributes that apply to every type of XML node (except the root <server> node). They are as follows:
+	
+		name=""
+		sound=""
+		mouseOverSound=""
+		mouseClickSound=""
+		lock=""
+	
+	Here are some examples of how these can be used with different nodes:
+	
+		<tab name="Universals Test" icon="3" sound="true" mouseOverSound="2" mouseClickSound="3" />
+	
+		<folder name="Universals Test" icon="3" sound="true" mouseOverSound="2" mouseClickSound="3" />
+
+		<object name="Universals Test" icon="3" sound="true" mouseOverSound="2" mouseClickSound="3" />
+
+		<object type="link" URL="http://www.studioah.com/" window="_blank" name="Universals Test" icon="3" sound="true" mouseOverSound="2" mouseClickSound="3" />
+
+		<object type="target" clip="dummy" frame="2" name="Universals Test" icon="3" sound="true" mouseOverSound="2" mouseClickSound="3" />	
+
+
+
+ALL OF THIS WILL BE CLEAR AND EASY ONCE YOU OPEN server.xml and the examples included within AND TAKE A LOOK. IT'S REALLY QUITE SIMPLE. 
+
+Much faster than html or javascript.
+
+Enjoy! And remember to give feedback!
+
+
+///////////////// ////////////////////////// ///////// visit studioAH.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

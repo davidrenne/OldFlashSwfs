@@ -1,0 +1,58 @@
+Exemplo criado por Maroto do Forum Flash4 e testado nos seguintes browsers:  Netscape® Communicator 4.75 
+           Internet Explorer 5.01
+	
+	EMAIL: pnmix@pnmix.com
+	Autor: Maroto (Mr. James)
+	Web Site: em condtrução...
+	Empresa: Pnmix Dj's e Produtores
+	
+	
+
+
+
+
+[Código java scipt para você embeber no html publicado pelo Flash]
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Maroto (pnmix@pnmix.com) -->
+<!-- Begin
+function fullScreen(theURL) {
+window.open(theURL, '', 'fullscreen=yes, scrollbars=no');
+}
+//  End -->
+</script>
+
+
+
+
+
+
+Apos a publicar o html do Flash, tem que embeber este código (no cabeçalho <HEAD>  </HEAD>) no respectivi html publicado pelo Flash, para ficar com este aspecto.
+
+[Exemplo do html publicado pelo Flash com o codigo java script embebido por você]
+
+<HTML>
+<HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Maroto (pnmix@pnmix.com) -->
+<!-- Begin
+function fullScreen(theURL) {
+window.open(theURL, '', 'fullscreen=yes, scrollbars=no');
+}
+//  End -->
+</script>
+
+
+<TITLE>:::::Exemplo Full Screen por MAROTO do Forum Flash 4  ::::::</TITLE>
+</HEAD>
+<BODY  bgcolor="#333333">
+<!-- URL's used in the movie-->
+<A HREF=javascript:fullScreen('http://www.forumnow.com/forum.asp?own=flash4&exe=s')></A> <!-- text used in the movie-->
+<!--Exemplo em Flash 4 para Alexandre --><OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0"
+ ID=tela fulll Fla4 WIDTH=100% HEIGHT=100%>
+ <PARAM NAME=movie VALUE="tela fulll Fla4.swf"> <PARAM NAME=quality VALUE=high> <PARAM NAME=scale VALUE=exactfit> <PARAM NAME=bgcolor VALUE=#333333> <EMBED src="tela fulll Fla4.swf" quality=high scale=exactfit bgcolor=#333333  WIDTH=100% HEIGHT=100% TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED>
+</OBJECT>
+</BODY>
+</HTML>

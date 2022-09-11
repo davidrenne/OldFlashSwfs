@@ -1,0 +1,3 @@
+This FLA shows the usage of drop targets and multiple clip dragging to produce a 'docking' effect. Interactivity between movie clips is demonstrated. Simillar Effect, as in Winamp (application)  and on BadBoyOnline.com ...
+
+Instructions: If movie clip 2 is dragged on movie clip1, then on dragging movie clip 1, they both move together. Drag and drop movie clip 2, outside movie clip1 to un-dock.

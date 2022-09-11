@@ -1,0 +1,1 @@
+&clock=1&clouds=1&light=1&textloaded=OK

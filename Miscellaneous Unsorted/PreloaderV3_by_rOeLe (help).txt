@@ -1,0 +1,66 @@
+Author      : Roland Schär
+Email       : roele33@hotmail.com
+Homepage    : http://www.go.to/roele
+Generate    : 11.12.00
+
+ Specification
+
+FLA title   : PreloaderV3_by_rOeLe
+FLA version : 5.0
+FLA type    : Smart-Clip
+FLA size    : 50 KB
+
+=========================
+ Usage
+
+1. use this clip as smart-clip
+   - to use as smart clip, put the "PreloaderV3_by_rOeLe.fla" in this folder :
+     ---------------------------------------------
+     c:\Program Files\Macromedia\Flash 5\Libraries
+     ---------------------------------------------
+
+2. while you're already in Flash5, launch menu :
+     ---------------------------------------------
+     Window > Common Libraries > 'PreloaderV3_by_rOeLe' [will appear if step 1 done]
+     ---------------------------------------------
+    
+     
+
+3a. leave frame 1 as 'blank keyframe' . 
+ b. Other timelines also leave blank at frame 1, if presented.
+ c. select frame 1, drag the clip 'PreloaderV3' 
+    & drop it to the working space.
+    [assign timeline action at frame 1 = 'stop']
+   
+4. the actual contents should start earliest from frame 2. 
+     
+   
+     
+
+5. that's all
+
+
+=========================
+ Program Flow
+
+1. Once the movie begin to load, it loads the 'PreloaderV3' clip first.
+2. Then 'PreloaderV3' movie starts, displaying the current loading status.
+3. It display 'current bytes loaded' , 'actual file size' , & 'percent till completion'
+   of the entire FLA.
+
+=========================
+ How to test
+
+method 1 : In Flash5, press 'Ctrl+Enter' for twice to test for streaming movie effect.
+
+method 2 : Upload the SWF to internet, you'll see the actual result.
+
+=========================
+ Advantages
+
+1. This preloader clip is only 7KB , with user friendly interface. 
+2. No need to alter any actionscripts beneath , just 'Plug&Play'.
+
+
+Enjoy 
+

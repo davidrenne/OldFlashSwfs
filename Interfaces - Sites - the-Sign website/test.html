@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>
+      Testing for flash...
+    </title>
+<style type="text/css">
+ body {
+  background-color: #000033;
+  color: white;
+  font-family: Ms Sans Serif, helvetica, sans-serif;
+ }
+ A {
+  color: white;
+ }
+</style>
+  </head>
+  <body scroll="no">
+<script type="text/javascript" language="JavaScript">
+<!--
+/*
+* redirect to flash site if the flash plugin is detected.
+* Else, offer a link to the plugin download and the option
+* to enter the flash site anyway.
+*/
+var UseFlash = 0;
+if (navigator.mimeTypes && navigator.mimeTypes["application/x-shockwave-flash"] ) {
+	// Check for Flash version 4 or greater in Netscape
+	var plugin = navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin;
+	if (plugin && parseInt(plugin.description.substring(plugin.description.indexOf(".")-1))>=4)
+		UseFlash = 1;
+} else if (navigator.appName && navigator.appName.indexOf("Microsoft") != -1 && 
+	  navigator.userAgent.indexOf("Windows") != -1 && navigator.userAgent.indexOf("Windows 3.1") == -1) {
+	// Assume any Windows IE except for Windows 3.1 supports the OBJECT tag
+	UseFlash = 1;
+}
+if(UseFlash) {
+//	if(navigator.language == "nl") {
+//		document.location.href = "./nl/index.html";
+//	} else {
+		document.location.href = "./main.html";
+//	}
+} else {
+	document.write('<table border=0 cellpadding=0 cellspacing=0 width=100% height=100%>' +
+'<tr><td><br /></td></tr>' +
+'<tr>' +
+	'<td width="30%"><br /></td><td align=center valign=middle style="text-align: justify;">' +
+			' In order to view this website, you need the Macromedia Flash plugin.' +
+			' We were not able to find this plug-in in your browser. Please download' +
+			' it from <b><a href="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">Macromedia</a></b>. This will' +
+			' only take a few minutes and is easy to do.<br />' +
+			' If you are sure that you have the flash plugin installed, you can visit' +
+			' our website by clicking <b><a href="main.html">here</a></b>.' +
+	'</td><td width="30%"><br /></td>' +
+'</tr>' +
+'<tr><td><br /></td></tr>' +
+'</table>');
+
+}
+//-->
+</script>
+  </body>
+</html>
+

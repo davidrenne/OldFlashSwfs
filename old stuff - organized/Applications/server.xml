@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<server
+	clipWidth = "500"
+	clipHeight = "200"
+	scrollSpeed="9"
+	scrollJumps="150"
+	backFolderTitle=".."
+	scrollButtonIncrement="20"
+	defaultFolderIconNumber="2"
+	backFolderIconNumber="3"
+	tabStraightOrRounded="straight" 
+	iconHorizSpacing="8"
+	iconVertSpacing="35"
+	tabSpeed="9.7"
+	linesOfTextAllowedInIconTitles="3"
+	topMargin="10"
+	leftMargin="20"
+	rightMargin="0"
+	includeExtraLinesInIconMargins="false"
+	whenToExecuteIconRefresh="end_of_slide"
+	soundEnabled="true"
+	defaultOverSound="3"
+	defaultClickSound="4"
+	tabSoundEnabled="true"
+	defaultTabOverSound="7"
+	defaultTabClickSound="8"
+	tabAllreadyOpenErrorSound="9"
+	backFolderOverSound="5"
+	backFolderClickSound="6"
+>
+	<!--
+	use <server> instead of the above if all the settings in the flash file are valid.
+	use the above to customize to special needs of users and dynamic web pages	
+-->
+<!-- icon #s: 1 default, 2 folder, 3 "back" folder, 4 link, 5 target, 6 movie, 7 text :: (change at _root.objectTemplate.icon.imagelist)-->
+<!-- sound #s: 3 default highlight, 4 default click, 5 folder hightlight, 6 folder click, 7 tab highlight, 8 tab click, 9 tab allready opened error-->
+
+<tab name="Tabtest">
+</tab>
+<tab name="Spacing Test">
+	<folder mouseOverSound="5" mouseClickSound="6">
+		<spacer /><spacer /><spacer /><spacer />
+		<object />
+	</folder>
+	<spacer /><spacer />
+	<object />
+</tab>
+<tab name="Folders Test">
+	<folder mouseOverSound="5" mouseClickSound="6" name="Numbered Folders" icon="2">
+		<folder mouseOverSound="5" mouseClickSound="6" name="1" icon="2">		<folder mouseOverSound="5" mouseClickSound="6" name="1" icon="2">
+			<folder mouseOverSound="5" mouseClickSound="6" name="2" icon="2">
+				<folder mouseOverSound="5" mouseClickSound="6" name="3" icon="2">
+		<folder mouseOverSound="5" mouseClickSound="6" name="1" icon="2">
+			<folder mouseOverSound="5" mouseClickSound="6" name="2" icon="2">
+				<folder mouseOverSound="5" mouseClickSound="6" name="3" icon="2">
+		<folder mouseOverSound="5" mouseClickSound="6" name="1" icon="2">
+			<folder mouseOverSound="5" mouseClickSound="6" name="2" icon="2">
+				<folder mouseOverSound="5" mouseClickSound="6" name="3" icon="2">
+
+				</folder>
+			</folder>
+		</folder>
+				</folder>
+			</folder>
+		</folder>
+				</folder>
+			</folder>
+		</folder>
+			<folder mouseOverSound="5" mouseClickSound="6" name="2" icon="2">		<folder mouseOverSound="5" mouseClickSound="6" name="1" icon="2">
+			<folder mouseOverSound="5" mouseClickSound="6" name="2" icon="2">
+				<folder mouseOverSound="5" mouseClickSound="6" name="3" icon="2">		<folder mouseOverSound="5" mouseClickSound="6" name="1" icon="2">
+			<folder mouseOverSound="5" mouseClickSound="6" name="2" icon="2">
+				<folder mouseOverSound="5" mouseClickSound="6" name="3" icon="2">
+
+				</folder>
+			</folder>
+		</folder>
+
+				</folder>
+			</folder>
+		</folder>
+				<folder mouseOverSound="5" mouseClickSound="6" name="3" icon="2">
+
+				</folder>
+			</folder>
+		</folder>
+	</folder>
+	<folder mouseOverSound="5" mouseClickSound="6" name="test" icon="2">
+		<folder mouseOverSound="5" mouseClickSound="6" name="test" icon="2">
+			<folder mouseOverSound="5" mouseClickSound="6" />
+			<folder mouseOverSound="5" mouseClickSound="6" />
+			<folder mouseOverSound="5" mouseClickSound="6" />
+			<folder mouseOverSound="5" mouseClickSound="6" />
+			<folder mouseOverSound="5" mouseClickSound="6" name="test" icon="2" />
+			<folder mouseOverSound="5" mouseClickSound="6" name="test" icon="2" />
+			<folder mouseOverSound="5" mouseClickSound="6" name="test" icon="2" />
+			<folder mouseOverSound="5" mouseClickSound="6" />
+			<folder mouseOverSound="5" mouseClickSound="6" />
+			<folder mouseOverSound="5" mouseClickSound="6" />
+			<folder mouseOverSound="5" mouseClickSound="6" />
+			<folder mouseOverSound="5" mouseClickSound="6" />
+			<folder mouseOverSound="5" mouseClickSound="6" />
+		</folder>
+		<folder mouseOverSound="5" mouseClickSound="6" />
+		<folder mouseOverSound="5" mouseClickSound="6" />
+		<folder mouseOverSound="5" mouseClickSound="6" />
+		<folder mouseOverSound="5" mouseClickSound="6" />
+		<folder mouseOverSound="5" mouseClickSound="6" />
+		<folder mouseOverSound="5" mouseClickSound="6" name="test" icon="2" />
+		<folder mouseOverSound="5" mouseClickSound="6" name="test" icon="2" />
+		<folder mouseOverSound="5" mouseClickSound="6" name="test" icon="2" />
+		<folder mouseOverSound="5" mouseClickSound="6" />
+		<folder mouseOverSound="5" mouseClickSound="6" />
+		<folder mouseOverSound="5" mouseClickSound="6" />
+		<folder mouseOverSound="5" mouseClickSound="6" />
+		<folder mouseOverSound="5" mouseClickSound="6" />
+	</folder>
+	<folder mouseOverSound="5" mouseClickSound="6" />
+	<folder mouseOverSound="5" mouseClickSound="6" />
+	<folder mouseOverSound="5" mouseClickSound="6" name="test" icon="2" />
+	<folder mouseOverSound="5" mouseClickSound="6" />
+	<folder mouseOverSound="5" mouseClickSound="6" />
+	<folder mouseOverSound="5" mouseClickSound="6" name="test" icon="2" />
+	<folder mouseOverSound="5" mouseClickSound="6" />
+	<folder mouseOverSound="5" mouseClickSound="6" />
+	<folder mouseOverSound="5" mouseClickSound="6" />
+	<folder mouseOverSound="5" mouseClickSound="6" />
+	<folder mouseOverSound="5" mouseClickSound="6" />
+	<folder mouseOverSound="5" mouseClickSound="6" />
+</tab>
+
+<tab name="Locked Items Test">
+	<folder name="locked folder" mouseOverSound="5" mouseClickSound="6" lock="true" />
+	<object name="locked object 1" icon="4" lock="true" />
+	<object name="locked object 2" icon="5" lock="true" />
+	<object name="locked object 3" icon="6" lock="true" />
+</tab>
+
+<tab name="Action Testing">
+	<object name="URL Test" type="link" icon="4" url="http://www.studioah.com/" window="_blank" />
+	<object name="Javascript Link" type="link" icon="4" url="javascript:openWin();" />
+	<object name="Clip Frame Name Target" type="target" icon="5" clip="dummy" frame="success" /> 
+	<object name="Clip Frame Number Target" type="target" icon="5" clip="dummy" frame="10" /> 
+	<object name="Import Movie To Clip" type="movie" icon="6" file="dummy.swf" clip="dummy" />
+</tab>
+
+<tab name="Icon Testing">
+	<object name="Long Name Example ::::::: end" />
+	<object name="default icon" /> 
+	<object name="icon 1" icon="1"/>
+	<object name="icon 2" icon="2"/>
+	<object name="icon 3" icon="3"/>
+	<object name="icon 4" icon="4"/>
+	<object name="icon 5" icon="5"/>
+	<object name="icon 6" icon="6"/>
+	<object name="icon 7" icon="7"/>
+</tab>
+
+<tab name="Welcome Test" open="true">
+	<object name="Welcome Object" />
+	<object />
+</tab>
+
+<tab name="Sound Tests">
+	<object name="No Sound" sound="false" />
+	<object name="Sound 1"  mouseOverSound="3" mouseClickSound="3" />
+	<object name="Sound 2"  mouseOverSound="4" mouseClickSound="4" />
+	<object name="Default Sounds" sound="true" />
+</tab>
+
+<tab>
+	<folder mouseOverSound="5" mouseClickSound="6" name="Unsigned Examples" icon="2">
+		<folder mouseOverSound="5" mouseClickSound="6" /><folder mouseOverSound="5" mouseClickSound="6" /><folder mouseOverSound="5" mouseClickSound="6" />
+		<object /><object /><object />
+	</folder>
+	<folder mouseOverSound="5" mouseClickSound="6" name="Cool Sites" icon="2">
+		<object name="StudioAH Link" type="link" icon="4" url="http://www.studioah.com/" window="_blank" />
+	</folder>
+	<folder mouseOverSound="5" mouseClickSound="6" name="Cool Sites" icon="2">
+		<object name="StudioAH Link" type="link" icon="4" url="http://www.studioah.com/" window="_blank" />
+	</folder>
+	<folder mouseOverSound="5" mouseClickSound="6" name="Cool Sites" icon="2">
+		<object name="StudioAH Link" type="link" icon="4" url="http://www.studioah.com/" window="_blank" />
+	</folder>
+	<folder mouseOverSound="5" mouseClickSound="6" name="Cool Sites" icon="2">
+		<object name="StudioAH Link" type="link" icon="4" url="http://www.studioah.com/" window="_blank" />
+	</folder>
+</tab>
+</server>

@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!-- Flash Kit Tutorials Page - Tute title here -->
+
+<HTML>
+<HEAD>
+	<TITLE>Flash Kit Tutorial - Tute title here</TITLE>
+	<META NAME="description" CONTENT="Flash Kit.  Tute title here">
+	<META NAME="keywords" CONTENT="Flash kit,  Tute title here">
+	<LINK REL="stylesheet" href="/styles/styles.css" type="text/css">
+</HEAD>
+
+<body>
+
+<!--#include virtual="/includes/adcode.html"-->	
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="CENTER" bgcolor="#000000">
+	<tr>
+		<td>
+			<table width="100%" border="0" cellspacing="1" cellpadding="3" align="CENTER">
+			<tr bgcolor="#ffdb5a">
+				
+          <td> <font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b> 
+            <!-- **************************   TITLE HERE   ****************************************************************** --> 
+            <a href="http://www.flashkit.com/tutorials/links/index.shtml">Tutorials</a> 
+            : <!-- **************************   END TITLE    *************************************************************** --> 
+            Using the Duplicate Movie Clip</b></font></td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		
+    <td align=left bgcolor="#ffffff"> <font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b> 
+      <!-- ******************************************************************************************** --> 
+      Author: Andy Donald| Website: <a href="http://www.yoursite.com/" target="_blank">www.root2.co.uk</a> 
+      <!-- ******************************************************************************************** --> 
+      </B></FONT> </td>
+	</tr>
+</TABLE>
+<P>
+	
+<DIV class=main> <FONT Class=text> <!-- ******************************************************************************************** --> 
+  <!--                            ENTER ASSUMED KNOWLEDGE                                           --> 
+  <h2><img src="/graphics/board_arrow.gif" width=17 height=13 border="0" align=center>Lava 
+    Clouds </h2>
+  <b>Assumed Knowledge:<br>
+  <ul>
+    <li>Basic Movie Clip creation and instance labeling</li>
+    <li>Basic Shape Tweening</li>
+  </ul>
+  </b> 
+  <P> <!-- ******************************************************************************************** --> 
+    <!--                            START YOUR TUTORIAL HERE                                           -->
+  </FONT>
+  <table width="75%" border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr> 
+      <td colspan="2"><b>Step 1</b></td>
+    </tr>
+    <tr> 
+      <td colspan="2"> 
+        <p>Create a movie clip instance in main scene called B1 say (Note this 
+          scene could be 1 frame in length I have used 60 simply to contain a 
+          comment) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2"><b>Step 2</b></td>
+    </tr>
+    <tr> 
+      <td colspan="2">Set the visable property of that instance to 0 (we don't 
+        need to see the parent movie clip we are going to create copies at different 
+        levels of Alpha visabilities)</td>
+    </tr>
+    <tr> 
+      <td colspan="2"><b>Step 3</b> (Heres the clever bit although still simple)</td>
+    </tr>
+    <tr> 
+      <td colspan="2">Add the following actions to the 1st frame of the main scene</td>
+    </tr>
+    <tr> 
+      <td width="11%">&nbsp;</td>
+      <td width="89%"> 
+        <p>&nbsp;</p>
+        <p>Set Variable: "i" = 0 <br>
+          Loop While (i<4) <br>
+          Set Variable: "i" = i+1 Duplicate Movie Clip ("/B1", "B"&i, i) <br>
+          Set Property ("/B"&i, Alpha) = 10+(2*/:i) <br>
+          Begin Tell Target ("/B"&i) <br>
+          Go to and Play (/:i*2) <br>
+          End Tell Target <br>
+          End Loop <br>
+          Stop </p>
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2"><b>Step 4 </b>(Easy to understand quite tricky to get a 
+        good effect)</td>
+    </tr>
+    <tr> 
+      <td colspan="2"> 
+        <p>Edit the Movie Clip<br>
+          create a shape without any boarder then simply shape tween from one 
+          position to the next</p>
+        <p>Masking can be used to uncover text etc. (This whole stage takes quite 
+          a lot of experimentation but with practice many effects can be realised)</p>
+        <p>Its best to download the Fla to see how I have done it</p>
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2">&nbsp;</td>
+    </tr>
+  </table>
+  <FONT Class=text>
+  <P> <!--                            END OF YOUR TUTORIAL                                              --> 
+    <!-- ******************************************************************************************** --> 
+    <!--                            FLASHKIT WILL DO THIS BIT                                         --> 
+  </FONT> </DIV>
+<P>
+<!--#include virtual="/includes/flashlist.html"-->
+
+<table width="760" bgcolor="#0033cc">
+	<tr>
+		<td>
+			<table width="100%" bgcolor="#ffc400" cellpadding="2">
+				<tr>
+					<td bgcolor="#ffc400" width="33%" align="left" valign="top">
+						<b><font face="Verdana,Arial, helvetica" size="2" color="#ffffff"><img src="/graphics/black_arrow.gif" width=17 height=13 border="0" align=center><a href="ftp://203.39.170.10/pub/tutorials/zips/tutorialzipname.zip">Download my Example</a></font></b><font face="Verdana,Arial, helvetica" size="2" color="#ffffff"> <font color="#000000">(0000k)</font></font><br>
+						<font face="Verdana,Arial, helvetica" size="1" color="#000000">
+						PC - <a href="http://www.winzip.com" target="_blank">Get Winzip</a> | 
+						Mac - <a href="http://www.aladdinsys.com/downloads/index.html" target="_blank">Get Stuffit</a>		
+					</font></td>
+					<td bgcolor="#ffc400" width="30%" align="left" "valign="top">
+						<b><font face="Verdana,Arial, helvetica" size="2" color="#000000"><img src="/graphics/black_arrow.gif" width=17 height=13 border="0" align=center>Your Feedback!</font></b><br>
+						<font face="Verdana" size=1 color="#000000">Please rate this tutorial, ten = Good</font>
+					</td>
+					<td bgcolor="#ffc400" width="37%" align="center" valign="middle">
+						<DIV CLASS=main>  
+							<FONT Class=text>
+								<form action="http://www.flashkit.com/cgi-bin/links_tute/rate.pl" method="POST">
+								<input type=hidden name="ID" value="20"><div class="margin">	
+										<p><select name=rate>
+											<option selected>10
+											<option>9
+											<option>8
+											<option>7
+											<option>6
+											<option>5
+											<option>4
+											<option>3
+											<option>2
+											<option>1
+										   </select>
+										   <input type=submit value="Rate this Link">
+										</p>
+									</div>
+								</form>
+							</font>
+						</DIV>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<!--#include virtual="/includes/adcode_bot.html"-->	
+<!--#include virtual="/includes/footer.html"-->
+
+<!-- ******************************************************************************************** -->
+<DIV id=counter style="position:absolute; visibility: hidden; left:0px; top:0px; width:0px; height:0px; z-index:2">
+		<!-- BEGIN WEBSIDESTORY CODE v5 -->
+		<!-- COPYRIGHT 1998-1999 WEBSIDESTORY, INC. ALL RIGHTS RESERVED.  U.S. PATENT PENDING. -->
+		<A HREF="http://rd1.hitbox.com/rd?acct=WQ591017O3AAWREN0&p=s">
+		<IMG src="http://hg1.hitbox.com/HG?hc=w104&l=y&hb=WQ591017O3AAWREN0&cd=1&n=Tutorials+Name+Here" height=62 width=88 ALT="Click Here!" border=0></A>
+		<!-- END WEBSIDESTORY CODE  -->		
+</DIV>
+<!-- ******************************************************************************************** -->

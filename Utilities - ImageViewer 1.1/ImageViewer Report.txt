@@ -1,0 +1,88 @@
+Movie Report
+-------------
+FrameFrame #    Frame Bytes    Total Bytes    Page
+------------    -----------    -----------    ---------------
+    1        232427         232427        imagegallery
+    2            10         232437          2
+
+Page                       Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+imagegallery                      0             0
+
+Embedded Objects               2666             0
+
+Page                       Symbol Bytes    Text Bytes
+-----------------------    ------------    ----------
+tshirt                            0             0
+Symbol 345                        0             0
+  Auto Play Button                0             0
+  AutoStop Button                 0             0
+ Scroll Down                      0             0
+ Scroll Up                        0             0
+Auto Play Movie (DO NOT EDIT)        0             0
+Button1                           0             0
+Button2                           0             0
+Button3                           0             0
+Button4                           0             0
+Button5                           0             0
+Button6                           0             0
+Button7                           0             0
+Button8                           0             0
+Button9                           0             0
+Button10                          0             0
+Button11                          0             0
+Button12                          0             0
+Button13                          0             0
+Button14                          0             0
+Button15                          0             0
+email button                     37           236
+Left Bar Controls                 0           585
+Main Movie                        0             0
+Main Movie Opening Text (EDITABLE)       40          1470
+Return to Home                   42           118
+Scroll Up Arrow                   0             0
+UI Line                          33             0
+
+Bitmap                     Compressed    Compression
+-----------------------    ----------  --------  -----------
+YourLogoHere.png               17906      127032   Lossless
+ Play Button Master              249        2500   =60
+ Stop Button Master              268        3000   =60
+Image3.png                     12675     1228800   =60
+Image15.png                    12675     1228800   =60
+Image14.png                    12675     1228800   =60
+Image13.png                    12675     1228800   =60
+Image12.png                    12675     1228800   =60
+Image11.png                    12675     1228800   =60
+Image10.png                    12675     1228800   =60
+Image9.png                     12675     1228800   =60
+Image8.png                     12675     1228800   =60
+Image7.png                     12675     1228800   =60
+Image6.png                     12675     1228800   =60
+Untitled0015.png                1034       16800   
+Untitled0014.png                1051       16800   
+Untitled0013.png                1028       16800   
+Untitled0012.png                1091       16800   
+Untitled0011.png                 791       16800   
+Untitled0010.png                 891       16800   
+Untitled0009.png                 711       16800   
+Untitled0008.png                 711       16800   
+Untitled0007.png                 719       16800   
+Untitled0006.png                 708       16800   
+Untitled0005.png                 757       16800   
+Untitled0004.png                 815       16800   
+Untitled0003.png                 926       16800   
+Untitled0002.png                 995       16800   
+Untitled0001.png                1048       16800   
+Untitled0000.png                1035       16800   
+Image5.png                     12675     1228800   =60
+Image4.png                     12675     1228800   =60
+Image2.png                     12675     1228800   =60
+Image1.png                      5278      130320   =60
+
+
+Sound name                 Bytes        Format    
+-----------------------    ---------    ----------
+Verdana Bold                  718        HRemnortu
+Arial Bold                   2441         ()./15:ADEFHILMPRTVYacdefghilmnoprstuw
+Arial                        3428         !(),.15ABCEGHIJLMNOPRSUVWabcdefghiklmnoprstuvwy

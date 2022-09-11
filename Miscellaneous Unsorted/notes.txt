@@ -1,0 +1,4 @@
+This flash tutorial is provided by Albert Castillo
+www.albertc.org
+
+The data.txt is where all of your user names and pass's are stored. To add a user or pass simply make one up, create a new id, such as (id1). Just make sure you change the number only. This number can be anything up to 2000. (ex. id2000). Also, make sure your display menu is not checked. This prevents someone from exploring your protected area by right clicking and choosing forward. This is done in the publish settings under the html tab. Make sure the display menu is unchecked.

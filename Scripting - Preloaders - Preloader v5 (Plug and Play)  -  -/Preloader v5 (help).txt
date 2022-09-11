@@ -1,0 +1,72 @@
+Author      : CTLeang
+Email       : CTLeang@i.am
+Homepage    : http://www.CTLeang.com
+Generate    : 5:59 PM 9/10/2000
+
+// Specification
+
+FLA title   : Preloader(Plug&Play) v1.0
+FLA version : 5.0
+FLA type    : Smart-Clip
+FLA size    : 3 kilobytes
+
+=========================
+// Usage
+
+1. use this clip as smart-clip
+   - to use as smart clip, put the "Preloader v5.fla" in this folder :
+     ---------------------------------------------
+     c:\Program Files\Macromedia\Flash 5\Libraries
+     ---------------------------------------------
+
+2. while you're already in Flash5, launch menu :
+     ---------------------------------------------
+     Window > Common Libraries > 'Preloader v5' [will appear if step 1 done]
+     ---------------------------------------------
+     ------------
+    see "pic1.gif" 
+     ------------
+
+3a. leave frame 1 as 'blank keyframe' . 
+ b. Other timelines also leave blank at frame 1, if presented.
+ c. select frame 1, drag the clip 'Preloader v5' 
+     ------------
+    see "pic2.gif"
+     ------------
+    & drop it to the working space.
+    [assign timeline action at frame 1 = 'stop']
+   
+4. the actual contents should start earliest from frame 2. 
+     ------------
+    see "pic3.gif"
+     ------------
+
+5. that's all
+
+* you can set the 'clip parameters' of 'Preloader v5' - original FLA.
+  [provided you know this is the new function in Flash5]
+
+=========================
+// Program Flow
+
+1. Once the movie begin to load, it loads for 3KB for the 'preloader v5' clip first.
+2. Then 'preloader v5' movie starts, displaying the current loading status.
+3. It display 'current bytes loaded' , 'actual file size' , & 'percent till completion'
+   of the entire FLA.
+
+=========================
+// How to test
+
+method 1 : In Flash5, press 'Ctrl+Enter' for twice to test for streaming movie effect.
+method 2 : Upload the SWF to internet, you'll see the actual result.
+
+=========================
+// Advantages
+
+1. This preloader clip is only 3KB , with user friendly interface. 
+2. No need to alter any actionscripts beneath , just 'Plug&Play'.
+
+
+Enjoy & goodluck.
+
+**************************************// End //******************************************

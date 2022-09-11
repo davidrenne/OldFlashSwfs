@@ -1,0 +1,24 @@
+<? 
+$max_count= 9;
+$filename = "count.txt";
+$fd = fopen ($filename, "r");
+$contents = fread ($fd,filesize($filename));
+fclose ($fd);
+
+$part = split("=",$contents);
+$say = $part[1];
+
+$say++;
+
+
+$length=strlen($say);
+$minus=$max_count-$length;
+ 
+for ($j=0;$j<$minus;$j++) {
+$say="0".$say;
+}
+ 
+$fd = fopen ($filename, "r+");
+fwrite ($fd,"&deger=".$say) or die("Dosya Yazilamadi!");
+fclose ($fd);
+?>

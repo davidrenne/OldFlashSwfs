@@ -1,0 +1,1 @@
+Hold any box and drag it from left to right. It can be moved, swayed and stopped wherever you place it.

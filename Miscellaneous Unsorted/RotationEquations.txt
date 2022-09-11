@@ -1,0 +1,12 @@
+Rotation about the x axis:
+x' = x
+y' = y cos ø - z sin ø
+z' = y sin ø + z cos ø 
+Rotation about the y axis:
+x' = z sin ø + x cos ø
+y' = y
+z' = z cos ø - x sin ø 
+Rotation about the z axis:
+x' = x cos ø - y sin ø
+y' = x sin ø + y cos ø
+z' = z 

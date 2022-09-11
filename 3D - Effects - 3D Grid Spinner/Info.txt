@@ -1,0 +1,15 @@
+3D GridSpinner Mouse Trail effect, by Jim Riggott
+
+This is not original, just a modification of part of the .fla by antoine legras' "The Cursor" which appeared on FlashKit on the following URL: 
+
+http://www.flashkit.com/movies/Flash_5/the_curs-antoine_-1391/index.shtml
+
+I used the idea to try and improve my previous Grid Spinner Mouse Trailer, which is also on FlashKit on: 
+
+http://www.flashkit.com/movies/Mouse_Trailers/grid_spi-Jim_Rigg-1105/index.shtml
+
+Thanks
+
+Jim Riggott
+Thursday 14th September 2000
+

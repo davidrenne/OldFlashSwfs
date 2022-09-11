@@ -1,0 +1,5 @@
+	There is a lot going on here but the basic idea was to see if I could make something even slightly impressive.  The main idea is with the fading in and out of the letters.  For this effect I did motion tweening adjusting the sizes to make it look like it was going in and out.  Other than that I added some sound and splashed my name at the end.
+
+
+...George Pichon
+

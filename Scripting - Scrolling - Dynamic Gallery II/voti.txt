@@ -1,0 +1,1 @@
+titolo=Test per la creazione di grafici dinamici&Gennaio=2170&Febbraio=2180&Marzo=3001&Aprile=903&Maggio=1560&Giugno=3450&Luglio=1890&Agosto=670&Settembre=1900&Ottobre=2405&Novembre=3589&Dicembre=4002

@@ -1,0 +1,12 @@
+Hi, thanks for downloading my flash counter
+How to get the thing to work. 
+Upload all the files in to your cgi-bin dir.
+After that chmod the directory where the scripts are in to 777
+Chmod the text file 777
+Chmod the script 755
+And that is all.
+Have fun
+
+Marc Witteveen
+marcwitteveen.com
+(check out my software page a cool flash screen saver programm is available there)

@@ -1,0 +1,68 @@
+SmartShop V.95
+
+By Joseph Miller
+
+Copyright 2002 Indivision Productions
+
+I decided to offer this flash shopping cart as GNU-ware on or around the same day that I 
+thought of a much better way to build a flash cart. However, I believe that someone may 
+find this cart useful as it is fairly simple and waiting to be prettied up. The cart is 
+absolutely free. I only ask that you send me a link if you use it. Not because I want to 
+track you down or see if you deleted the indivision copyright or anything like that but 
+because I’m just curious and would like to see if this is useful for anyone.
+
+How It Works:
+
+Products and their information (name, price, etc.) are stored in separate product modules. 
+In addition, information regarding different categories are also stored in ‘index’ modules. 
+You add categories and products by creating new .swf files with the information and the 
+appropriate links within them. When a customer selects merchandise and enters their 
+order information, it is sent to an email address. No record, order number or any kind of 
+database of the transaction is made. The email is the only file. This means that it is up to 
+whoever runs the store to manage the incoming emails (ie. Setting up processed/denied 
+orders and saving them for records). While obviously being limited in this regard, this 
+system would be fine for many small businesses.
+
+Setting Up Shop:
+
+A.	The Script (orderform.cgi)
+
+Open the script and follow the instructions in it’s comments. Upload it to the ‘cgi-bin’ on 
+your server. Make a note of the path to it’s location as you will need it later. Also, make 
+sure that you upload the script in ASCII mode and not Binary.
+
+B.	Inside the Store
+
+Open store.fla in flash. In the actionscript of the first frame there are instructions 
+regarding the path to your orderform.cgi. The store will not work unless you change the 
+orderlocation variable to point at the location of your orderform.cgi. It is recommended 
+that you continue on to the next step and get the cart working before you attempt to alter 
+the categories. However, when you do change or add categories, you must change the 
+index.swf files that the category buttons call. I have it set up now so that every button 
+calls the surfindex.swf just for example. Publish the movie when you are done and upload 
+to server. (NOTE: At this point you can go ahead and publish all of the files and upload 
+them. If the store does not work, it has something to do with the paths or the script. I 
+recommend that you get this part working now, before you begin altering the categories 
+and products.)
+
+C.	The Goods
+
+Open surfindex.fla. Click on the ‘Edit Symbols’ button (looks like a triangle under a 
+square under a circle) select the movieclip titled ‘P2’. This is where both the information 
+for product categories and their images are stored. There are instructions in the 
+actionscript on adding and entering category information. Images representing each 
+category reside on separate frames within this clip. Simply import an image on a new 
+frame and add information in the actionscript to add a category. (be sure that the purl 
+variables correctly indicate a ‘product module.’)
+
+Now open shirts.fla. This is a product module. It’s set up almost exactly like the index 
+files. Open the movieclip titled ‘P2’. Products are entered the same as categories are 
+entered. You may add as many variable sets and images as you like. The cart will 
+automatically resize them to fit within the thumbnail window. Make a new product 
+module for every category.
+
+
+That’s it. Publish upload and enjoy. If you have questions regarding the cart, please post 
+them on the forum at www.indivision.net. However, if you must, for some insane reason, 
+you can email me at joe@indivision.net . Just remember that I respond to forum 
+questions immediately and there is a 3-4 day waiting period for emails. ;)

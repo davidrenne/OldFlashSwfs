@@ -1,0 +1,33 @@
+Floaters in space - Aka the B2 effect
+
+This is a series of nested movie clips containing a single shape, floater.
+
+Floater was created in Flash as a simple square with no border. I have used other shapes
+such as stars, lines,  and trapezoids. Trapezoids work well to give the end display a little depth.
+To get that "blurred" effect simply select your shape (without edges) and select soften edges from
+the Modify>Curves pull-down menu. I used a distance of 16 px and a number of steps of 12 px on
+this example. Other combinations can obtain different results, so you may want to play with it a
+little.
+
+Then "floater" was placed in a series of other movie clips where the shape tweens in from 
+small to large, transparent to visable, and a drastic change in position.
+
+All of these can be altered to create different effects or speeds. I inserted a mid keyframe
+and adjusted the easing of the tween on either side to produce that "stall" effect evident in the B2
+presentation, but you can remove the keyframe if you wish.
+
+Now that the motion is mailed down the movie clips can be inserted in to your movie or assembled
+into an array (another movieclip). If you label your instances well, you can call to the individual
+motions as I have by using the Tell target command or you can simply drop the non-repeating clips into
+your main timeline. 
+
+If you chose to create an array, you can then tween the array to make it fell as if you are travelling
+down a tunnel. 
+
+I hope this is useful. 
+
+I'd like to know if you use this anywhere. let me know.
+
+Chris Cotton, Flash for hire
+chris@emicom.com  
+ 

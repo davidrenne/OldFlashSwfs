@@ -1,0 +1,1 @@
+For this to work properly it must be set to low quality otherwise it'll eat the CPU right out of your computer!!

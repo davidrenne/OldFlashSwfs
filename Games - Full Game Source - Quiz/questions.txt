@@ -1,0 +1,10 @@
+q1=What is the Shuttle's name?
+&q2=Complete the name Professor .......
+&q3=When a meteor crashes on Earth is is called a 
+&q4=Which comet passes Earth every 76 years?
+&q5=How many planets orbit our sun?
+&q6=Which is the sixth planet?
+&q7=The moon Phobos orbits which planet?
+&q8=Which is the nearest star to Earth (apart from the sun)?
+&q9=Which space shuttle exploded after take off?
+&q10=Which Apollo craft broke down on the way to the moon?

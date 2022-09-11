@@ -1,0 +1,74 @@
+<?xml version='1.0'?>
+<Restaurant>
+<Information>
+<Name>Chinese Restaurant</Name>
+<Description>If you're really looking for Chinese food here, you've come to the wrong place!</Description>
+</Information>
+<Menu>
+<Meat>
+<Beef>
+	<Name>Szechuan Spiced Beef</Name>
+	<Price>$8.25</Price>
+	<Description>Slices of beef with hot peppers, finely chopped nuts, bamboo shoots, green peppers</Description>
+	<Dish>
+		<Name>Chef's Special</Name>
+		<Price>$9.25</Price>
+		<Description>Crispy noodles topped with shredded mixed vegetable and Barbecue Beef</Description>
+	</Dish>
+</Beef>
+<Pork>
+	<Dish>
+		<Name>Hot and Sour Pork</Name>
+		<Price>$6.95</Price>
+		<Description>Pork tenderloin with diced bamboo shoots, onions, and pepperes in a hot and sour sauce</Description>
+	</Dish>
+	<Dish>
+		<Name>Manarin Spareribs</Name>
+		<Price>$7.75</Price>
+		<Description>Spare ribs cooked with sweet rice vinegar</Description>
+	</Dish>
+</Pork>
+<Chicken>
+	<Dish>
+		<Name>Hunan Chicken</Name>
+		<Price>$8.25</Price>
+		<Description>Marinated chicken with garlic, bamboo shoots, and scallions sauteed in hot and spicy sauce</Description>
+	</Dish>
+	<Dish>
+		<Name>Lemon Fried Chicken</Name>
+		<Price>$7.25</Price>
+		<Description>Breast of Chicken Deep Fried With Lemon Sauce</Description>
+	</Dish>
+	<Dish>
+		<Name>Kung Pao Chicken</Name>
+		<Price>$7.95</Price>
+		<Description>Boneless chicken cubes, red peppers, peanuts, celery, mushrooms, and peas in a spicy hot sauce</Description>
+	</Dish>
+</Chicken>
+</Meat>
+<Seafood>
+	<Fish>
+		<Dish>
+			<Name>Sweet and Sour Fish</Name>
+			<Price>$8.95</Price>
+		</Dish>
+		<Dish>
+			<Name>Steamed Salmon with Black Bean Sauce</Name>
+			<Price>$10.95</Price>
+		</Dish>
+	</Fish>
+	<Shellfish>
+		<Dish>
+			<Name>Mixed Seafood Delight</Name>
+			<Price>$13.25</Price>
+			<Description>Crab, shrimps, and scallops cooked with broccoli</Description>
+		</Dish>
+		<Dish>
+			<Name>Spiced Oysters</Name>
+			<Price>$9.25</Price>
+			<Description>Marinated oysters with garlic, ginger, bay leaves, red pepper, and parsley</Description>
+		</Dish>
+	</Shellfish>
+</Seafood>
+</Menu>
+</Restaurant>

@@ -1,0 +1,46 @@
+timeglobe.fla
+by Ombra
+flashstuff2000@hotmail.com
+
+This is my attempt at making a desktop wallpaper that will be coordinated to your computers time (I use GMT for the calculations so it doesn't matter what time zone you're in).  Best viewed at 1024x768, although 800x600 isn't too bad.
+
+By clicking on the globe you get the following options:
+
+CLOUDS:
+Off
+Slow
+Med
+Fast
+
+MOTION:
+Spin - puts earth into a fast spin
+Clock - co-ordinates with your computers clock.
+
+SHADOW & ATMOSPHERE:
+On
+Off
+
+I have also included a .txt file called presets.txt this file enables you to choose how you would like the wallpaper displayed when you re-boot your P.C.
+
+PRESETS.TXT
+&clock=0 - spin,  1 - clock
+&clouds=0 - off, 1 - slow, 2 - med, 3 - fast
+&light=0 - off, 1 = on
+
+TO INSTALL AS A DESKTOP WALLPAPER:
+I have MS Windows 98 and this is how I do it, 
+Extract timeglobe.html, timeglobe.swf, presets.txt to a directory (i.e. c:\windows\desktops).
+Click on your "Start" button then select "Settings" then "Control Panel".
+From the Control Panel double click on "Display". 
+Select the Tab labeled "Background".
+From this area you should be able to "Browse" to the directory you put the timeglobe files in, and select timeglobe.html and click on the "Apply" button.
+You may be asked if you want to enable "Active Desktop" in which case select Yes.
+To make changes the defaults for startup simply edit presets.txt with the values above.
+
+NOTES:
+This does obviously use system resources,  I have a PIII 450 w 128MB RAM and it uses about 3% system resources when running as wallpaper.
+I have noticed that sometimes my screen saver will stop it when in clock mode, just select clock from the options again for it to reset, or right-click somewhere close to the edge of your desktop and select "refresh".  If anyone knows of a way for me to fix this, please let me know.
+
+Please note the sunrise/sunset position of the shadow is just approximate (Your time zone should be facing you at about 1800 Hrs.), as I am only doing a time calculation and not allowing for the time of year. 
+
+Enjoy!

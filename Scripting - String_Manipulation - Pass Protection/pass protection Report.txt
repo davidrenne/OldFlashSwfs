@@ -1,0 +1,30 @@
+Movie Report
+------------
+
+Frame #    Frame Bytes    Total Bytes    Page
+-------    -----------    -----------    ---------------
+    1          5728           5728        preloader
+    2            15           5743          2
+    3          1920           7663        passprotection
+    4           673           8336          2
+    5           209           8545          3
+
+Page                       Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+preloader                         0             0
+passprotection                    0           500
+
+Symbol                     Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+Loading_G                         0            44
+loading_M                         0             0
+bg                             4793             0
+result_movie                      0             0
+Again_movie                       0             0
+Submit                            0            90
+again                           164            82
+
+Font Name                  Bytes       Characters
+-----------------------    --------    -----------
+BankGothic Md BT             1210         !:APSUabdegimnorstuw
+BankGothic Md BT Bold         356        adgilno

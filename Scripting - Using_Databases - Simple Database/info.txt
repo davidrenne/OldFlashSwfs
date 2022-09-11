@@ -1,0 +1,44 @@
+
+ 19:06 00-08-02                       made and submited by Explorer
+ ==================================================================
+ This code is FreeWare.
+ You cen use it in any way you want.
+ Thers one thing that I would like you to do.
+ If you make this code work better,
+ please let me know.
+
+ Explorer - drozda@poczta.onet.pl
+
+
+
+ There are two action frames. First one sets the variables
+ and loads the database from "database.txt" into the
+ variable called BASE. 
+ Second one displays data on the screen.
+
+ 
+ HOW IS THE DATABASE.TXT BUILD
+ ==================================================================
+ RECORD is 120 char's long. Each record contains three
+ fields (eg. Name, EMail, Address). Each field is 40
+ char's long.
+ When creating a database file it is importent NOT to place any
+ newline between recorda or fields. When i did i couldn't make it
+ work.
+
+ HOW IS THE RECORD BUILD
+ ==================================================================
+
+ My Name               My e-Mail	     My Address
+ |=========40=========||=========40=========||=========40=========|
+         Field 1               Field 2               Field 3
+
+ |===============================120==============================|
+                               Record 1
+
+
+
+
+
+ Have fun!
+ EXP

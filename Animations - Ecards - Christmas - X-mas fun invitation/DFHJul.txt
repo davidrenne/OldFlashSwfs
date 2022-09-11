@@ -1,0 +1,5 @@
+InvitationTXT=Her skriver du din invitation, dvs i 
+DFHJul.txt. Rediger kun med WordPad 
+eller lignende!
+Programmet distribueres gratis og uden ansvar.
+&success=True

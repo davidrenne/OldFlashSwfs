@@ -1,0 +1,2 @@
+aname1=Shaun&acomment1=A test of the new y2k Guestbook :)&aurl1=http://www.shaunstrayer.com&adate1=19. October 2000 (22.10 Clock)&aemail1=sstrayer@yahoo.com.comaname2=Mark&acomment2=This is a modified version of the cybercollege / flashkit guest book.
+aname2=Mark&aurl2=http://www.flashkit.com&adate2=03. January 2000 (06.27 Clock)&aemail2=webmaster@flashkit.com

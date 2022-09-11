@@ -1,0 +1,147 @@
+DateDetect
+
+Very easy to follow movie, but was asked for detailed instructions - here they are.  And man are these detailed.
+
+Please note the big spinning thing is to illustrate the movie starting and then carrying on if all is well date wise - obviously not needed to use this detector.
+Also note that this isn't for stand alone playing - the javascript is needed.
+
+Use
+
+Simple date detector - to allow a movie to be 'locked out' if the date is later than one you specify.  Comes in handy if clients etc. want to be a pain in the arse and require the finished movie before payment - they can view it/use it all they want until the date you specify, after which they can view no more - a small incentive to hurry up with that cheque.
+Until that date, they wont notice the detection occur (well, unless you want them too.....)
+
+Method
+
+This is done with both actions in the flash movie and javascript - the javascript pulling the system date and sending it into the flash movie, which then sorts out what to do with it.
+You will need to alter a few things to use as is, or just look at it and recreate.  Basically, there needs to be a few frames added into your main movie wherever you want the detect to occur, and to drop the datedetect MC into the movie.
+
+You specify the date (I have used just month and year, but knock yourself out with days,minutes etc if you're so inclined) that you want the movie to stop 'working', and thats that.
+If the user is pure evil and gets someone to pull the javascript from the html page, the movie will be stuck on frame 1 (see frame 1 details below - it needs the handler from the FSCommand to carry on), or if they doctor the code to remove the date but still send the play command back up, the movie will get null values for it's month/year, and still lock em out.
+
+If they do get locked out (the movie stops), then pressing play from the right-click menu will simply retun them to the beginning of the movie - so no luck for em there.  Or simply turn off the right-click menu - I'd reccomend this anyway, but for this example I left the menu on.
+
+They can of course keep changing the clock, or work round with more javascript to input fake dates, but there you go - this aint meant to be foolproof, just handy.
+
+Copy the javascript from the html page (or below) and paste it into your own - if you're a javascript guru,  you'll doubtless make a better job of it than me.  It seems to works fine, that'll do for now.  May be errors, but I haven't had any from my exhaustive 2 minute test. (!)
+
+
+Details:
+
+JavaScript in html:
+
+  <SCRIPT LANGUAGE=JavaScript>
+<!--
+var InternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+// Handle all the the FSCommand messages in a Flash movie
+function movie_DoFSCommand(command, args) {
+  var movieObj = InternetExplorer ? movie : document.movie;
+  //
+{if(command=="getdate"){setdate()}}
+function setdate()
+{var movie = window.document.movie;
+var now = new Date();
+var year = now.getFullYear();
+var month = now.getMonth();
+movie.SetVariable("month", month+1);
+movie.SetVariable("year", year);
+movie.GotoFrame(9);
+movie.Play();
+}
+// End -->
+  //
+}
+// Hook for Internet Explorer 
+if (navigator.appName && navigator.appName.indexOf("Microsoft") != -1 && 
+	  navigator.userAgent.indexOf("Windows") != -1 && navigator.userAgent.indexOf("Windows 3.1") == -1) {
+	document.write('<SCRIPT LANGUAGE=VBScript\> \n');
+	document.write('on error resume next \n');
+	document.write('Sub movie_FSCommand(ByVal command, ByVal args)\n');
+	document.write('  call movie_DoFSCommand(command, args)\n');
+	document.write('end sub\n');
+	document.write('</SCRIPT\> \n');
+
+}
+//-->
+</SCRIPT>
+
+Note that it's the function setdate() you're really interested in - this pulls the date from the system clock, and the few lines above enable the j/script to wait for the right FSCommand to be issued by your movie.  The rest (most of it) is standard stuff you can get by publishing the movie (with fs commands enabled).
+
+
+
+Main Movie:
+
+frame 1-2 - a loop to make sure it's all loaded (don't need this if you're dropping this in a movie - you'll have your own preloader.  Won't you??)
+
+frame 3 - out of loop, just a play.
+frame "fs" - FS Command ("getdate", ""), and play
+
+this sends the FSCommand "getdate" to the HTML/javascript, on getting the command, the javascript  begins it's setdate function.  ie pulls the system date and sends it back to the flash movie - and starts the movie playing.
+
+This is pretty important - without the FSCommand, you can get javascript errors indicating the movie doesn't have a property.  Basically, it makes sure the flash movie is ready to accept the values 'calculated' by the java, without which the movie will fail.
+
+frame "loop" - sends the movie back to "fs" repeatedly - in all honestly should be able to do without this loop, but seems in practice the movie can fail to accept the variables on first load up - so this keeps sending the fscommand until it is picked up, once it is, as can be seen in above j/script, the variables are sent to the movie, and the movie is sent to frame 9 and told to play - thus getting out of the loop only when the variables have been sent.  And hopefully after the variables have been accepted!
+
+Note:  When the javascript says goto a frame (ie here movie.GotoFrame(9);), it is going to frame 8 in your flash movie, as it uses zero-frame base - frame 1 in flash is referenced by frame 0 by j/script, etc.  So GoToFrame(9) is going to the frame labelled "start" in the movie.
+
+frame "start" - play action.  double sure that the movie is going to play once sent here by the javascript.
+
+frame "names" - gives the months 1-12 brought in by the java the names - jan-dec.  This is not needed, just allows you to print up the name of the month later rather than it's number.
+
+frame "working" - starts up the detectdate MC ("detect"), with a tell target, which does the calculations, then stops the main movie.  See MC details below.
+
+frame "return" - just to stop those being smart - if the date is up and the movie stops, right-click/play will just send the movie back to the start and reset the datedetect MC.
+
+frame "carryon" - if the date etc is fine, the detect MC starts the main movie again from here.
+
+frame "end" - obviously the end of the example - for use you'll just need to name a frame carryon, and then your movie will continue as normal - so don't need this frame either.
+
+
+Detectdate MC
+
+frame 1 - stop - so it doesn't go through the detect till you want
+
+
+frame "actual" - does the actual working out of the date:
+
+If ((/:month >= 3) and (/:year >= 2000))
+      Go to and Stop ("outofdate")
+Else If (/:year > 2000)
+      Go to and Stop ("outofdate")
+Else If ((/:month = "") or (/:year = ""))
+      Go to and Stop ("jsremoved")
+Else
+      Begin Tell Target ("/")
+            Go to and Play ("carryon")
+      End Tell Target
+End If
+Stop
+
+
+ie here, any date after february 2000 will go to out of date
+
+Note that the first Else If is needed (/:year > 2000) as without it, jan/feb 2001, 2002 etc would allow the movie to play.
+
+Just change the If and Else If as needed.
+
+The last Else means that if for any reason the javascript didnt send up the month/year (like, it was deleted!), then the movie would also stop.
+
+frame "outofdate" - where they go from above code if they are using after the set date.
+Message that that the specified date is up, shows current date (uses the newmonth variable - the month name rather than month number)
+
+Note I added an 'unlock' code thing - password fred - that would allow the movie to continue.
+This would only be a temp. unlock as noone wants to keep typing it in - it would allow someone to watch the movie even if out of date - but really you would send/upload etc the same movie with this datedetect removed when payment is received etc.
+Look at the Go button if you dont know how this works.  If they enter wrong password, it clears what they entered and goes to frame "retry" - a loop back to this "outofdate" frame.
+Have it or not.
+
+frame "jsremoved" - if flash didn't recieve the variables from the javascript - sent here (from above code) and stops.  Message that the javascript wasn't detected (ie stop cheating)
+
+frame "done" - if date was OK, after the code above started the main movie again, this MC goes to here and stops.
+
+Thats yer lot.
+Try playing the movie (from within the HTML!), and changing your system clock.  Or pulling th javascript, or pulling just the date bit of the javascript.
+
+Mike
+
+mikeybyker@sinisterwaltz.com
+
+errors due to lack of drink and/or sleep

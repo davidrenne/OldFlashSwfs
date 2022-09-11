@@ -1,0 +1,22 @@
+Contents: Glass that makes a special zoom in an movie clip
+Author: Thiago dos Santos Prado
+E-mail: thiagoprado@yahoo.com
+ICQ: 7030551
+
+* How to use:
+    Play the movie and push the button, then drag the glass over the animation
+
+* Changing the animation:
+   Gives the target movie clip an instance name and Linkage in library exporting it with this name: 'exp';
+   Edit the clip parameters of the glass by cliking the right button over the oval blue button/movie-clip;
+   Now change the parameter 'associated_clip' to the new instance name
+   You can also alter the diameter and the amout of zoom in percent.
+
+* Thanks to:
+   My friends (Angelo, Celso, Dharlan, Marlos, Pedro, Thiago C., Krishnamurti)
+   My girlfriend (Rafaella)
+   Site from which I grabbed the DIABLO (www.animfactory.com)
+   Everybody that believe and build up!
+
+* Special Thanks to:
+   My parents (Péricles, Luiza)

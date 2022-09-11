@@ -1,0 +1,271 @@
+Multiserver is an XML server meant for use with Flash 5 clients.
+
+This document is meant to serve as a guide to get the aspiring backend developer.
+
+It is taken for granted that you are familiar with the Java programming language,
+compiling and running java programs, editing the classpath environment variable, etc.
+
+Multiserver is meant for experimental / low-load use only. If you place this program
+in a production environment for something system-critical, you do so at your own risk.
+
+//----------
+
+Multiserver Files:
+
+XmlServer.java -- the class that gets everything running. It's responsible for putting
+	the server into a "listen" state
+XmlHandler.java -- an XmlHandler gets created for each client connection.
+conversationObj.java -- an object which can hold one submitted message. The current
+	implementation is used to update new connections with the state of the chat window
+pinger.java -- an object which sets up a heartbeat between the server and client. If the
+	heartbeat cannot be detected, we kill the connection
+Logger.java -- an object which logs messages to a file.
+
+//-----------
+
+Supporting Files:
+
+jdom.jar
+xerces.jar
+
+	These files contain java xml parsing libraries.
+	Add them to your classpath.
+
+//-----------
+
+Installation
+
+To run the server, copy all the .class files to your server. Add the jar files refered to above to your classpath.
+You need to have the java runtime environment installed and be familiar with all that whoey. Download it free 
+from java.sun.com  Refer to macromedia's documentation regarding security and whatnot. It's important. 
+It won't work unless you follow the rules. The machine you're doing this on is the one that 
+your Flash file will connect to using the "server" variable we talk about below.
+
+type: 
+java XmlServer 9999
+
+
+That assumes you want to run this bad boy on port 9999. Unix users will want to add an "&" to the end of that command 
+so that it spawns a new process.
+
+You should now be able to connect to your xmlServer ... give it a whirl.
+
+//------------
+
+Security Restrictions
+
+Ok, so the fact that you can only connect back to servers within your domain blows ass. What to do?
+
+1) Get access to your own DNS server so you can tweak everything. If you don't have control over your own DNS, 
+you *can*, and for *free* Visit granitecanyon.com
+
+2) Add an entry for whatever box has your xml server so that it appears that it's part of the same domain as www.yourwebserver.com 
+
+//------------
+
+Modifying The Source Code
+
+Everything important happens in XmlHandler.java
+
+Start there.
+
+First, take a look at the process() function.
+
+It reads the nodename of the first element,
+and passes the xml off to another function for specific processing.
+
+You'll see that there are three functions in charge of specifically sending 
+data to client connections: broadcast, sendToOthers, reply
+
+broadcast: send this message to all users
+sendToOthers: send this message to all users except the one being handled by the current Thread
+reply: send this message to the user being handled by the current Thread
+
+Your specific xml processing implementations will probably want to implement one of these functions
+or a variant thereof.
+
+//------------
+//------------
+
+Sample Flash Code:
+
+
+//Server config
+port = 9999
+server = "xml.yourserver.com"
+
+function init() {
+// queue initialization
+xmlQueue = new Array()
+
+//xml initialization
+xsock = new XMLSocket()
+
+//once we connect to the server we call sockConnect
+//but nothing actually happens yet
+xsock.onConnect = sockConnect
+//when we receive new data we call handleXML
+//again...this doesn't do anything yet
+xsock.onXML = handleXML
+
+//try to connect
+//this kicks off the sockConnect function and NOW our
+//handleXML function will get called when new data arrives.
+xsock.connect(server, port)
+trace ("connecting...")
+}
+
+function sockConnect (success) {
+	if(success){
+		trace("Connected")
+	}
+	else {
+		trace ("UNSUCCESSFUL CONNECTION")
+	}
+}
+
+function handleXML (xmlDoc) {
+
+//if the queue is empty go ahead and process it.
+//if there's a line, wait your turn
+	if (xmlQueue.length==0) {
+		processXML (xmlDoc)
+	}
+	else {
+		xmlQueue[xmlQueue.length]=xmlDoc
+	}
+}
+
+function handleXMLQueue () {
+//get the next thing in the queue and deal with it.
+	var xmlDoc = xmlQueue.shift
+	if (xmlDoc!=null) {
+		processXML (xmlDoc)
+
+	//when you're done with that one, process the queue again
+	//yeah, I know, this could cause a recursive mess...
+	handleXMLQueue()
+	}
+}
+
+function processXML(xmlDoc) {
+
+trace ("RECIEVED: " + xmlDoc)
+
+var xml = xmlDoc.childNodes[0]
+trace ("node: " + xml.nodeName)
+
+	if (xml.nodeName == "broadcast") {
+		var username = xml.attributes["username"]
+		var msg = xml.attributes["msg"]
+		//call a function with this data
+		doSomethingWithThisData(username,msg)
+	}
+
+	if (xml.nodeName == "addUser") {
+		var id = xml.attribuites ["id"]
+		doSomethingElse(id)
+	}
+}
+
+function sendXmlExample (text) {
+trace ("text: " + text)
+	var obj = new Object ()
+	obj.username = myUsername
+	obj.msg = text
+	
+	var xml = ioObjToXML(obj, "broadcast")
+
+	xsock.send(xml)
+}
+
+//Usefull library functions--now contained in ioLib
+//object to xml ---- xml to object
+
+function ioObjToXML (obj, name) {
+	var xml = new XML();
+	var xdata = xml.createElement(name);
+
+	for (i in obj) {
+		xdata.attributes[i] = obj[i]
+	}
+
+	xml.appendChild(xdata)
+
+	return xml
+}
+
+function ioXmlToObj (doc) {
+	
+	var xml = doc.childNodes[1]
+	var objName = xml.nodeName
+	var attribCount = xml.attributes.length
+
+	var returnObj = new Object ()
+
+	for (i in xml.attributes) {
+		set (returnObj[i], xml.attributes[i])
+	}
+
+	return returnObj
+}
+
+
+So what's all this, right? 
+Ok, the code above is a stripped-down, slightly modified version of the chat code being used at 
+theremediproject.com This should give you one helluva head start in creating your multi-user 
+masterpiece. Let's break it down.
+
+First thing we do is set two variables, port and server. These should be familiar from the Flash 5 
+manual. What?! Didn't read the manual? Shame shame.
+
+init() 
+This function sets up our xml socket. You can have more than one if you want, but there's really no point.
+
+You can probably cut/paste this function as is.
+
+sockConnect(success)
+Flash automatically calls this function (we told it to in init() ) after the call to connect either succeeds 
+or fails... I think this is called a "callback function" or something...whatever, the manual doesn't explain 
+it very well, but that's what happens. The "success" parameter is a boolean (read the manual, ok?) that 
+tells us if the connect worked or not. Note that this function isn't doing anything in this example. In real life, 
+you would tell your app to allow sending/recieving data if everything is cool, and if the connect failed, 
+you'd offer a retry or something.
+
+handleXML (xmlDoc) & handleXMLQueue ()
+Flash calls the handleXML function when new xml is received. I've made it a bit more complex than it really 
+needs to be and added a queue. Since this function gets called everytime new xml arrives, we want to be 
+sure one request doesn't stomp on the processing of another. Basically, I don't trust Macromedia on this 
+one... If you want to make sense of it, just follow the processing path with your finger...*be* the xml...Just keep 
+in mind that we're not processing the data at all in this function; all we're doing is making a list of stuff 
+that needs to get processed. That's pretty easy.
+
+processXML(xmlDoc)
+Now we're getting somewhere. This function breaks the xml down and figures out what's in it. If it's just a 
+simple one-node message (and most of the stuff you build probably will be at first), this function will figure 
+out the node name, and process the data based on the node name. So, If my XML looks like: 
+
+<broadcast username="paul" msg="whatever man, I just xml here." /> 
+This function will see that the node name is broadcast, and pull the username and message attribute values 
+out of the rest of the xml string. Neato, huh?
+
+sendXmlExample (text)
+I've included this for completeness sake, even though I didn't include the functions that deal with how you display 
+a new piece of chat once you've got it. If you want to send XML, here's how. I've included two pretty usefull (I think) 
+library functions that convert xml into objects and vice versa. The sendXmlExample function uses the ioObjToXml function. 
+First, we build an object, that contains a username and a message, then we call it "broadcast", convert it to xml, 
+and send it down the pipe. More on how this works in a sec.
+
+ioObjToXML (obj, name)
+The first library function converts any object into an xml string. You just specify a node-name. This is particularly 
+usefull for pulling all the data out of a movie clip and sending it to the server, without knowing exactly what data it 
+contains. You simply pass the movieclip as the "obj" parameter, and give it a node-name. The xml string is returned. 
+If this isn't making any sense, refer back to the code, and look up the "for in" loop in the ActionScript guide. Keep in 
+mind too, that you should be able to use this function without completely understanding it...at least that's my hope.
+
+ioXmlToObj (doc)
+This function does the opposite, give it an xml string (again, single node only) and it'll return an object containing all 
+the name/value pairs from that object. We grab the node-name, but we don't do anything with it in this example, and 
+as you might have noticed, I'm not even using this function in the chat engine at all...it's just here as an analog to the 
+function above.
+

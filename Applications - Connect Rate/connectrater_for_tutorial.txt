@@ -1,0 +1,8 @@
+Downloadrater von Joscha Feth (Flash4)
+Homepage: http://www.jofe.de
+eMAil: JoschaFeth@gmx.de
+Bitte alle Verbesserungen und Bugs melden!
+HINWEIS: Offline tut er nicht und in Flash muss man sehr schnell sein um zum Streaming umzuschalten *g*.
+Und noch was: zum mehrmaligen Testen vergesst in der HTML-Seite nicht den Wert: <META HTTP-EQUIV="pragma" CONTENT="no-cache"> und <META HTTP-EQUIV="Expires" CONTENT="Tue, 01 Jan 1980 1:00:00 GMT">
+Viel Spass
+Joscha

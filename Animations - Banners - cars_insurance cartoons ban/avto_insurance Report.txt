@@ -1,0 +1,70 @@
+Movie Report
+------------
+
+Frame #    Frame Bytes    Total Bytes    Page
+-------    -----------    -----------    ---------------
+    1         22298          22298        Scene 1
+
+Page                       Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+Scene 1                           0             0
+
+Symbol                     Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+Symbol 50                        82             0
+Symbol 49                        81             0
+CopyrightText                     0           108
+CopyrightMy                       0             0
+CopyRight                        35             0
+Symbol 45                       102             0
+Eye333                            0             0
+Symbol 43                         0             0
+Symbol 42                        68             0
+Symbol 41                         0             0
+Symbol 40                         0             0
+CarBody11                       852             0
+GearSignal                        0             0
+movingTrack1                      0             0
+SlideBtn                         35             0
+SlideShow                         0           520
+Track1                          262             0
+Swear02                           0             0
+Symbol 21                         0             0
+Car04                           776             0
+Car03                             0             0
+forest22                         55             0
+Forest                            0             0
+Symbol 14                        37             0
+Symbol 13                        40             0
+Symbol 12                         0             0
+Back                              0             0
+Eye                               0             0
+EyeCover                         43             0
+Symbol 8                          0             0
+Symbol 7                          0             0
+MovingCar                         0             0
+MovingCar2                        0             0
+MovingCar4                        0             0
+Swear                             0             0
+Swear2                            0             0
+Symbol 4                         64             0
+Swear1                            0             0
+Car01                             0             0
+Car01body                         0             0
+Car02                             0             0
+Car01 copy                        0             0
+LogoKokspolis                     0             0
+letter_K                        102             0
+letter_O                        217             0
+letter_C                        190             0
+letter_И                         88             0
+letter_Л                        158             0
+letter_П                         77             0
+letter_Дефис                     55             0
+
+Tweened Shapes: 371 bytes
+
+Font Name                  Bytes       Characters
+-----------------------    --------    -----------
+Arial Cyr Italic             1351         !Nacdeghnorsuy
+Arial Cyr                    2438         !-./02:ACEINRSUVabcdehiklnoprstuvwy

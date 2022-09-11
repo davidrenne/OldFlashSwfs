@@ -1,0 +1,5 @@
+memberData=ralanis,LoginBox,www.flashkit.com
+member1,password1,www.microsoft.com/keyboard
+member2,password2,www.microsoft.com/mouse
+member3,password3,www.microsoft.com
+member4,4password,www.were-here.com

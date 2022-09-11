@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<calendar>
+	<month name="october">
+		<day number="1">
+			<textnode>this is text</textnode>
+			<time value="8"/>
+		</day>
+	</month>
+	<month name="november">
+		<day number="1">
+			<textnode>this is text</textnode>
+			<time value="8"/>
+		</day>
+	</month>
+	<month name="december">
+		<day number="1">
+			<textnode>this is text</textnode>
+			<time value="8"/>
+			<hour>
+				<min>
+					<sec value = "1"/>
+				</min>
+			</hour>
+		</day>
+	</month>
+	<month name="january">
+		<day number="1">
+			<textnode>this is text</textnode>
+			<time value="8"/>
+		</day>
+	</month>
+	<month name="feb">
+		<day number="1">
+			<textnode>this is text</textnode>
+			<time value="8"/>
+		</day>
+	</month>
+	<month name="april">
+		<day number="1">
+			<textnode>this is text</textnode>
+			<time value="8"/>
+			<hour>
+				<min>
+					<sec value = "1"/>
+				</min>
+			</hour>
+		</day>
+	</month>
+</calendar>

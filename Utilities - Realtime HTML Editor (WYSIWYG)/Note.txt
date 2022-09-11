@@ -1,0 +1,1 @@
+NOTE: You must run the.swf in a browser window to make use of the 'Browser Preview' feature. -Mike

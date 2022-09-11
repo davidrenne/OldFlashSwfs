@@ -1,0 +1,1086 @@
+<HTML><title>ioLib</title>
+<body bgcolor="#FFCC00" text="#333333" link="#FF3366">
+<font face="Verdana, Arial, Helvetica, sans-serif"> <br>
+// ----------------------------------------- 
+<h1>ioLib</h1>
+copyleft 2001 - - Jon Williams - - ioResearch - - for a list of contributors call 
+_root.ioAuthors()<br>
+  this module is covered by the GNU LIMITED GENERAL PUBLIC LICENSE - - NO WARRANTY<br>
+  see LGPL.txt for details - - Do not remove this notice
+<h3>// -----------------------------------------<br>
+  <br>
+  <a href="examples/">Examples</a><br>
+  <br>
+  <a href="ioLib.zip">Download </a><br>
+</h3>
+<h2>// Contents</h2>
+Installation Instructions<br>
+  ioDebug<br>
+  ioFrameLoop<br>
+  ioClutch<br>
+  ioBufferedClutch<br>
+  ioXmlToObj<br>
+  ioObjToXml<br>
+  ioLoadMovie<br>
+  ioSetVars<br>
+  ioRemoveFrameLoops<br>
+  ioRemoveFrameLoopsRecursive<br>
+  ioRemoveMovieClip<br>
+  ioUnloadMovie<br>
+  ioSetRGB<br>
+  ioSetHex<br>
+  ioAddForce<br>
+  ioKillForce<br>
+  ioGetForceIds<br>
+  ioPauseForce<br>
+  ioUnpauseForce<br>
+  ioGetForceState<br>
+  ioPointAttraction<br>
+  ioObjAttraction<br>
+  ioTotalDeltaAttraction<br>
+  ioAngleAttraction<br>
+  ioAccelBy<br>
+  ioAccelAt<br>
+  ioMoveTo<br>
+  ioMoveBy<br>
+  ioMoveAt<br>
+  Creating Custom Forces<br>
+  Extending the Force Concept
+<br><br>// -----------------------------------------
+</font> 
+<h2><font face="Verdana, Arial, Helvetica, sans-serif">// Installation:</font></h2>
+<font face="Verdana, Arial, Helvetica, sans-serif"> add the file ioLib.fla to 
+/Macromedia/Flash5/Libraries<br>
+add the file ioLib.txt to the directory containing your project <br>
+<br>
+open Flash 5 <br>
+<br>
+select &quot;Window&quot; menu &gt;&gt; &quot;Common Libraries&quot; &gt;&gt; 
+&quot;ioLib&quot;<br>
+the ioLib.fla will open as a Library <br>
+<br>
+drag an instance of &quot;ac, ioStepLoops&quot; into your movie. <br>
+<br>
+add <br>
+<br>
+<font face="Courier New, Courier, mono" size="-1">#include &quot;ioLib.txt&quot; 
+</font><br>
+<br>
+as code on the first frame of your movie.<br>
+(the ioLib.txt file must be saved in the same directory as your FLA file) 
+<h3>WARNING:</h3>
+One (and only one) copy of the ioStepLoops clip must remain on the stage throughout 
+your project.<br>
+Be careful that loaded movies do NOT contain a copy of ioLib. Loaded movies should 
+be<br>
+able to take advantage of ioLib as long as the container movie has ioLib installed. 
+<br>
+<br>
+If your project contains modules which rely on ioLib, and you need to add ioLib 
+during testing,<br>
+temporarily add the ioStepLoops clip on its own layer. Add the #include &quot;ioLib.txt&quot; 
+line. <br>
+When testing inside the container movie, comment out the include, and turn the 
+ioStepLoops layer into a guide. <br>
+Re-export the module swf, and then load it into your container project. 
+<h3>TROUBLESHOOTING:</h3>
+1) If the library is successfully installed, it will write &quot;ioLib installed&quot; 
+into the Output window when you test your movie in the flash authoring environment.<br>
+2) Make sure you included the ioStepLoops actionclip.<br>
+3) Read this document.<br>
+4) Take a look at template.fla This is a good starting point for creating your 
+own projects with ioLib<br>
+<h2>ioDebug</h2>
+If you've ever attempted to use the debugger included with Flash 5, the existence 
+of this object will require no explanation.<br>
+ioDebug is a drag-and-drop replacement which will dynamically show the contents 
+of its parent. 
+<h3>// Installation</h3>
+Drag an instance of the &quot;ioDebug&quot; clip from the ioLib Library into your 
+movie. If you haven't already, follow the instructions for<br>
+installing ioLib. 
+<h3>// Usage</h3>
+Test your movie. Once the instance containing ioLib is on stage, you should see 
+the ioDebug clip. It should list one item--the<br>
+movieClip which contains it. If you added it to the main timeline. It should refer 
+to its parent level. <br>
+<br>
+Click the item in ioDebug. It should expand to show all the objects/variables 
+it contains. Repeat this process for any movieClip<br>
+or object contained inside of any other. The heirarchy should be recognizeable 
+as being analagous to your computer's file system. <br>
+<br>
+Each ioDebug entry has a red button to its left. Pressing this button causes the 
+ioLib system to watch that object/variable<br>
+for changes. Values are updated once per frame for each selected item. The button 
+will turn green to indicate that ioDebug<br>
+is watching that item. Click the button again to turn off the watch. Due to processor 
+limitations, a watch only processes its<br>
+direct children. For example, if you place a watch on the main timeline (_level0), 
+ioDebug will indicate when movieClips appear<br>
+or disappear from that timeline. However, it will not indicate changes *inside* 
+those movieClips. Place a watch directly on the<br>
+movieClip to keep its listing updated, and so on. <br>
+<br>
+For best performance, only place watches on those items which need constant updates. 
+Watching a variable requires much<br>
+less processing than watching an entire object. Therefore, if you only need to 
+watch a specific property of an object, it<br>
+is better to place a watch on the specific property rather than the object itself. 
+<br>
+<br>
+ioDebug is a draggable clip. Click and drag the blue titlebar to position within 
+your movie. <br>
+<br>
+NOTE: For usability reasons, objects of type &quot;function&quot; are not shown 
+in ioDebug. <br>
+<br>
+NOTE: ioDebug is alpha code and may not accurately describe the contents of your 
+movie. Your mileage may vary. <br>
+<br>
+NOTE: ioDebug uses the ioHashTable object internally. ioHashTable is not documented 
+here because it is not yet<br>
+deemed ready for use. See ioLib.txt for source and credits. <br>
+<h2>ioFrameLoop</h2>
+Occasionally, it's preferable to create frameloops programmatically rather than 
+creating<br>
+movieClip objects for this purpose and then having to deal with attaching/duplicating/removing 
+them.<br>
+Creating frameloops via code can make your projects much more maintainable. 
+<h3>// Constructor</h3>
+<b>ioFrameLoop ()</b><br>
+returns an empty ioFrameLoop object <br>
+<br>
+if an ioFrameLoop object is left running, it will continue to take up system resources, 
+and may potentially cause ioFrameLoops created<br>
+at a later time to function incorrectly. ioLib contains a series of functions 
+designed to make clean-up an easy process. <br>
+<br>
+See:<br>
+ioFrameLoop.end()<br>
+ioCleanLoops()<br>
+movieClip.ioRemoveFrameLoops()<br>
+movieClip.ioRemoveFrameLoopsRecursive()<br>
+movieClip.ioRemoveMovie()<br>
+movieClip.ioUnloadMovie() <br>
+<h3>// Methods</h3>
+<b>ioFrameLoop.addFrame ( object, method, argumentObject, argumentProperty)</b><br>
+&nbsp;&nbsp;object: the object which contains the method<br>
+&nbsp;&nbsp;method: the name of the method to run (passed as a string)<br>
+&nbsp;&nbsp;argumentObject: the object which contains the property to be passed 
+as an argument at runtime<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NOTE: argumentObject may be ommited and no argument will 
+be passed to the method<br>
+&nbsp;&nbsp;argumentProperty: the property of the argument object which will be 
+passed to the method as an argument (passed as a string)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NOTE: argumentProperty may be ommited, and the entire 
+argumentObject will be passed to the method <br>
+<br>
+addFrame() adds a &quot;frame&quot; to the ioFrameLoop object. If you wish one 
+action to happen repeatedly (on every frame until<br>
+the ioFrameLoop ends) add only one &quot;frame&quot;. If you wish two actions 
+to happen repeatedly (each taking turns, one every<br>
+frame until the ioFrameLoop ends) add two &quot;frames&quot;...etc. <br>
+<br>
+<b>ioFrameLoop.loop ()</b><br>
+this method is called automatically by the ioLib system. You should never need 
+to call this method directly. It causes<br>
+the ioFrameLoop to process one &quot;frame&quot;. The loop() method is called 
+on all active ioFrameLoops, once per frame. <br>
+<b><br>
+ioFrameLoop.setDone ( object, method, argumentObject, argumentProperty)</b><br>
+&nbsp;&nbsp;object: the object which contains the method<br>
+&nbsp;&nbsp;method: the name of the method to run (passed as a string)<br>
+&nbsp;&nbsp;argumentObject: the object which contains the property to be passed 
+as an argument at runtime<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NOTE: argumentObject may be ommited and no argument will 
+be passed to the method<br>
+&nbsp;&nbsp;argumentProperty: the property of the argument object which will be 
+passed to the method as an argument (passed as a string)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NOTE: argumentProperty may be ommited, and the entire 
+argumentObject will be passed to the method <br>
+<br>
+setDone() facilitates an action running automatically when the ioFrameLoop is 
+destroyed. If setDone() has been called,<br>
+the function will run automatically when end() is called. See ioFrameLoop.end() 
+<br>
+<br>
+<b>ioFrameLoop.setLifeTime (loops)</b><br>
+&nbsp;&nbsp;loops: the number of times to process the ioFrameLoop <br>
+<br>
+after running setLifeTime, end() will be called automatically after the configured 
+number of iterations have completed. <br>
+<br>
+<b>ioFrameLoop.reset () </b><br>
+<br>
+occasionally a variable which was used for one ioFrameLoop will be reused for 
+a new ioFrameLoop. It is best to call<br>
+reset() prior to calling the constructor function again. This will automatically 
+call end() on the old instance of<br>
+ioFrameLoop object should that be necessary.<br>
+<br>
+<b>ioFrameLoop.end () </b><br>
+<br>
+this method is used to destroy an ioFrameLoop that is no longer needed. This MUST 
+be done in order to free system<br>
+resources. If setDone() was called on this ioFrameLoop, the method will be called 
+by end(). <br>
+<h3>// Properties</h3>
+<b>ioFrameLoop.running </b><br>
+<br>
+true/false -- this property can be used to determine if an ioFrameLoop is currently 
+running. <br>
+<h3>// Related ioSystem Methods</h3>
+<b>_root.ioStepLoops()</b><br>
+<br>
+ioStepLoops() is called once per frame and is responsible for calling loop() on 
+all currently active ioFrameLoops.<br>
+This is ordinarily handled by a clipEvent(enterframe) installed by ioLib <br>
+<br>
+<b>_root.ioCleanLoops() </b><br>
+<br>
+ioCleanLoops() must be called periodically by any flash system which utilizes 
+ioLib. ioCleanLoops is responsible<br>
+for de-registering old ioFrameLoops. There is a slight performance hit based on 
+the total number of ioFrameLoops.<br>
+Although it is possible for ioLib to perform this cleanup automatically, it has 
+no way of knowing when is a <br>
+&quot;bad&quot; time v/s a &quot;good&quot; time. Therefore, its implementation 
+is left up to the individual project. <br>
+<h2>ioClutch</h2>
+One of the more common tasks in flash development is finding a way to link the 
+properties of two objects.<br>
+Flash has a built-in function -- startDrag() -- for linking the x/y properties 
+of a movieClip to the mouse x/y,<br>
+but what to do if you'd like to create your own links? <br>
+<br>
+if an ioClutch object is left running (engaged), it will continue to take up system 
+resources, and may potentially cause ioFrameLoops <br>
+created at a later time to function incorrectly (if its container movie is destroyed, 
+for instance). ioLib contains a series of functions <br>
+designed to make clean-up an easy process. <br>
+<br>
+See:<br>
+ioClutch.disengage()<br>
+movieClip.ioRemoveFrameLoopsRecursive()<br>
+movieClip.ioRemoveMovie()<br>
+movieClip.ioUnloadMovie() <br>
+<h3>// Constructor</h3>
+<b>ioClutch ( inObject, inProperty, outObject, outProperty )</b><br>
+&nbsp;&nbsp;inObject: the object containing the source data<br>
+&nbsp;&nbsp;inProperty: the property of inObject containing the source data (passed 
+as a string)<br>
+&nbsp;&nbsp;outObject: the object to which data will be passed<br>
+&nbsp;&nbsp;outProperty: the property of outObject which will be set by ioClutch. 
+(passed as a string) <br>
+<br>
+the constructor returns an ioClutch object with the specified linkage, but does 
+not begin processing.<br>
+<h3>// Methods </h3>
+<b>ioClutch.engage() </b><br>
+<br>
+calling engage() causes the linkage to take effect. <br>
+<br>
+<b>ioClutch.disengage() </b><br>
+<br>
+calling disengage() causes the linkage to be temporarally paused (thus not taking 
+processor time),<br>
+yet without destroying the ioClutch object. <br>
+<br>
+<b>ioClutch.setTransform (function)</b><br>
+&nbsp;&nbsp;function: the function which will be used to convert from inObject 
+&quot;coordinates&quot; to outObject &quot;coordinates&quot; <br>
+<br>
+often, the relationship between the linked objects is not 1:1 ioLib allows the 
+programmer to create transform<br>
+functions which will be automatically called by ioClutch. Transform functions 
+will recieve the following parameters:<br>
+<br>
+&nbsp;&nbsp;inObject: the inObject with which the ioClutch was created.<br>
+&nbsp;&nbsp;outObject: the outObject with which the ioClutch was created.<br>
+&nbsp;&nbsp;inValue: the current value of inObject[inProperty]<br>
+<br>
+Transform functions are expected to then return the correct value for outObject[outProperty] 
+<br>
+<br>
+In most cases, the relationship is a linear one. Here's a template transform function 
+for use as an example. <br>
+<br>
+<font face="Courier New, Courier, mono" size="-1">//LINEAR EXAMPLE<br>
+xform1 = function (inObj, outObj, inValue) {<br>
+<br>
+var inLow = 10<br>
+var inHi = 25<br>
+var outLow = 100<br>
+var outHi = 200<br>
+<br>
+var outValue = (((inValue-inLow)/(inHi - inLow)) * (outHi - outLow)) + outLow<br>
+<br>
+return outValue<br>
+} <br>
+</font> <br>
+to use this function as your ioClutch transform: <br>
+<br>
+<font face="Courier New, Courier, mono" size="-1">myClutch.setTransform (xform1) 
+</font><br>
+<br>
+<b>ioClutch.setLinger (frames)</b><br>
+&nbsp;&nbsp;frames: number of frames to continue processing after disengage() 
+<br>
+<br>
+In systems which utilize multiple ioClutch objects, it may become necessary for 
+processing to continue for a few<br>
+frames past the disengage() call in order for data to be successfully recognized 
+and migrated. This is especially<br>
+true if the inObject of one ioClutch is the outObject of another ioClutch. <br>
+<h3>// Properties</h3>
+<b>ioClutch.ratio</b><br>
+<br>
+In those cases in which you do not wish to use a transform function, but there 
+is a constant relationship<br>
+between inProperty and outProperty, set the ratio property of the ioClutch (default 
+is 1) <br>
+<br>
+<font face="Courier New, Courier, mono" size="-1">//RATIO EXAMPLE <br>
+<br>
+myClutch.ratio = 2 //to multiply the inProperty by 2 before setting outProperty<br>
+myClutch.ratio = (1/3) //to divide the inProperty by 3 before setting outProperty 
+</font><br>
+<br>
+<b>ioClutch.buffer </b><br>
+<br>
+The buffer property contains the last known value of inObject[inProperty] <br>
+<h3>// Performance</h3>
+Projects which rely heavily on the ioClutch object (more than 20 in movies which 
+are already performance-challenged) may <br>
+experience a performance hit. The dynamic nature of the object contains some inherent 
+inefficiencies. Developers are generally <br>
+advised to continue using the ioClutch object until the project is complete. During 
+the optimization process, ioClutch objects <br>
+can be systematically converted to clipEvents with very little effort. The structure 
+imposed by the ioClutch object lends itself <br>
+towards an overall reduced development time and easy conversion to more efficient 
+routines. In addition, the ability to dynamically<br>
+start and stop the ioClutch object can oftentimes make it *more* efficient than 
+the same system built utilizing clipEvents. <br>
+<h2>ioBufferedClutch</h2>
+See ioClutch for full description. ioBufferedClutch extends ioClutch by offering 
+a setBufferLength method.<br>
+There are times in which values of inObject[inProperty] should be recorded for 
+later use and/or the<br>
+outObject should be updated out-of-step from the inObject. <br>
+<h3>// Constructor </h3>
+<b>ioBufferedClutch ( inObject, inProperty, outObject, outProperty )</b><br>
+&nbsp;&nbsp;inObject: the object containing the source data<br>
+&nbsp;&nbsp;inProperty: the property of inObject containing the source data (passed 
+as a string)<br>
+&nbsp;&nbsp;outObject: the object to which data will be passed<br>
+&nbsp;&nbsp;outProperty: the property of outObject which will be set by ioClutch. 
+(passed as a string) <br>
+<br>
+the constructor returns an ioBufferedClutch object with the specified linkage. 
+<br>
+<br>
+<b>ioBufferedClutch.setBufferLength ( bufferLength ) </b><br>
+&nbsp;&nbsp;bufferLength: number of slots in the buffer <br>
+<br>
+the buffer's length is set to bufferLength and all slots in the buffer are populated 
+with<br>
+the current value of inObject[inProperty] <br>
+<b><br>
+ioBufferedClutch.setNoDelay() </b><br>
+<br>
+it may be desirable to retain a history in the clutch while keeping outObject 
+synchronized with<br>
+the most current value as opposed to the oldest value. Call setNoDelay() to accomplish 
+this. <br>
+<br>
+<b>ioBufferedClutch.setDelay ( delay )</b><br>
+&nbsp;&nbsp;delay: the delay (in frames) between a value being read from inObject[inProperty] 
+and being sent to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;outObject[outProperty]<br>
+<br>
+it may be desirable to retain a history in the clutch that is longer than the 
+delay between property<br>
+updates. Calling setDelay() allows finer control than simply using setNoDelay(). 
+<h3>// Properties </h3>
+<b>ioBufferedClutch.buffer </b><br>
+<br>
+The buffer property of ioBufferedClutch is an Array. <br>
+<br>
+The most recent values of inObject[inProperty] are located at the end of the Array: 
+<br>
+<font face="Courier New, Courier, mono" size="-1"><br>
+newest = myBufClutch.buffer[myBufClutch.buffer.length-1] </font><br>
+<br>
+The oldest values of inObject[inProperty] are located at the beginning of the 
+Array: <br>
+<br>
+<font face="Courier New, Courier, mono" size="-1">oldest = myBufClutch.buffer[0] 
+</font><br>
+<h2>ioXmlToObj </h2>
+ioXmlToObj is a utility function used to create an Object using the attribute/value 
+pairs passed in an xmlNode. <br>
+<h3>// Usage </h3>
+<b>myObject = _root.ioXmlToObj (xmlObject) <br>
+</b><br>
+the attribute/value pairs found in xmlObject are used to populate myObject <br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">myXML = new XML (&quot;&lt;exampleData 
+name='bill' ss='241-95-0000' x='17' y='20' /&gt;&quot;)<br>
+myObject = _root.ioXmlToObj (myXML.childNodes[0]) // send the first (and only) 
+childNode, not the whole document <br>
+<br>
+//myObject.name = &quot;bill&quot;<br>
+//myObject.ss = &quot;241-95-0000&quot;<br>
+//myObject.x = &quot;17&quot;<br>
+//myObject.y = &quot;20&quot; </font><br>
+<br>
+NOTE: to convert string values to numeric values for use in computation: <br>
+<font face="Courier New, Courier, mono" size="-1">myObject.x = Number (myObject.x) 
+</font><br>
+<h2>ioObjToXml </h2>
+ioObjToXML is a utility function used to create an XML Object using the data stored 
+in a movieClip or Object. <br>
+<h3>// Usage </h3>
+<b>myXML = _root.ioObjToXML (&quot;nodeName&quot;, myObject) <br>
+</b><br>
+the attribute/value pairs found in myObject are used to populate myXML. Passing 
+a movieClip reference will create<br>
+an XML object containing data for _x, _y, _alpha, _xscale, _yscale, _target, etc 
+<h3> // Example </h3>
+<font face="Courier New, Courier, mono" size="-1">myObject = new Object ()<br>
+myObject.x = 27<br>
+myObject.y = 100<br>
+myObject.name = &quot;bill&quot;<br>
+myObject.color = &quot;FFCC00&quot; <br>
+<br>
+myXML = _root.ioObjToXML (&quot;myObjectData&quot;, myObject) <br>
+<br>
+trace (myXML) <br>
+<br>
+//Should return:<br>
+// &lt;myObjectData x=&quot;27&quot; y=&quot;100&quot; name=&quot;bill&quot; color=&quot;FFCC00&quot; 
+/&gt; </font><br>
+<br>
+<br>
+<h2>MovieClip.ioLoadMovie </h2>
+the ability to load external swf files as movieClips is very powerful and often 
+used when the developer would like to use a template.<br>
+This proves difficult in practice as it becomes neccessary to create and keep 
+track of preloaders and to wait until the movieClip<br>
+is completely loaded to populate it with data. The more movies you're attempting 
+to load at once, the more difficult the proceedure<br>
+becomes. <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioLoadMovie (path, varsObject, object, method, argumentObject, 
+argumentProperty)</b><br>
+&nbsp;&nbsp;path: path to the swf file that should be loaded<br>
+&nbsp;&nbsp;vars: an object containing the data which should be sent to this movieClip 
+once it is fully loaded<br>
+&nbsp;&nbsp;object, method, argumentObject, argumentProperty: describe a method 
+that should be run once the movieClip<br>
+&nbsp;&nbsp;&nbsp;&nbsp;is fully loaded <br>
+<br>
+the last four arguments are exactly the same syntax as ioFrameLoop.addFrame() 
+or ioFrameLoop.setDone() <br>
+<br>
+ioLoadMovie will automatically discard the contents of myMovieClip. If the movieClip 
+contains ioFrameLoop objects, they will<br>
+be removed via the end() method. See movieClip.ioUnloadMovie(). <br>
+<br>
+Often, you'll need to use movieClip.attachMovie() to create a movieClip instance 
+to run ioLoadMovie() upon.<br>
+The ioLib library contains a linked movieClip object called &quot;empty&quot; 
+which can be used for this purpose. <br>
+<br>
+NOTE: movies loaded with ioLoadMovie are loaded with visibility set to false. 
+This allows the developer complete control over<br>
+when/where/how the loaded movie appears. <br>
+<br>
+To automatically show the movie once it is loaded, add a _visible attribute to 
+the varsObject: <br>
+<br>
+<font face="Courier New, Courier, mono" size="-1">myVarsObject = new Object()<br>
+myVarsObject._visible = true <br>
+<br>
+myMovie.ioLoadMovie (&quot;myExternal.swf&quot;, myVarsObject)<br>
+//the movie's visibility will automatically be set to true, after the movie is 
+completely loaded. </font><br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">myVarsObject = new Object()<br>
+myVarsObject._visible = true<br>
+myVarsObject._x = 200<br>
+myVarsObject._y = 50<br>
+myVarsObject.name = &quot;bob&quot; <br>
+<br>
+myMovie.ioLoadMovie (&quot;myExternal.swf&quot;, myVarsObject, _root, &quot;notifyMe&quot;, 
+myMovie, name)<br>
+//once the movie is loaded, it will be moved to _x = 200, _y = 200<br>
+//its visibility will be set to true<br>
+//a variable called &quot;name&quot; will be set to &quot;bob&quot; on the movieClip's 
+timeline<br>
+//the ioLib system will automatically call: _root.notifyMe(myMovie.name)<br>
+//which in this case will be equivalent to: _root.notifyMe(&quot;bob&quot;) </font><br>
+<h3>// Properties </h3>
+<b>myMovie.ioLoadedPercent </b><br>
+<br>
+the amount of a movie being loaded via ioLoadMovie that has loaded (0 - 100) <br>
+<br>
+<b>myMovie.ioLoaded </b><br>
+<br>
+true if the movie is completely loaded, false or null otherwise <br>
+<br>
+<br>
+<h2>movieClip.ioSetVars </h2>
+sets the variables in a movieClip equal to the variables in another movieClip 
+or Object <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioSetVars (varsObject)</b><br>
+&nbsp;&nbsp;varsObject: an object containing the data to populate myMovieClip 
+<br>
+<h3>// Example</h3>
+<font face="Courier New, Courier, mono" size="-1">myVars = new Object<br>
+myVars._x = 100<br>
+myVars._y = 50<br>
+myVars._alpha = 70<br>
+myVars._rotation = 90<br>
+myVars.name = &quot;sharron&quot;<br>
+myVars.id = 123456 <br>
+<br>
+myMovieClip.ioSetVars (myVars) <br>
+<br>
+//or <br>
+<br>
+myMovieClip.ioSetVars (anotherMovieClip)<br>
+//sets all the values of myMovieClip equal to the values of anotherMovieClip </font><br>
+<br>
+<br>
+<h2>movieClip.ioRemoveFrameLoops </h2>
+calls end() on any running ioFrameLoops in the movieClip <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioRemoveFrameLoops() </b><br>
+<br>
+<br>
+<h2>movieClip.ioRemoveFrameLoopsRecursive </h2>
+calls end() on any running ioFrameLoops in the movieClip, including those running 
+in any internal movieClips or ioClutches. <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioRemoveFrameLoopsRecursive() </b><br>
+<br>
+<br>
+<h2>movieClip.ioRemoveMovieClip</h2>
+removes the movieClip (including the instance name) after calling ioRemoveFrameLoopsRecursive() 
+<h3>// Usage </h3>
+<b>myMovieClip.ioRemoveMovieClip() </b><br>
+<br>
+<br>
+<h2>movieClip.ioUnloadMovie </h2>
+unloads movie (leaving the instance name) after calling ioRemoveFrameLoopsRecursive() 
+<br>
+<h3>// Usage</h3>
+<b>myMovieClip.ioUnloadMovie() </b><br>
+<br>
+NOTE: the output window within the Flash authoring environment may display an 
+error which looks something like:<br>
+Error opening URL &quot;file:///D|/projects/flash/&quot; <br>
+<br>
+This is because of a peculiarity of using movieClip.unloadMovie(). ioUnloadMovie 
+uses movieClip.unloadMovie() internally. <br>
+This warning should not affect the performance of your projects. <br>
+<br>
+<br>
+<h2>movieClip.ioSetRGB</h2>
+sets the color of a movieClip object to an RGB value <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioSetRGB (r,g,b)</b><br>
+&nbsp;&nbsp;r: red component (0 - 255)<br>
+&nbsp;&nbsp;g: green component (0 - 255)<br>
+&nbsp;&nbsp;b: blue component (0 - 255) <br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">myMovieClip.ioSetRGB (255,255,255)<br>
+//turns myMovieClip white </font><br>
+<br>
+<br>
+<h2>movieClip.ioSetHex </h2>
+sets the color of a movieClip object to a hexidecimal value <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioSetHex ( hex )</b><br>
+&nbsp;&nbsp;hex: hexidecimal value used to set color (passed as a string) <br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">myMovieClip.ioSetHex (&quot;FFFF00&quot;)<br>
+//turns myMovieClip yellow </font><br>
+<br>
+<br>
+<h2>movieClip.ioAddForce </h2>
+adds a movement behavior to a movieClip object and returns a unique force id. 
+See ioKillForce() <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioAddForce ( forceFn, arg1, arg2, arg3...)</b><br>
+&nbsp;&nbsp;forceFn: force function to use on this movieClip (passed as a string)<br>
+&nbsp;&nbsp;argN: arguments to be passed to the force function -- force specific 
+<br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">myForceId = myMovieClip.ioAddForce 
+(&quot;ioObjAttraction&quot;, mc12, .2, .8)<br>
+//myMovieClip will now be attracted to mc12 </font><br>
+<br>
+<br>
+<h2>movieClip.ioKillForce </h2>
+removes a movement behavior from a movieClip object <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioKillForce ( forceId )</b><br>
+&nbsp;&nbsp;forceId: the force id of the force to remove. See ioAddForce() <br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">myMovieClip.ioKillForce (myForceId) 
+</font><br>
+<br>
+<br>
+<h2>movieClip.ioGetForceIds </h2>
+returns an array containing the ids of all forces currently acting upon this movieClip, 
+including any that may be paused. <br>
+<h3>// Usage </h3>
+<b>myForceList = myMovieClip.ioGetForceIds () </b><br>
+<h3>// Example </h3>
+myForceList = myMovieClip.ioGetForceIds ()<br>
+<br>
+<font face="Courier New, Courier, mono" size="-1">var myFlag = true<br>
+for (var i in myForceList) {<br>
+&nbsp;&nbsp;if (myMovieClip.ioGetForceState[myForceList[i]]) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;myFlag = false<br>
+&nbsp;&nbsp;}<br>
+}<br>
+if (myFlag) {<br>
+&nbsp;&nbsp;//only perform the actions here if there are no forces acting on myMovieClip<br>
+}</font><br>
+<br>
+<br>
+<br>
+<h2>movieClip.ioPauseForce </h2>
+temporarily stops a movement behavior without killing the force <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioPauseForce ( forceId )</b><br>
+&nbsp;&nbsp;forceId: the force id of the force to pause. See ioAddForce() <br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">myMovieClip.ioPauseForce (myForceId) 
+</font><br>
+<br>
+<br>
+<h2>movieClip.ioUnPauseForce </h2>
+resumes a movement behavior that was previously paused <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioUnPauseForce ( forceId )</b><br>
+&nbsp;&nbsp;forceId: the force id of the force to resume. See ioAddForce() <br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">myMovieClip.ioUnPauseForce (myForceId) 
+</font><br>
+<br>
+<br>
+<h2>movieClip.ioGetForceState </h2>
+returns true if the force is running, false if the force is paused or no longer 
+active <br>
+<h3>// Usage </h3>
+<b>myBoolean = myMovieClip.ioGetForceState ( myForceId )</b><br>
+&nbsp;&nbsp;forceId: the force id of the force to test <br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">myBoolean = myMovieClip.ioGetForceState 
+( myForceId )<br>
+if (myBoolean) {<br>
+&nbsp;&nbsp;trace (&quot;force &quot; + myForceId + &quot; is active.&quot;)<br>
+}<br>
+else {<br>
+&nbsp;&nbsp;trace (&quot;force &quot; + myForceId + &quot; is inactive.&quot;)<br>
+} </font><br>
+<br>
+<br>
+<h2>movieClip.ioPointAttraction </h2>
+attracts or repells to/from an x,y coordinate <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioAddForce (&quot;ioPointAttraction&quot;, x, y, accel, accelUnits, 
+frictionPercent, range, killFlag)</b><br>
+&nbsp;&nbsp;x: x coordinate to attract/repell to/from<br>
+&nbsp;&nbsp;y: y coordinate to attract/repell to/from<br>
+&nbsp;&nbsp;accel: acceleration constant: positive values attract, negative values 
+repell<br>
+&nbsp;&nbsp;accelUnits: acceleration units:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;pc&quot; -- percent, each itteration, the movement 
+force will be a percentage of the distance<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;px&quot; -- pixels, each itteration, the movement 
+force will be a number of pixels<br>
+&nbsp;&nbsp;frictionPercent: (0 - 1) percentage of momentum that is maintained 
+from the last iteration.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;values close to 0 retain little momentum, values close 
+to 1 retain most of their momentum.<br>
+&nbsp;&nbsp;range: range is the distance, in pixels from the x/y coordinate, at 
+which this force will begin decay.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A null range sets an infinite range.<br>
+&nbsp;&nbsp;killFlag: (true/false) should this force be automatically removed 
+once the specified range has been<br>
+&nbsp;&nbsp;&nbsp;&nbsp;reached? Default is true. This attribute is most often 
+used with repulsion (negative acceleration).<br>
+<br>
+NOTE: killFlag may initially appear to be a redundant feature in light of the 
+&quot;range&quot; attribute.<br>
+Keep in mind that multiple forces may act on the same object resulting in the 
+movieClip being<br>
+brought *back* into range. killFlag allows the developer to control behavior under 
+these<br>
+circumstances. <br>
+<h3>// Examples </h3>
+<font face="Courier New, Courier, mono" size="-1">//move to (150, 200) accelerating 
+10% per frame with low enough friction (.9) to give some &quot;springyness&quot;<br>
+myMovieClip.ioAddForce (&quot;ioPointAttraction&quot;, 150, 200, .1, &quot;pc&quot;, 
+.9) <br>
+<br>
+//move to (150, 200) accelerating 4 pixels per frame until 6 pixels away<br>
+//with low enough friction (.9) to give some &quot;springyness&quot;<br>
+//NOTE: ommiting range with with acceleration measured in pixels may not produce 
+the intended effect <br>
+myMovieClip.ioAddForce (&quot;ioPointAttraction&quot;, 150, 200, 4, &quot;px&quot;, 
+.9, 6) <br>
+<br>
+//move away from (150, 200) accelerating 10% per frame until at least 200 pixels 
+away<br>
+//with low enough friction (.9) to give a smooth stop<br>
+//kill the force once this range has been reached<br>
+myMovieClip.ioAddForce (&quot;ioPointAttraction&quot;, 150, 200, -.1, &quot;pc&quot;, 
+.9, 200, true) <br>
+<br>
+//move away from (150, 200) accelerating 4 pixels per frame until at least 200 
+pixels away<br>
+//with low enough friction (.9) to give a smooth stop<br>
+//keep this force active. If myMovieClip gets close enough to (150,200), this 
+force will take effect again.<br>
+//NOTE: using repulsion (negative acceleration) with acceleration measured in 
+pixels may not produce the intended effect <br>
+myMovieClip.ioAddForce (&quot;ioPointAttraction&quot;, 150, 200, -4, &quot;px&quot;, 
+.9, 200, false) </font><br>
+<br>
+<br>
+<h2>movieClip.ioObjAttraction </h2>
+attracts or repells to/from a movieClip object's coordinates <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioAddForce (&quot;ioObjAttraction&quot;, mc, accel, accelUnits, 
+frictionPercent, range, killFlag)</b><br>
+&nbsp;&nbsp;mc: movieClip whose x/y coordinate to attract/repell to/from<br>
+&nbsp;&nbsp;accel: acceleration constant: positive values attract, negative values 
+repell<br>
+&nbsp;&nbsp;accelUnits: acceleration units:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;pc&quot; -- percent, each itteration, the movement 
+force will be a percentage of the distance<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;px&quot; -- pixels, each itteration, the movement 
+force will be a number of pixels<br>
+&nbsp;&nbsp;frictionPercent: (0 - 1) percentage of momentum that is maintained 
+from the last iteration.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;values close to 0 retain little momentum, values close 
+to 1 retain most of their momentum.<br>
+&nbsp;&nbsp;range: range is the distance, in pixels from the x/y coordinate, at 
+which this force will begin decay.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A null range sets an infinite range.<br>
+&nbsp;&nbsp;killFlag: (true/false) should this force be automatically removed 
+once the specified range has been<br>
+&nbsp;&nbsp;&nbsp;&nbsp;reached? Default is true. This attribute is most often 
+used with repulsion (negative acceleration).<br>
+<br>
+NOTE: killFlag may initially appear to be a redundant feature in light of the 
+&quot;range&quot; attribute.<br>
+Keep in mind that multiple forces may act on the same object resulting in the 
+movieClip being<br>
+brought *back* into range. killFlag allows the developer to control behavior under 
+these<br>
+circumstances. <br>
+<h3>// Examples </h3>
+<font face="Courier New, Courier, mono" size="-1">//move towards mc2 accelerating 
+10% per frame with low enough friction (.9) to give some &quot;springyness&quot;<br>
+myMovieClip.ioAddForce (&quot;ioObjAttraction&quot;, mc2, .1, &quot;pc&quot;, 
+.9) <br>
+<br>
+//move towards mc2 accelerating 4 pixels per frame until 6 pixels away<br>
+//with low enough friction (.9) to give some &quot;springyness&quot;<br>
+//NOTE: ommiting range with with acceleration measured in pixels may not produce 
+the intended effect <br>
+myMovieClip.ioAddForce (&quot;ioObjAttraction&quot;, mc2, 4, &quot;px&quot;, .9, 
+6) <br>
+<br>
+//move away from mc2 accelerating 10% per frame until at least 200 pixels away<br>
+//with low enough friction (.9) to give a smooth stop<br>
+//kill the force once this range has been reached<br>
+myMovieClip.ioAddForce (&quot;ioObjAttraction&quot;, mc2, -.1, &quot;pc&quot;, 
+.9, 200, true) <br>
+<br>
+//move away from mc2 accelerating 4 pixels per frame until at least 200 pixels 
+away<br>
+//with low enough friction (.9) to give a smooth stop<br>
+//keep this force active. If mc2 gets close enough, this force will take effect 
+again.<br>
+//NOTE: using repulsion (negative acceleration) with acceleration measured in 
+pixels may not produce the intended effect <br>
+myMovieClip.ioAddForce (&quot;ioObjAttraction&quot;, mc2, -4, &quot;px&quot;, 
+.9, 200, false) </font><br>
+<br>
+<br>
+<h2>movieClip.ioTotalDeltaAttraction </h2>
+attracts or repells to/from a total x/y change <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioAddForce (&quot;ioTotalDeltaAttraction&quot;, dx, dy, accel, 
+accelUnits, frictionPercent, range)</b><br>
+&nbsp;&nbsp;dx: distance on the x-axis from this movieClip to attract/repell to/from<br>
+&nbsp;&nbsp;dy: distance on the y-axis from this movieClip to attract/repell to/from<br>
+&nbsp;&nbsp;accel: acceleration constant: positive values attract, negative values 
+repell<br>
+&nbsp;&nbsp;accelUnits: acceleration units:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;pc&quot; -- percent, each itteration, the movement 
+force will be a percentage of the distance<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;px&quot; -- pixels, each itteration, the movement 
+force will be a number of pixels<br>
+&nbsp;&nbsp;frictionPercent: (0 - 1) percentage of momentum that is maintained 
+from the last iteration.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;values close to 0 retain little momentum, values close 
+to 1 retain most of their momentum.<br>
+&nbsp;&nbsp;range: range is the distance, in pixels from the x/y coordinate, at 
+which this force will begin decay.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ommiting the range attribute sets an infinite range. <br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">//move 50 pixels to the right, 
+80 pixels up, accelerating 10% per frame with low enough friction (.9) to give 
+some &quot;springyness&quot;<br>
+myMovieClip.ioAddForce (&quot;ioTotalDeltaAttraction&quot;, 50, -80, .1, &quot;pc&quot;, 
+.9) <br>
+<br>
+<br>
+</font><br>
+<h2>movieClip.ioAngleAttraction </h2>
+attracts or repells to/from a total x/y change <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioAddForce (&quot;ioAngleAttraction&quot;, theta, totalDistance, 
+accel, accelUnits, frictionPercent, range)</b><br>
+&nbsp;&nbsp;theta: angle (in degrees) to attract/repell to/from<br>
+&nbsp;&nbsp;totalDistance: total distance from this movieClip to attract/repell 
+to/from<br>
+&nbsp;&nbsp;accel: acceleration constant: positive values attract, negative values 
+repell<br>
+&nbsp;&nbsp;accelUnits: acceleration units:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;pc&quot; -- percent, each itteration, the movement 
+force will be a percentage of the distance<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;px&quot; -- pixels, each itteration, the movement 
+force will be a number of pixels<br>
+&nbsp;&nbsp;frictionPercent: (0 - 1) percentage of momentum that is maintained 
+from the last iteration.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;values close to 0 retain little momentum, values close 
+to 1 retain most of their momentum.<br>
+&nbsp;&nbsp;range: range is the distance, in pixels from the x/y coordinate, at 
+which this force will begin decay.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ommiting the range attribute sets an infinite range. <br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">//move towards 1 o'clock (35 
+degrees) by 80 pixels, accelerating 10% per frame with low enough friction (.9) 
+to give some &quot;springyness&quot;<br>
+myMovieClip.ioAddForce (&quot;ioAngleAttraction&quot;, 35, 80, 0, .1, &quot;pc&quot;, 
+.9) </font><br>
+<br>
+<br>
+<h2>movieClip.ioAccelBy </h2>
+accelerates the movieClip at the specified rate for the specified number of frames, 
+then slows to a stop. <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioAddForce (&quot;ioAccelBy&quot;, accelRateX, accelRateY, frictionPercent, 
+lifeTime)<br>
+</b>&nbsp;&nbsp;accelRateX: rate of acceleration along x-axis (positive values 
+move right, negative values move left)<br>
+&nbsp;&nbsp;accelRateY: rate of acceleration along y-axis (positive values move 
+down, negative values move up)<br>
+&nbsp;&nbsp;frictionPercent: (0 - 1) percentage of momentum that is maintained 
+from the last iteration.<br>
+&nbsp;&nbsp;lifeTime: lifeTime of this force in frames. After this number of iterations, 
+the movieClip will cease to accelerate<br>
+&nbsp;&nbsp;&nbsp;&nbsp;and will begin to slow to a stop (via frictionPercent) 
+<br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">// accelerate down and to the 
+right for 5 frames<br>
+myMovieClip.ioAddForce (&quot;ioAccelBy&quot;, 5, 10, .9, 5) </font><br>
+<br>
+<br>
+<h2>movieClip.ioAccelAt </h2>
+accelerates the movieClip at the specified angle and rate for the specified number 
+of frames, then slows to a stop. <br>
+<h3>// Usage </h3>
+<b>myMovieClip.ioAddForce (&quot;ioAccelAt&quot;, theta, accelRate, frictionPercent, 
+lifeTime)<br>
+</b>&nbsp;&nbsp;theta: angle (in degrees) at which to accelerate <br>
+&nbsp;&nbsp;accelRate: rate of acceleration (in pixels)<br>
+&nbsp;&nbsp;frictionPercent: (0 - 1) percentage of momentum that is maintained 
+from the last iteration.<br>
+&nbsp;&nbsp;lifeTime: lifeTime of this force in frames. After this number of iterations, 
+the movieClip will cease to accelerate<br>
+&nbsp;&nbsp;&nbsp;&nbsp;and will begin to slow to a stop (via frictionPercent) 
+<br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">// accelerate towards 1 o'clock 
+(35 degrees) by 10 pixels per frame for 5 frames<br>
+myMovieClip.ioAddForce (&quot;ioAccelAt&quot;, 35, 10, .9, 5) </font><br>
+<br>
+<br>
+<h2>movieClip.ioMoveTo </h2>
+moves the movieClip to the x/y coordinate in steps of delta <br>
+<h3>// Usage</h3>
+<b>myMovieClip.ioAddForce (&quot;ioMoveTo&quot;, x, y, delta)</b><br>
+&nbsp;&nbsp;x: the x coordinate to move to<br>
+&nbsp;&nbsp;y: the y coordinate to move to<br>
+&nbsp;&nbsp;delta: the number of pixels to move per frame<br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">//move to 20, 50 in 2 pixel 
+increments<br>
+myMovieClip.ioAddForce (&quot;ioMoveTo&quot;, 20, 50, 2) </font><br>
+<br>
+<br>
+<h2>movieClip.ioMoveBy</h2>
+moves the movieClip by the specified amounts in steps of delta <br>
+<h3>// Usage</h3>
+<b>myMovieClip.ioAddForce (&quot;ioMoveBy&quot;, dx, dy, delta)</b><br>
+&nbsp;&nbsp;dx: the distance to move along the x-axis<br>
+&nbsp;&nbsp;dy: the distance to move along the y-axis<br>
+&nbsp;&nbsp;delta: the number of pixels to move per frame<br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">//move to 20 pixels right, 50 
+pixels down, in 2 pixel increments<br>
+myMovieClip.ioAddForce (&quot;ioMoveBy&quot;, 20, 50, 2) </font><br>
+<br>
+<br>
+<h3>movieClip.ioMoveAt </h3>
+moves the movieClip at the specified angle for the specified distance in steps 
+of delta <br>
+<h3>// Usage</h3>
+<b>myMovieClip.ioAddForce (&quot;ioMoveAt&quot;, theta, totalDist, delta)</b><br>
+&nbsp;&nbsp;theta: the angle (in degrees) at which to move<br>
+&nbsp;&nbsp;totalDist: the total distance to move<br>
+&nbsp;&nbsp;delta: the number of pixels to move per frame<br>
+<h3>// Example </h3>
+<font face="Courier New, Courier, mono" size="-1">//move towards 1 o'clock (35 
+degrees), 50 pixels in 2 pixel increments<br>
+myMovieClip.ioAddForce (&quot;ioMoveAt&quot;, 35, 50, 2) </font><br>
+<br>
+<br>
+<h3>//Properties </h3>
+<b>movieClip.ioDx</b><br>
+<br>
+The amount the movieClip will move along the x-axis during this frame. ioDx is 
+reset to zero by ioLib<br>
+each frame. Custom force functions should add to ioDx. Otherwise, this property 
+should only be modified via ioAddForce. <br>
+In addition, calculations based on the current value will behave erratically. 
+<br>
+<br>
+<b>movieClip.ioDy</b><br>
+<br>
+The amount the movieClip will move along the y-axis during this frame. ioDy is 
+reset to zero by ioLib each <br>
+frame. Custom force functions should add to ioDy. Otherwise, this property should 
+only be modified via ioAddForce. <br>
+In addition, calculations based on the current value will behave erratically. 
+<br>
+<br>
+<b>movieClip.ioVx </b><br>
+<br>
+The current speed of the movieClip along the x-axis. This value is calculated 
+based on movement completed<br>
+during the last frame update. This property is read-only. <br>
+<br>
+<b>movieClip.ioVy </b><br>
+<br>
+The current speed of the movieClip along the y-axis. This value is calculated 
+based on movement completed<br>
+during the last frame update. This property is read-only. <br>
+<h2>// Creating Custom Forces </h2>
+The forces included with ioLib are a good starting point for creating your own 
+custom force functions.<br>
+All force functions are expected to follow the following syntax: <br>
+<br>
+<b>forceFn (mc, args, data, ioForceId)</b><br>
+&nbsp;&nbsp;mc: the movieClip object to act upon<br>
+&nbsp;&nbsp;args: an array containing the arguments which configure this specific 
+force<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(e.g. coordinates to seek, an acceleration rate, friction 
+constant, etc)<br>
+&nbsp;&nbsp;data: an object containing data specific to this instance of the force 
+which will be reused from frame to frame<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(e.g. acceleration, a force &quot;lifetime&quot; counter, 
+etc)<br>
+&nbsp;&nbsp;ioForceId: the id of the current force. <br>
+<br>
+First, your force function must be accessible to any movieClip which will attempt 
+to utilize it.<br>
+The easiest way to ensure this is to attach your force functions to the movieClip.prototype 
+object.<br>
+This will provide access to the force function from any movieClip in your project. 
+<br>
+<h3>// Example</h3>
+<font face="Courier New, Courier, mono" size="-1">movieClip.prototype.newForce 
+= function (mc, args, data, ioForceId) {<br>
+&nbsp;&nbsp;//force code here<br>
+} </font><br>
+<br>
+Next, if your force needs to utilize iteration data over time, try to avoid storing 
+this information directly in<br>
+the movieClip. Instead, use the data argument. Although slightly more complicated, 
+this allows one movieClip to<br>
+utilize more than one of the same kind of force. <br>
+<br>
+To use the data argument, simply return an object containing your data at the 
+end of your force function. It will<br>
+be passed back to the function (also as an object) during the next iteration. 
+<br>
+<h3>// Example</h3>
+<font face="Courier New, Courier, mono" size="-1">movieClip.prototype.newForce 
+= function (mc, args, data, ioForceId) {<br>
+</font><font face="Verdana, Arial, Helvetica, sans-serif"><font face="Courier New, Courier, mono" size="-1">&nbsp;&nbsp;</font></font><font face="Courier New, Courier, mono" size="-1"><br>
+</font><font face="Verdana, Arial, Helvetica, sans-serif"><font face="Courier New, Courier, mono" size="-1">&nbsp;&nbsp;</font></font><font face="Courier New, Courier, mono" size="-1">//how 
+much influence did this force have last time?<br>
+</font><font face="Verdana, Arial, Helvetica, sans-serif"><font face="Courier New, Courier, mono" size="-1">&nbsp;&nbsp;</font></font><font face="Courier New, Courier, mono" size="-1">var 
+dx = data.dx<br>
+</font><font face="Verdana, Arial, Helvetica, sans-serif"><font face="Courier New, Courier, mono" size="-1">&nbsp;&nbsp;</font></font><font face="Courier New, Courier, mono" size="-1">var 
+dy = data.dy <br>
+<br>
+</font><font face="Verdana, Arial, Helvetica, sans-serif"><font face="Courier New, Courier, mono" size="-1">&nbsp;&nbsp;</font></font><font face="Courier New, Courier, mono" size="-1">//...edited 
+for clarity... <br>
+</font><font face="Verdana, Arial, Helvetica, sans-serif"><font face="Courier New, Courier, mono" size="-1">&nbsp;&nbsp;</font></font><font face="Courier New, Courier, mono" size="-1"><br>
+</font><font face="Verdana, Arial, Helvetica, sans-serif"><font face="Courier New, Courier, mono" size="-1">&nbsp;&nbsp;</font></font><font face="Courier New, Courier, mono" size="-1">//save 
+this iteration's change data for next time.<br>
+</font><font face="Verdana, Arial, Helvetica, sans-serif"><font face="Courier New, Courier, mono" size="-1">&nbsp;&nbsp;</font></font><font face="Courier New, Courier, mono" size="-1">var 
+dataObj = new Object()<br>
+</font><font face="Verdana, Arial, Helvetica, sans-serif"><font face="Courier New, Courier, mono" size="-1">&nbsp;&nbsp;</font></font><font face="Courier New, Courier, mono" size="-1">dataObj.dx 
+= dx<br>
+</font><font face="Verdana, Arial, Helvetica, sans-serif"><font face="Courier New, Courier, mono" size="-1">&nbsp;&nbsp;</font></font><font face="Courier New, Courier, mono" size="-1">dataObj.dy 
+= dy <br>
+<br>
+&nbsp;&nbsp;return dataObj<br>
+} </font><br>
+<br>
+Your force influences a movieClip by manipulating its ioDx and ioDy properties 
+instead of changing the _x and _y<br>
+properties directly. Again, this adds complexity, but allows you to have lots 
+of forces influencing a single movieClip. <br>
+<h3>// Example</h3>
+<font face="Courier New, Courier, mono" size="-1">movieClip.prototype.newForce 
+= function (mc, args, data, ioForceId) {<br>
+&nbsp;&nbsp;this.ioDx += 10<br>
+&nbsp;&nbsp;//this force will create an influence to move an object to the right<br>
+&nbsp;&nbsp;//10 pixels per frame until it is destroyed.<br>
+} </font><br>
+<br>
+<br>
+<h2>// Extending the Force Concept </h2>
+Experiment with the arguments of the included force functions and feel free to 
+use their code as the starting point<br>
+for your own forces. They already provide a wide range of behaviors; perhaps the 
+movement you need can be achieved<br>
+by changing the sign of an argument (for instance). <br>
+<br>
+It is actually quite possible to affect properties of your movieClips other than 
+_x and _y using the provided force system.<br>
+You may also wish to experiment with scale, alpha, rotation, etc. <br>
+<br>
+In addition, forces may be the ideal solution to movement problems which do not 
+immediately appear to be relevant.<br>
+Collision detection, bounce physics, etc are possibilities. </font> </HTML>
+

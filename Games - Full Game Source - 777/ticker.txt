@@ -1,0 +1,1 @@
+&info=This text shows how a window can be filled with a message which then scrolls and restarts ithout emptying the window

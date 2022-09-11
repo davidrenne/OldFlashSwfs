@@ -1,0 +1,92 @@
+
+<HTML><HEAD><TITLE>Cookie Crumbs</TITLE>
+<SCRIPT language=JavaScript>
+<!--
+// Cookie Crumbs version E
+// By drZoode (Ahmet Zorlu) 
+// [http://www.zoode.cjb.net]-[zoode@usa.net]
+// Last Update: April 04 2001
+
+// We set our cookie according to the Flash input
+// we place the user input after the "|" vertical bar (an arbitrary choice)
+
+	function setCookie(input) 
+	{
+	var splitInput = input.split(",");
+	var propertyValuePairs = "nameEntry="+splitInput[0]+"&"+"colorPref="+splitInput[1]+"&"+"langPref="+splitInput[2];
+	var myCookie= "cookieCrumbs|"+ propertyValuePairs;
+	var expiryDays = 100*24*60*60*1000;
+	// I want the cookie to expire after 100 days, you can change this value
+	var exp = new Date(); 
+	exp.setTime(exp.getTime() + (expiryDays));
+	var expiry =  exp.toGMTString();
+	document.cookie = myCookie + ";expires=" + expiry;
+	}
+
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY bgColor=#999999>
+<SCRIPT language=JavaScript>
+<!--	
+
+// Cookie Crumbs version E
+// By drZoode (Ahmet Zorlu) 
+// [http://www.zoode.cjb.net]-[zoode@usa.net]
+// Last Update: April 04 2001
+
+// If a cookie exists we read the value by using the split method
+// and we pass this value to the Flash movie
+	
+	if (document.cookie != "") 
+	{
+	var cookieString = document.cookie.split(";");
+	var leftSide = cookieString[0];
+	var splitAgain = leftSide.split("|");
+	var myPropertyValuePairs = splitAgain[1];
+	} else {
+	var myPropertyValuePairs = "";
+	}
+
+// Here we are simplifying the document.write routine
+// When you change this part of the script according to your movie file
+// pay attention to ESCAPING special characters and putting SPACES where needed
+
+var c=">"; // I will use the closing tag more than once
+var oC="<OBJECT classid=\'clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\' ";
+var cB=" codebase=\'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0\' ";
+var w=" WIDTH=500 ";
+var h=" HEIGHT=350 ";
+var pN=" <PARAM NAME=movie  VALUE=" 
+var pQ=" <PARAM NAME=quality VALUE=best> ";
+var pW=" <PARAM NAME=wmode VALUE=transparent> ";
+var pB=" <PARAM NAME=bgcolor VALUE="; 
+var bG="#CCCCFF";
+var eS=" <EMBED src=";
+var eQ=" quality=best ";
+var eW=" wmode=transparent ";
+var eB=" bgcolor=";
+var eT=" TYPE=\'application/x-shockwave-flash\' ";
+var eP= "PLUGINSPAGE=\'http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash\'> ";
+var eO=" </EMBED> </OBJECT> ";
+
+// the last step
+var line01=oC+cB+w+h+c+pN;
+var line02=c+pQ+pB+bG+c+eS;
+var line03=eQ+eB+bG+w+h+eT+eP+eO;
+
+// here is our most crucial variable- pay attention to the "?" at the end of the movie name
+// we append the cookie query string at the end of the movie name
+var movieName ="cookieCrumbsE.swf?"+unescape(myPropertyValuePairs);
+
+// write the OBJECT/EMBED tags
+document.write(line01+movieName+line02+movieName+line03);
+// ...done
+//-->
+</SCRIPT>
+
+
+</BODY>
+</HTML>
+

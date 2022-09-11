@@ -1,0 +1,20 @@
+This movie is created with flash 4 and poser.
+In poser you create the motion, export the files as seperate files, 
+import these files into flash and use the trace bitmap settings.
+Just experiment with the settings untill you have the right amount
+of detail. The imported files are now transformed in vectorfiles.
+If you export a movie in Poser as pict sequences you can import that 
+sequence in flash. You only have to save these files as a fileformat
+that flash can import. Unfortunatelly Flash does not support pict import.
+So you need to do that extra step of chaging the fileformat.
+
+You can also fill the figure with one color, add a line and delete the file.
+You now have a outline figure of the walking man. 
+
+Have fun and visit my site with lots of animations
+
+Djojo
+Studio van Schaik
+Netherlands
+http://www.schaik.net
+Mailto: info@schaik.net

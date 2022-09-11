@@ -1,0 +1,53 @@
+&id1=1&
+&id2=2&
+&id3=3&
+&id4=4&
+&id5=5&
+&id6=6&
+&id7=7&
+&id8=no&
+&id9=no&
+&id10=no&
+&id11=no&
+-------------------------------------------------------------------
+&noticia1=Le proporcionamos búsquedas bibliográficas en todos nuestros documentos. A través del "Servicio de Información Bibliográfica" puede solicitar aquella búsqueda que le interese&
+&noticia2=Acceda al proyecto "Guías de actuación clínica" realizado por las Sociedades Médicas Españolas&
+&noticia3=Descubra 34 Especialidades Médicas con amplia información  &
+&noticia4=Agudice su pericia clínica en las "Sesiones Clínicas Docentes"&
+&noticia5=Más de cuatrocientos médicos españoles colaborando en la sección del "Especialista Opina". Entre en su especialidad. &
+&noticia6=Complemente su formación participando en nuestros "Cursos" &
+&noticia7=Listas de Distribución&
+&noticia8=prueba&
+&noticia9=prueba&
+&noticia10=prueba&
+&noticia11=prueba&
+-------------------------------------------------------------------
+&url1=#&
+&url2=#&
+&url3=#&
+&url4=#&
+&url5=#&
+&url6=#&
+&url7=#&
+&url8=#&
+&url9=#&
+&url10=#&
+&url11=#&
+-------------------------------------------------------------------
+&fecha1=21 Septiembre de 2000&
+&fecha2=21 Septiembre de 2000&
+&fecha3=21 Septiembre de 2000&
+&fecha4=21 Septiembre de 2000&
+&fecha5=21 Septiembre de 2000&
+&fecha6=21 Septiembre de 2000&
+&fecha7=21 Septiembre de 2000&
+&fecha8=21 Septiembre de 2000&
+&fecha9=21 Septiembre de 2000&
+&fecha10=21 Septiembre de 2000&
+&fecha11=21 Septiembre de 2000&
+-------------------------------------------------------------------
+&carga=1&
+
+
+
+

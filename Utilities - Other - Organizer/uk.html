@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<TITLE>Getting time and date using JavaScript</TITLE>
+<script language="JavaScript">
+<!--
+function TimeDate() {
+   currentDate = new Date();
+   
+   hours = currentDate.getHours();
+   minutes = currentDate.getMinutes();
+   sec = currentDate.getSeconds();
+   
+   year = (currentDate.getYear());
+   if (document.layers){
+     year = year + 1900;
+   }
+   month = (currentDate.getMonth() + 1);
+   day = currentDate.getDate();
+   
+   clock = 0;
+   
+   window.document.td_tut.SetVariable("year", year);
+   window.document.td_tut.SetVariable("mon", month);
+   window.document.td_tut.SetVariable("day", day);		 
+   window.document.td_tut.SetVariable("hours", hours);
+   window.document.td_tut.SetVariable("mins", minutes);
+   window.document.td_tut.SetVariable("secs", sec);
+   window.document.td_tut.SetVariable("time", clock);
+   window.setTimeout ('TimeDate()',1000);
+ }
+//-->
+</script>
+</HEAD>
+<BODY bgcolor="#FFFFFF" marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" onLoad="TimeDate()">
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0"
+ ID=td_tut WIDTH=100% HEIGHT=100%>
+ <PARAM NAME=movie VALUE="ukdaytime.swf"> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#000000> <EMBED src="ukdaytime.swf" quality=high bgcolor=#000000 WIDTH=100% HEIGHT=100% NAME=td_tut TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED>
+</OBJECT>
+</BODY>
+</HTML>

@@ -1,0 +1,34 @@
+Hi,
+
+Create a 6 frame animation that 'simulates' the positions
+of a VRML object and render as a sequence of images
+
+Save as, or convert the images,  to .png files
+
+
+Start Flash
+
+Open the .fla file and select Window/Library
+
+"Right" click "1p" and select "Properties"
+Select "Import" and locate the first image from your sequence
+Load your image and then click "OK"
+
+Move to "2p" and repeat the procedure for all six images
+
+
+Save your .fla file then export your .swf movie
+To embed it in a webpage.. you can use this code:
+<embed src="vrml.swf" width=400 height=400>
+(or whatever you name the file you create)
+Don't forget to upload the .swf to the same directory!
+
+You are able to save this movie as a 'Flash3' file..
+insuring that almost no one will need to get a plug-in
+
+Good luck
+
+©2000 RADenney@welcomesite.com
+
+
+

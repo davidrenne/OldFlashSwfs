@@ -1,0 +1,102 @@
+                                      Photo Blocks v1.1 
+                                      ~~~~~~~~~~~~~~~~~
+
+The souce code of Photo Blocks is provided free of any charge but without any support
+or warranties of any kind. Digital Vision assumes no responsibilities with regard
+of this game. 
+
+This game is intended for you to learn Flash programming and hopefully create better 
+and more innovative games. We would appreciate if you add a line stating that your
+game is based on our code. 
+
+
+
+A short description of the most importants features.
+
+This document describes the internal structure of the file.
+Please note that we can not ensure 100% accuracy, since the game itself may be updated
+more often than this file. However, this document should provide enough reference
+material for you to understand how it works.
+
+
+Movie clips:
+~~~~~~~~~~~
+cell1..cell7 : the cells of diferrent colors, fading to alpha=0
+   viitoarea : the next coming piece, in each frame it has a piece made of cells.
+       Photo : the clip containing the photos
+       sound : the clip containing the  sounds
+  play-pause : movie clip in 2 frames drawing the play and pause symbols
+  play-pause 
+  controller : movie clip that controls the switching of the two frames of
+	       play-pause movie when start button is pressed
+      
+
+Buttons
+~~~~~~~
+Start : controls every interaction with the player
+        - starts the game
+        - move left-right-down, rotate the pieces
+        - play-pause switch
+
+
+Sounds
+~~~~~~
+drop, level, line, lost : managed by sound movie clip
+
+
+Global variables
+~~~~~~~~~~~~~~~~
+    dx, dy : the number of columns and rows of the table
+xmin, xmax : the minimal am maximal coordinates
+ymin, ymax   of the table
+       lev : level ( from 1 to 9)
+     lines : the number of initial lines ( from 1 to dy )
+     trail : the trail effect ( from 0 to 3; 0=none) 
+      scor : the score
+
+
+Other variables
+~~~~~~~~~~~~~~~
+           a : string dx*dy that contains the current position of the game
+       new_a : string that contains the position of the game after one move
+	       before refreshing screen
+       old_a : string that contain the position of the the stacked piece
+               NB: a, new_a, old_a must have the same length dx*dy
+        time : timing variables that are needed to increase the speed
+   next_time : with the level
+x1..4, y1..4 : the coordinates of the cells of the current piece
+               NB: they are from 0 to dx-1 ( dy-1 )
+        rand : random choice of the piece (from 1 to 7)
+       frand : random choice of the upcoming piece (from 1 to 7)
+         i,j : looping variables	
+
+
+Important frames of the main movie
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         "First" : let you to choose level, lines, trail, size ...
+         "Start" : define the table, the cells, puts the initial lines,
+                   dispaly the next piece  
+    "Generation" : randomize the next piece, generate one piece
+       "Falling" : simulate the falling of the piece one cell down
+       "Timing1" : Loop the two frames to time slow the falling
+       "Timing2" :
+   "Check lines" : Checks if exists filled lines and deletes them
+"Refresh screen" : it display the changes of matrix on the screen
+                   NB: It is a soubroutine, it is called every time something is changed
+
+
+Button actions
+~~~~~~~~~~~~~~
+On "Start" button we have a play action on "First" frame
+and on the other frames we have: 
+On pressing <Left> key   : move the piece on the left one cell
+On pressing <Right> key  : move the piece on the right one cell
+On pressing <Down> key   : drop down the piece  
+On pressing <Up> key     : rotate the piece 90 degres clockwise
+On pressing <-> key      : finish the game
+On hiting  the button we swicth pause-play status
+
+------------------------------------------
+coded by Tavi Halmaghi for Digital Vision
+doc by Tavi Halmaghi
+(C)2000 Digital Vision

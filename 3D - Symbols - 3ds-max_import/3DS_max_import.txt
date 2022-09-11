@@ -1,0 +1,11 @@
+THIS IS ONLY A TEST!!!
+
+I made a simple animation in 3d-studio max en rendered every 3th frame to JPG.
+Then I inported the JPG-files (frame by frame)in flash.... Braked them apart...smoothed the corves and optimized
+each image.
+Then you're able to edit the shapes and the fills.
+
+If youre interested in the original .Fla, then mail me at joyamars@hotmail.com
+
+Mars
+

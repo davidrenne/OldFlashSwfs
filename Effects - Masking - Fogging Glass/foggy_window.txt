@@ -1,0 +1,18 @@
+Foggy Window
+by Joshua Sullivan
+josh@metagamer.com
+
+
+Usage:
+Very simple. Just replace the images in "*Blurry Image" and "*Clear Image" with those you want to use. Note that one doesn't have to be a blurred version of the other... you can get another really neat effect by having two completely unrelated images. Try it out! I've commented all the actionscript pretty well, so if you want to do any tweaking, go right ahead.
+
+If the movie seems to be running extremely slowly, make sure the movie quality in the HTML is set to "low". There is no visual difference between high and low quality, but low runs roughly twice as fast! Speed games can also be had by reducing the number of spawned circles, with the cost of making the effect somewhat rougher.
+
+Please, please, please! Don't send me e-mail along the lines of "I am learning actionscripting, explain your movie to me." I don't have time to hold the hands of those unwilling to study Flashkits' excellent tutorials. If you have a specific modification in mind that just isn't quite working out, I'd be happy to try and help you along, though I'm very busy, so it might take a while.
+
+Final note... this is a Flash 5 source file, though it is programmed to be Flash 4 compatible, so output whichever version you like.
+
+
+
+Legal:
+You are free to use or modify this movie in any way you see fit. I only ask that commercial users inform me when they use this movie (or any variation of it), since I am insufferably curious. The photograph contained in the movie is copyrighted to me (Joshua Sullivan), and may not be used in commercial(for-profit) projects without my express written consent.

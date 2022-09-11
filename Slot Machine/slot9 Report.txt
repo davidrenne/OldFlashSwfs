@@ -1,0 +1,75 @@
+Movie Report
+-------------
+FrameFrame #    Frame Bytes    Total Bytes    Page
+------------    -----------    -----------    ---------------
+    1         60282          60282        Scene 1
+    2          6602          66884          2
+    3             2          66886          3
+    4             2          66888          4
+    5           363          67251          5
+
+Page                       Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+Scene 1                         167           472
+
+Embedded Objects                321             0
+
+Page                       Symbol Bytes    Text Bytes
+-----------------------    ------------    ----------
+JoyLuckClub                      39           202
+ExtraButton                      65             0
+Bet                             116             0
+HighLight                        38             0
+Cookie1                           0             0
+Cookie2                           0             0
+Cookie3                           0             0
+cookie                          133             0
+pullbar6                        282             0
+Tween 3                           0             0
+pullbar3                          0             0
+Machine                         375             0
+PlayAgain                        44            52
+MoneyPic2                         0             0
+MoneyPic                          0            32
+Tween 2                           0             0
+Tween 1                           0             0
+PullBar                           0             0
+Bar                               0             0
+Bar2                              0             0
+Bar3                             53            35
+Seven                             0             0
+Seven 2                           0             0
+Seven3                            0             0
+slotperameters                  261             0
+cherry2                           0             0
+cherry3                           0             0
+cherry4                         114             0
+red                               0             0
+box                               0             0
+cherriy                           0             0
+cherry                            0             0
+card1                             0             0
+
+Bitmap                     Compressed    Compression
+-----------------------    ----------  --------  -----------
+seven 5                          863         408   Lossless
+seven 3                          863         408   
+cookiegif                       6945       90000   
+seven 4                          863         408   
+SlotGood                       29387       74152   
+
+Event Sounds: 11KHz Stereo 16 kbps MP3
+
+Sound name                 Bytes        Format    
+-----------------------    ---------    ----------
+schbell22                    6463        11KHz Mono 16 kbps MP3
+slotm3                       6567        11KHz Mono 16 kbps MP3
+cashregister                  847        11KHz Mono 8 kbps MP3
+
+
+Sound name                 Bytes        Format    
+-----------------------    ---------    ----------
+Arial Bold                     20        
+Verdana Bold                  302        ABR
+Times New Roman Bold           30        
+Times New Roman              5461         $.0123456789:?ABCDEGILNPRSTYbceghjklmortuy

@@ -1,0 +1,6 @@
+<banners timeout="5">
+	<banner src="banner.swf" timeout="15" />
+	<banner src="skunkbros.jpg" href="http://skunkbros.com" window="_blank" />
+	<banner src="newswell.jpg" href="http://newswell.com" />
+	<banner src="brianweil.jpg" href="http://brianweil.com" />
+</banners>

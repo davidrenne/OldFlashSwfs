@@ -1,0 +1,14 @@
+delay=100&
+&text=You can customize this Flash banner by editing the words in the "text.txt" file. You don't even have to open up the .fla if you don't want to.
+BUT remember, you must NOT remove these three things in the text file:
+The first one is the word "delay=" in the first line. This is the delay time for each messages. You can adjust this as you see fit.
+The second one is the word "text=" in the second line. This is where you type in your messages.
+The last one is the last line (that "eof=true" thing). This line marks the end of the messages.
+Open the "text.txt" in Notepad to edit the messages.
+You can put put as many sentences as you like. But remember that since the height of the banner is 60 pixels, it can only get 3 lines of sentences at a time.
+Every message is separated by ENTER.
+You can use this banner for other purposes (news flash, credits, etc.) Just play around with it. It's pretty fun. ;)
+(C) April, 2000 - Ferry Halim
+www.ferryhalim.com
+(my special thanks to Jessica and all the very helpful people at www.were-here.com)
+&eof=true

@@ -1,0 +1,1 @@
+This Thanksgiving card was created using flash 4.The sounds are from Flashkit.com and the art is freeclipart found on the web and on Flashkit.Feel free to use this card in any manner as long as youdo not sell it.John Campbellj_campbell@hotmail.com

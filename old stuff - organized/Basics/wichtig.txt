@@ -1,0 +1,30 @@
+Diese Datei wurde von "Kevins Webdesign" herruntergeladen.
+
+Für private Zwecke sind die heruntergeladenen Dateien von www.webdesign-ks.de
+kostenlos und können mit Ihren eigenen Inhalten gefüllt werden. Die Verwendung
+der Dateien für den kommerziellen Gebrauch ist nicht gestattet. 
+Sollten Sie diese für den kommerziellen Gebrauch benötigen, bitte ich Sie, sich 
+mit mir in Verbindung zusetzen (ksiml@gmx.de). Wenn Sie meine Dateien
+verwenden, würde ich mich freuen, wenn Sie einen Link zu meiner Seite einfügen.
+Das Copyright bleibt auch nach Download und Nutzung weiterhin bei www.webdesign-ks.de.
+Die Dateien dürfen nicht in irgendwelche Archive zum Download angeboten werden.
+Bei Download und Nutzung erklären Sie sich mit den Nutzungsbedingungen einverstanden.
+Im Falle einer Zuwiderhandlung gegen die Nutzungsbedingungen, halte ich mich vor,
+rechtliche Schritte einzuleiten.
+
+
+Ich würde mich freuen wenn Sie meine Seite auf Ihrer verlinken würden.
+
+Banner 88x31:
+-------------
+<a href="http://www.webdesign-ks.de" 
+alt="Kevins Webdesign" target="_blank">
+<img border="0" src="http://www.webdesign-ks.de/images/kw_88_31.gif" 
+width="88" height="31"></a>
+
+Banner: 468x60:
+---------------
+<a href="http://www.webdesign-ks.de" 
+alt="Kevins Webdesign" target="_blank">
+<img border="0" src="http://www.webdesign-ks.de/images/kw_468_60.gif" 
+width="468" height="60"></a>

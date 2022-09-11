@@ -1,0 +1,79 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive 4">
+		<title>Welcome to Adobe GoLive 4</title>
+	</head>
+
+	<body>
+		<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="5"><b>This tutorial will show how to create a Rock-Solid-Will-ALWAYS-Work-Advanced Double-Click based on actual time passing, not based on frame playback in a movie timeline.</b></font>
+		<p><!--Draggable, double-clickable title bar. Interface Window -->
+		<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="advanceddoubleclick" width="300" height="250">
+			<param name="movie" value="advanceddoubleclick.swf">
+			<param name="quality" value="high">
+			<param name="bgcolor" value="#FFFFCC">
+			<embed src="advanceddoubleclick.swf" quality="high" bgcolor="#FFFFCC" width="300" height="250" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"> 
+		</object></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="4"><b>What's the difference? </b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">For starters, if you increase the FPS&nbsp;(Frames Per Second - or framerate)&nbsp;of the playback of your movie, your user suddenly has to double-click that much faster for Flash to detect it correctly.&nbsp;Even worse, Flash animations play back at a different rate on different CPU's. Someone on a 486DX&nbsp;has to double-click a lot SLOWER&nbsp;for frame actions to detect the double click than someone on a 500MHz P3.&nbsp;Because the code runs so much slower!&nbsp;How much slower? A piece of code I&nbsp;tested took 20ms to run on a 450MHz P3. It took 580ms to run on a 486DX!&nbsp;Over half a second longer!&nbsp;That means you can never truly guarantee the speed of your double-click detect EVEN&nbsp;IF&nbsp;you always have your Flash animations playback at the same frame rate.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">(NOTE:&nbsp;Animations also play back SLOWER&nbsp;when in a web browser window than if they are a standalone &quot;.swf&quot;&nbsp;file.)</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="4"><b>The solution?</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">A)&nbsp;Create a double-click detect that operates only in one frame.<br>
+		B)&nbsp;Compensate your code for the variability of CPU speeds.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">That's why there are two steps to this tutorial.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="6"><b>STEP&nbsp;1:</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Find out just how fast (or slow)&nbsp;the CPU&nbsp;that the Flash animation is running on really is.</b><br>
+		</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Here is Frame 1 of the <b>CPU tester:</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><img height="358" width="601" src="Snap1.gif"></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Frame 2</b> says &quot;GoTo Frame 1&quot;.<br>
+		There is a variable on the workspace in Frame 1 called &quot;speed&quot;. That's just so you can see the results live. The &quot;.swf&quot;&nbsp;file embedded here shows the results... </font></p>
+		<p><object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="CPU" tester width="200" height="150">
+			<param name="movie" value="CPU tester.swf">
+			<param name="quality" value="high">
+			<param name="bgcolor" value="#FFFFCC">
+			<embed src="CPU tester.swf" quality="high" bgcolor="#FFFFCC" width="200" height="150" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"> 
+		</object></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">That's it.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">When you start up a Flash animation, Flash starts its own timer. The timer keeps counting forever until you stop the animation. You can ask Flash what the value of that timer (in milliseconds) is at any time. You say &quot;GetTimer&quot;.&nbsp;So all this code does is:</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>(A) </b>check the time </font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>(B) </b>count to 1000 </font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>(C) </b>check the time again.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The difference between those two times is the number of milliseconds it took your processor (while running Flash)&nbsp;to count to 1000.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">I&nbsp;call that difference&nbsp;<b>&quot;CPUlag&quot;</b>.<br>
+		On a 486DX&nbsp;I&nbsp;tried this on, it took 580ms to count to 1000. Over half a second!<br>
+		On a 450MHz P3 it took only 20ms. One fiftieth of a second.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Now that we know how much lag our processor has, we can use that information to slow down the double-click detect to accommodate slower processors. Since on a really fast CPU&nbsp;the lag is going to be less than a fiftieth of a second, we can safely assume we will never need to compensate for faster CPUs. Since the CPUlag on slower processors is exactly proportional to the speed at which that CPU&nbsp;will read the Flash scripts, I simply add the CPUlag to the double-click detect speed. </font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">This variable is called <b>&quot;gap&quot; </b>and it represents the amount of time in between the two clicks.</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">350 ms seems to be about a comfortable double-click gap&nbsp;(plus CPUlag).</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>This may seem like a lot of work for nothing but it will be the difference between the double click working for EVERYONE out there on the net or just people with fast CPUs.</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="6"><b>STEP&nbsp;2:</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>You have to decide what it is you want your double-click to do.</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">For this example, we will simply &quot;GoTo&quot; the next frame. In frame 1 of the movie, the window is open. In frame 2, the frame is closed.</font></p>
+		<p></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Now for some programming questions...</font></p>
+		<p></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>What is a double-click?</b>&nbsp;You do it hundreds of times a day on your PC. But it is MUCH&nbsp;more than just the computer testing for two clicks....</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">It has to test the gap between the first click and release.&nbsp;What if the user clicks and holds?</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">...and the gap between the second click and release. What if the user double-clicks then holds?</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">...and the gap between the first release and second click.&nbsp;What if you click and release fast enough... then pause too long... then click and release fast enough again?</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">...and the gap between the first release and second release. This is the final test. If you click, then release fast enough, then click again fast enough, finally release that second click fast enough... </font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>THEN&nbsp;and ONLY&nbsp;then is it a double-click.</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">And <b>how fast is fast enough?</b>&nbsp;That's our variable<b> &quot;gap&quot;</b>.&nbsp;(Which we added CPUlag to.)</font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">From personal tests I&nbsp;found 350ms (plus CPUlag)&nbsp;seems to work about right.</font></p>
+		<p></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="4"><b>Here we test for the first click and release <br>
+		being close enough together to pass:</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><img height="358" width="601" src="Snap2.gif"></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="4"><b>Here we test for the second click and release <br>
+		being close enough together AND&nbsp;the gap between the<br>
+		two releases:</b></font></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><img height="537" width="601" src="Snap3.gif"></font></p>
+		<p></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The only real trick is that if a person clicks once, releases, then pauses TOO&nbsp;LONG&nbsp;before clicking again, well then the second measured click is actually a first click. Therefore, instead of going back to frame 1 we switch the second click variables to be first click variables and stay in frame 2.</font></p>
+		<p></p>
+		<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Note that even though there are two frames here, they do not run consecutively according to the movie's playback head. The only time we move from frame 1 to frame 2 is if the user has clicked the button.</b></font>
+	</body>
+
+</html>

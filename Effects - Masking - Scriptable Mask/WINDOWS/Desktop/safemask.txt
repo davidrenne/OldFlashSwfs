@@ -1,0 +1,29 @@
+
+The Safe 
+Sept. 2000
+
+by Justin Everett-Church 
+justin@infinitumdesign.com
+http://www.infinitumdesign.com
+
+
+If you use this, I'd love to hear from you!
+
+
+Ever wanted a mask that responds to scripts?  (yeah, me too)
+
+Well, This isn't quite it but it works pretty much just like one. This exploits a bug in Flash 4 and 5 that cancels out alphas when there are ten or more stacked on top of each other. The safe door is set alpha 99% (offset 2). The spotlight is a draggable movieclip with ten instances of a circle of alpha 0% (offset 5).  Since there is no mask it can be scripted!  My only word of caution is that 10 alpha 0%'s can be processor intensive.    
+
+Notes:
+
+The only Mask in this movie is the one that  blocks the rim from showing outside the door area when you shine the light on it. 
+
+With the SetTransform Command in Flash 5, you can even set the percentage and offset of movieclips to make then susceptible to the bug or not. (essentially turning the mask on and off)
+
+I find that alpha 99% offset 2 makes whatever object look opaque, but still work for the effect.
+
+Alpha gradients on the bottom will also disappear, alpha gradients in the stack are still visible as gradients.
+
+a cool effect could be to animate several different things in the dragged movieclip.  that way the "mask would apear to change like a  kaleidoscope
+
+you can tint the draggable movieclip (by making the color before alpha zero was applied what tint you want)  and then adjust the offset of the alpha in the special... if you do it too much, it breaks the effect though :)

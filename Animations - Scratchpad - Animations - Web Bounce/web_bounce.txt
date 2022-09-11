@@ -1,0 +1,19 @@
+Bouncing & Reflections :
+---------------------------
+by Marco Lapi - April 2000
+
+This is a simple example on how you can embellish text and objects.
+
+Reflections are made by using modified versions of the original objects :
+I just squeezed them on Y-axis leaving the same width. Then set the alpha
+to some 25% or less to achieve the "reflection" idea.
+
+Making the object BOUNCE is just a basic repetition of up and down motion
+adding some "easy in/out" effect to the tweening (justtake a look to the .fla)
+
+Also notice in the source ,how objects are distorted and alpha-ed during
+the bounce scene.
+
+Marco
+(mlapi@tiscalinet.it)
+ 

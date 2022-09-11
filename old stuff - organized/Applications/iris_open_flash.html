@@ -1,0 +1,61 @@
+<html>
+<HEAD>
+<TITLE>IRIS Open Flash</TITLE>
+</HEAD>
+<BODY bgcolor="#600000" marginheight=0 marginwidth=0 leftmargin=0 topmargin=0 rightmargin=0 >
+
+  <SCRIPT LANGUAGE="JavaScript"> 
+
+//  Handle special cases where we need different code 
+//  for Internet Explorer vs. Netscape navigator 
+var InternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+
+//  Handle all the FSCommand messages in a Flash movie  
+function movie_DoFSCommand(command, args) { 
+  // IE and Navgiator have slightly different document object models 
+  // IE treats objects as members of "window" while in Navigator, 
+  // embedded objects are members of "window.document" 
+  var map = InternetExplorer ? parent.flash_frame.movie : parent.flash_frame.document.movie; 
+  //  Evaluate the command string and decide what to do 
+
+  
+  if ( command=="explore" ) { 
+	parent.form_frame.form.image.click();
+	parent.form_frame.form.target.value = args;
+	//parent.form_frame.form.image.focus();
+	
+
+ } else if ( command=="submitIt" ) { 
+		    parent.form_frame.form.submit(); 
+			parent.form_frame.form.reset();
+
+			}
+  }
+  
+
+</SCRIPT>
+	
+	<SCRIPT LANGUAGE="VBScript">
+
+//  Map VB script events to the JavaScript method - Netscape will ignore this... 
+//  Since FSCommand fires a VB event under ActiveX, we respond here 
+
+Sub movie_FSCommand(ByVal command, ByVal args)
+  call movie_DoFSCommand(command, args)
+end sub
+
+</SCRIPT>
+
+
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0"
+ WIDTH=100% HEIGHT=100% name="movie" id=sign_on>
+  <PARAM NAME=movie VALUE="iris_open_flash.swf">
+  <PARAM NAME=quality VALUE=high>
+  <PARAM NAME=bgcolor VALUE=#600000>
+  <PARAM NAME=scale VALUE=1>
+  <EMBED src="iris_open_flash.swf" quality=high bgcolor=#600000  WIDTH=100% HEIGHT=100% scale=1 TYPE="application/x-shockwave-flash"  PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" name="movie"></EMBED>
+</OBJECT>
+
+</BODY>
+</HTML>

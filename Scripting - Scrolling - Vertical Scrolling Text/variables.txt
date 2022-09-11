@@ -1,0 +1,21 @@
+GAME_STUFF=When one of the text fields
+reaches a vertical position defined
+within flash, it automatically returns
+to the bottom of the scroller and 
+picks up another piece of text.
+
+The text can be from an internal
+variable, or from an external source
+such as a file. This is a good
+example of what String.indexOf can do.
+
+The variable index is used as a 
+start point and end as the end point
+for use with String.slice.
+
+Carriage return characters "\r" are
+used in order to search for lines
+of text.
+
+Gav.
+

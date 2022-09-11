@@ -1,0 +1,44 @@
+Movie Report
+------------
+
+Frame #    Frame Bytes    Total Bytes    Page
+-------    -----------    -----------    ---------------
+    1         40613          40613        Scene 1
+
+Page                       Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+Scene 1                        8654            48
+
+Symbol                     Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+Tween 5                           0             0
+Tween 4                          79             0
+mMagicBubbles                 12037             0
+gBubblesSet2                      0             0
+gBubblesSet1                      0             0
+gPipe                             0             0
+minstrument                       0             0
+mPipe4                          336             0
+mPipe3                          124             0
+mPipe2                          113             0
+MPipe1                           84             0
+mMain                             0             0
+gTriggerHit                      58             0
+gtirggercover                    64             0
+mBall                           125             0
+gBall                             0             0
+mBubbleInstrument              3214             0
+gOuterPush                      162             0
+gInnerPush                      175             0
+mBubbles                        110             0
+mSmallBubble                      0             0
+gBubbles                          0             0
+gSmallBubbles                    60             0
+mGurrams                       1749            41
+
+Tweened Shapes: 6314 bytes
+
+Font Name                  Bytes       Characters
+-----------------------    --------    -----------
+Haettenschweiler              399        'amrsu
+Arial Black                   318         Heirt

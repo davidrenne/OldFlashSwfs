@@ -1,0 +1,4 @@
+author Carlos Zumbado "kadazuro"
+email  kadazuro@yahoo.com
+website http://www.godesignz.com
+Description: allow your users to set the volume level

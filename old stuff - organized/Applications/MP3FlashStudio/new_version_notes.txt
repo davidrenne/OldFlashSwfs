@@ -1,0 +1,5 @@
+New Version notes
+
+would like a sorting system. alphabetical and numerical if possible. but I'll take either as well :o)
+
+password protection system for the folders and objects. <folder password="god">

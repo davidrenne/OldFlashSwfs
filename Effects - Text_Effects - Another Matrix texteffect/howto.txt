@@ -1,0 +1,28 @@
+Another Matrix texteffect
+------------------------------------------------------------
+Mark H. Kathmann - mark@kathmann.com
+
+
+1. Create an alphabet of the letters you want to use.
+
+   NOTE: this FLA uses a copyrighted font, Frutiger.
+   If you do not have this font on your system the letters
+   might not come out right.
+
+2. Create a movie clip for each letter that has to be
+   animated. The movie clip contains the letters leading up
+   to the final one appearing and fading out, with the final
+   letter staying at the top.
+
+3. Line up the movie clips on the stage.
+
+4. Make the movie clips fade out slowly as soon as they
+   appear. Also don;t make them appear all at once, but
+   "scatter" the appearances.
+
+5. There is no 5. You're done.
+
+
+You can play around with the timing and which letters to
+use for the leading-up fades as much as you want. In this
+samply I just followed the alphabet.

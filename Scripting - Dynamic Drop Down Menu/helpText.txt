@@ -1,0 +1,104 @@
+//
+// author: 	nathaniel weinham
+// site:	www.weinham.com
+// home:	Portland, Oregon, The Good East Side
+// title: 	dynamic drop down menu & multi-variable text file
+// date: 	november, 2000
+// shoutout:	thanks to all the people who answer questions at all hours 
+//		on the bulletin boards.	You are making a big difference in 
+//		a lot of lives around the world! And you, person reading 
+//		this now, share the love, give back to the community, teach.
+//
+// NOTE: 
+// The format of this text file should be as follows;
+// TEXT FILE FORMAT:
+// 1) There must be at least one variable named TOC and one variable named Home.
+//	TOC = Table Of Contents, the items you list in this varialbe are the very 
+//	same items which will appear in your drop down menu. One of them is "Home".
+//	Home = This is the "Home Screen" displayed before an item has been selected
+//	by the user. You'll generally want to put "Welcome" type info here.
+// 2) The TOC variable must be coma delimeted w/out spaces ({a,b} vs {a, b}).
+//	Don't put spaces after the comas. These items are going to be separated and 
+//	and put into an array inside the Flash movie.
+// 3) Each item in TOC must exactly verbatum precisely correspond to a var below.
+//	If an item appears in your drop down menu but nothing shows when you click on 
+//	it, check to make sure the title used in the variable TOC is a perfect match to 
+//	the variable used farther down in the text file.
+// 4) Using HTML format in the text file...
+//	The following HTML tags are supported in editable text boxes: 
+//	 <A>,<B>,<FONT COLOR>,<FONT FACE>,<FONT SIZE>,<I>,<P>,<U>
+//	Use these wisely, they are a great help.
+// 5) Special Characters must often be used to make sure your text comes out formatted
+//	in the way you intended. Yes, this is a pain in the ass to do in a text file and 
+//	by hand. You will have to experiment with the following special characters to 
+//	see just how they'll alter your final text presentation. Remember, text boxes will
+//	display differently online than in test-mode. Toy around with using a real carriage 
+//	return and the special character equivalent.
+// 	%0A = Line Feed 
+// 	%0D = Carriage Return 
+// 	%20 = Space 
+// 6) The final variable in this text file should remain as it is, we'll use it in our 
+//	Flash script to find out if the whole text file has been loaded yet.
+// 7) Araucaria Araucana is most commonly known as the "Monkey Puzzle Tree".
+// 
+//
+// VARIABLES:
+//	
+&TOC=Home,Straight Dope,Too Much Coffee Man,Flash 5,Break Dancing,Puddletown,Do Good&
+//
+&Home=<font size="16" color="#663300" face="arial">Welcome%0AWillkommen%0ABenvenuto%0AMottakelse</font>
+<font size="12" color="#336600" face="arial">What up holmes. This here is the <b>Dynamic Drop Down Menu</b> tutorial and there is a <b>lot</b> you can learn in here. Just click on the menu bar above to see how this sucka performs.
+You'll find everything you need in this download;%0A<b>FLA</b> - Contains all the guts.%0A<b>SWF</b> - The glorious result of your labor.%0A<b>TXT</b> - Power, that's what you'll wield when you see how easy it is to start using text files!
+Download this tute and pop open the <b>fla</b> so we can see what's under the hood. <b>Look in the <i>notes</i> frame script in frame 1 of scene 1 for more information.</b>
+Now Git!</font>&
+//
+&Straight Dope=<font size="16" color="#663300" face="arial">Straight Dope</font>
+<font size="12" color="#336600" face="arial">Taking a look at Flash 5 and it's new capabilities, namely the new and improved <b>actionScripting</b> language, it becomes clear that Flash has finally entered the arena of tomorrow's <b>User Interface</b> design tools.
+Sure, lot's of folks are making movies and that's fun, entertaining and educational, but Flash also has the power to remove us from the boxy world of microsoft windows and allow us to design navigation systems which are as unique as the minds behind them.</font>&
+//
+&Too Much Coffee Man=<font size="16" color="#663300" face="arial">Too Much Coffee Man</font>
+<font size="12" color="#336600" face="arial"><a href="http://www.tmcm.com/" target="_blank"><u>www.toomuchcoffeeman.com/</u></a>
+You know what I'm talking about. This is the comic book that's brought a whole new audience to comic books. Henry Rollins even reads it. You don't have to like it but I do so it's here.</font>&
+//
+&Flash 5=<font size="16" color="#663300" face="arial">Flash 5</font>
+<font size="12" color="#336600" face="arial">We're seeing a lot of Flash in websites, I'd like to see more stand-alone interfaces. The web is great and we don't need to stay w/in the borders of web browsers. C'mon Earth, You can do it!
+And here's a snippet from the Macromedia web site (<a href="http://www.macromedia.com/" target="_blank"><u>www.macromedia.com/</u></a>) 
+<i>Design and deliver distinctive, low-bandwidth Web Sites with Macromedia Flash 5, the professional standard for producing high-impact Web experiences, used by over half a million Web authors worldwide. Designers easily create engaging graphics with the familiar Macromedia user interface, and developers build advanced Web applications using scripting, forms, and server-side connectivity.</i></font>&
+//
+&Break Dancing=<font size="16" color="#663300" face="arial">Break Dancing</font>
+<font size="12" color="#336600" face="arial">OK, I didn't write a word of this, I just totally swiped it from the BreakDance.com site (<a href="http://www.breakdance.com/" target="_blank"><u>www.breakdance.com/</u></a>) goto "moves". Breakdancing has never died.
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+6-Step (also called DownRock):
+This is the basis of bboyin. Its the thing people do when they first hit the floor. It looks like yer sitting there with your legs flying around you.
+Like the name says, it has six steps.
+These instructions are for doing the move counter-clockwise, as are most moves.
+To start, get in the position like you would to do a push up, but with your feet spread about 2 or so feet apart.
+Step 1: Lift your right hand, and move your left where your hand used to be.
+Step 2: Move your right leg forward so your knees are close, but keep your left leg where it is.
+Step 3: Pull your left leg in as your right leg stays where it is.
+Step 4: Swing your right leg in a WIDE arc kinda like how peeps do that coffee grinder thing Switch hands, so now you're right hand is down, left hand up. Keep your right leg swinging around.
+Step 5: Your right leg swings around and wraps around your left. You have your face down and both hands on the floor. Extend your left leg first, then your right leg. This is important to making it look right.
+Step 6: Now you're in the starting position, continue with step 1
+That's how the 6-step is done. You'll see it often referred to in other moves such as mini flare, swipes,and other stuff.
+You will start most moves from the 6-step. All the power moves that you do on the ground (except flares) can only be started from 6-step and look good.
+Some Moves from 6-step:
+Mini Flares/Baby Flares-This is kind of a half flare. All you do is swing both feet up in front of you like a flare, on step 2. Lots of people dont know how this ends up, but its simple. Both feet go back around you and you end up in step 4/5. Windmills can be put in on step 2
+Go to Crickets/Jackhammers/other similar moves from step 5.
+Most other moves, you can figure out where it can fit just cuz it feels comfortable that way. Good luck and practice a lot
+-By b-boy decibel, I learned it and adapted this from Bboy Neko</font>&
+//
+&PuddleTown=<font size="16" color="#663300" face="arial">Puddletown</font>
+<font size="12" color="#336600" face="arial">Portland, Oregon
+Livin' large on the Good East Side from Sellwood through Brooklyn accross Sunnyside (that's right, it's not Hawthorne) up onto Burnside. Portland is the best, but don't think you can move here just 'cause I love it. It's too <b>hard</b> for you. Hard <i>rain</i> that is, rains more than a baby cries, but when you gotta home it's a home.
+Peace to the East, and the South, North and the West.
+sePDX</font>&
+//
+&Do Good=<font size="16" color="#663300" face="arial">Do Good</font>
+<font size="12" color="#336600" face="arial">thanks to all the people who answer questions at all hours on the bulletin boards. You are making a big difference in a lot of lives around the world! And you, person reading this now, share the love, give back to the community, teach.</font>&
+//
+//
+// leave this one as is.
+&Loaded=done&
+//
+//
+// done

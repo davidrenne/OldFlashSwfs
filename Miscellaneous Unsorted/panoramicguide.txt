@@ -1,0 +1,26 @@
+Panoramic View:
+
+1). Open the library for this *.fla
+2). Open the MovieClip 'picture holder'
+3). Delete the old picture 'Panorama_Vorschau.jpg' 
+    from this MC. (i.e. movie-clip).
+4). Now import your picture: File/Import placed it
+    on the MC 'picture holder' and then CENTER the
+    picture - Highlight/mark the picture and do ALIGN.
+5). Go 'Scene 1' and see if the picture fits the stage,
+    if not choose: Modify/Movie - Dimensions.
+6). You can delete the MASK on 'Scene 1' and the Text.
+
+Thanx for the all the people who uploaded their
+OPEN-FLAs on various flash-help-sites.
+I haven't invented the 360'degrees slider neither
+the actionsscripts use in this FLA - its all
+based on other peoples work - keep that in mind.
+
+I have done improvemnets  - though :-) and made
+it in Flash5 rather than Flash4 using some extra
+script that onlu work in only flash5.
+
+There you go - Henrik Dahm, henrik.dahm@mail.dk
+
+

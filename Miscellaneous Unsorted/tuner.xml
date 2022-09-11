@@ -1,0 +1,64 @@
+<rn-tunergenres>
+<genres mod="1">
+<genre
+	name="&Alternative"
+	urlparam="format=260"
+	pos="2"
+/>
+<genre
+	name="&Blues"
+	urlparam="format=115"
+	pos="3"
+/>
+<genre
+	name="&Classical"
+	urlparam="format=116"
+	pos="5"
+/>
+<genre
+	name="Co&untry"
+	urlparam="format=121"
+	pos="7"
+/>
+<genre
+	name="&Easy Listening"
+	urlparam="format=497"
+	pos="8"
+/>
+<genre
+	name="&Gospel"
+	urlparam="format=500"
+	pos="11"
+/>
+<genre
+	name="&Latin"
+	urlparam="format=380"
+	pos="14"
+/>
+<genre
+	name="&News"
+	urlparam="format=19"
+	pos="15"
+/>
+<genre
+	name="Ol&dies"
+	urlparam="format=122"
+	pos="16"
+/>
+<genre
+	name="&Rock"
+	urlparam="format=261"
+	pos="20"
+/>
+<genre
+	name="&Sports"
+	urlparam="format=7"
+	pos="24"
+/>
+<genre
+	name="&Talk"
+	urlparam="format=503"
+	pos="25"
+/>
+</genres>
+</rn-tunergenres>

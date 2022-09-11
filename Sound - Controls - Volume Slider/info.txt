@@ -1,0 +1,4 @@
+author kadazuro
+email  kadazuro@yahoo.com
+website http://www.godesignz.com
+Description: a slide windows-like volume control

@@ -1,0 +1,322 @@
+
+                                     GHOST 20000
+                                              
+                             (C)2000 by Digital Vision
+
+                              Created by Cosmin Suciu
+                               and Armand Niculescu
+
+The souce code of Photo Blocks is provided free of any charge but without any support
+or warranties of any kind. Digital Vision assumes no responsibilities with regard
+of this game. 
+
+This game is intended for you to learn Flash programming and hopefully create better 
+and more innovative games. We would appreciate if you add a line stating that your
+game is based on our code.
+
+
+Global Variabiles 
+-----------------
+  maze_x, maze_y: origin on a screen of the labyrinth
+  maze_w, maze_h: size of the labyrinth in units.
+                  NB: this value is directly related with strings m[]
+  m1..m20       : the strings what contain information of labyrinth
+                  NB: the length of one string must be equal with
+                      maze_w and the number of the strings must be 
+		      equal with maze_h 
+  m		: it contains the matrix of the game, m is equal with
+		  m=m1 & m2 & .. & m20;
+		  It's used one variable just for simplicity of operation.
+                  
+		  m string will contain information by Labyrinth
+                  coded in this mode:
+                  - "1" : wall
+                  - " " : empty
+                  - "." : small score
+                  - "*" : big score
+                  - "O" : ghost
+		  - "o"	: worm hole
+		  - "c" : character
+			
+
+ nr_level       : specify the number of levels
+ start          : it let me to go in Label-Before,if start=1 go in
+                  Label 3,e else the game waits while start=0 in 
+                  Label-Init
+                  If I push the button Start, start variable become 1,
+		  start=1;
+ pause		: used to freeze the game temporarily, if pause=1 the game 
+		  is frozen else the game runs
+   		  If I push button Pause and 
+			if(pause=0) pause=1
+			else if(pause=1) pause=0			
+
+ object         : initially "object" is equal with the number of all 
+                  objects from labyrint can be eaten
+
+ score          : It tells the number of objects eaten
+ life           : It tells the number of lives on textfield-life 
+                  called Life
+
+
+Character Variables
+--------------------
+
+ MazeXYval      : It shows the object from position determinated by 
+                  index from matrix for caracter
+ chr_x          : it represents the current position on orizontal for 
+                  character 
+ chr_y          : it represents the curent position on vertical for 
+                  character
+ chr_abs_x, chr_abs_y : Used to hold character's position relative to screen
+ posg_abs_x,posg_abs_y: Used to hold ghost's position relative to screen
+
+
+Ghost varibles
+----------------
+ MazeXYvalg[]   : It's the object from the current position of ghost[counter] 
+                  which was  stored
+ MazeXYvalg     : It shows the object from position determinated by 
+                  index from matrix for ghost 
+ address_ghost[]: It contains the start position for ghost[counter]
+ address_ghost  : It's local variable and is equal with address_ghost[]
+ posg_x[counter]: it's represent the x position in the matrix for 
+                  ghost[counter] 
+ posg_y[counter]: it's represent the y position in the matrix for 
+                  ghost[counter] 
+ ghost_nr       : It's represent the number of ghosts from matrix  
+ counter        : It's a counter for ghost, it's tells me the number of
+                  ghost 
+ run 		: behaviour of the ghost, if run=0 the ghost comes after 
+                  me (Pacman) else the ghost runs away from me and Pacman
+		  can eat the ghosts
+ run_time       : determines the time interval for ghost to run away
+                  from me 
+ state,kill     : If state=1 the ghost colour is green else the ghost 
+                  colour is red which means for state =0 ghost comes 
+                  after me  else if state=1 ghost runs away from me 
+
+ makepos        : It checks if the ghosts make a movement.
+                  If the ghosts make a movement 
+                         makepos=1 
+                      else makepos=0
+ posg_x         : It's a local variable,it's equal with posg_x[counter]
+                  which means for every ghost it takes other values 
+ posg_y         : It's a local variable,it's equal with posg_y[counter]
+                  which means for every ghost it takes other values 
+ oldg_x         : It's a local variable,it's equal with old position 
+                  of the ghost on the horizontal
+ oldg_x         : It's a local variable,it's equal with old position 
+                  of the ghost on the vertical
+ 
+ priority       : It's number at random in the interval 1..4
+last_direction[]: It reminds the last direction of movement for ghost[counter]
+                  with this variable I forced the ghost to go ahead
+ last_direction : It's local variable it's equal with last_direction[counter]
+ 
+ 
+
+Worm_Hole Variables
+--------------------
+
+ posw_x[worm_counter]: it represents the x position in the matrix for 
+                       worm[worm_counter] 
+ posw_y[worm_counter]: it represents the y position in the matrix for 
+                       worm[worm_counter] 
+ worm_nr             : It represents the number of all worms from 
+                       matrix  
+ worm_counter        : It's a counter for worm-holes ,it's tells me the
+                       of number of worm-holes 
+
+ 
+Timing Variables
+-----------------
+ speed          : specifies the speed of the ghost to catch-me (Pacman),
+                  or run from me, it's time period in which the ghost 
+                  perform the new movement
+ time           : It's equal with Gettimer
+ clk            : It's equal int(time/speed) 
+ t              : It's temporal variable for testing equal with GetTimer
+ delay          : delay=GetTimer+500 
+                  It's used for freezing the game if a ghost was 
+                  eaten for a period of time or a ghost stoles a life 
+
+Other Variables
+---------------
+read_x, read_y       : Used to read an element from the m[] matrix
+i, k                 : Used for loop iterations
+index                : Used when duplicating movie clips, to assign an unique number
+firststring          : It's a part of the matrix ranged below the index-1 
+secondstring         : It's the second part of the matrix after index+1
+dif_pos_x            : It's equal with diference from character x position 
+                       and ghost x position ; chr_x-posg_x
+dif_pos_y            : It's equal with diference from character y position 
+                       and ghost y position ; chr_y-posg_y
+
+string               : it's a temporary variable which contains 16 symbols ;
+                       4 symbols for every priority ,these simbols represent
+                       the name of Label and direction of movement for ghosts
+   		      The symbols are: L-LEFT,R-RIGHT,U-UP,D-DOWN; 	
+begin_read_string    : It represents the begining position to read the
+                       4 symbols to create a movement priority
+                       Begin position can take the values: 1,4,8,12
+
+substring            : It's a temporary variable which contains name of 
+                       Label " to call" got from position begin_read_string+1
+		       where i is a local variable used in a while instruction
+   					
+							
+
+Subroutine
+---------
+1. Init 
+   Initiates some variables
+   IN: start
+   OUT: N/A
+
+2. Label 2
+   It waits for variable start to be equal 1, if not it goes to label
+   in it 
+   IN: N/A
+   OUT: N/A
+
+3. Label 3
+   Initiates some variables and it calls the matrix coresponding to
+   the level and it calls "GenerateMaze"
+   IN: N/A
+   OUT:N/A 
+
+4. Label Loop
+   It checks life variable and object variable and it makes 
+   something for each case (increment lives ,decrement lives,decrement
+   object while object>0) 
+   IN: life,object
+   OUT:object,life,score,level_nr
+
+5. Label 6 
+   It checks the state of the ghost (red or green) and it calls the ghost
+   to do their movement and make "Go to Play Loop"    
+   IN: run
+   OUT:object,life
+
+
+6. Label Matrix[]
+   It contains the variables m1...m20 which characterise the labyrinth
+   IN: N/A
+   OUT:N/A
+
+
+7. Label ReadGhostPos 
+   It read the next position of the ghost from the matrix of labyrint 
+   IN: posg_x, posg_y
+   OUT: MazeXYvalg
+
+8. Label ReadMazePos
+   It reads the value of an element on the matrix of the labyrinth
+   IN: read_x, read_y
+   OUT: MazeXYval
+
+9. Label GenerateMaze
+   It draw the labyrint.
+   NB: In finally, the walls will not be not drawn,but the eating 
+   points,the labyrinth walls being drawn by hand according 
+   to the matrix 
+   IN: N/A
+   OUT: N/A
+
+10.Label MoveCharacter
+   It moves the character at a new location of the labyrinth.
+   It converts the relative value of the matrix in the absolute value of 
+   the screen  
+   IN: chr_x, chr_y
+   OUT: N/A
+
+11.SlideCharacter
+   It prepares the movement of the caracter :it checks if the new 
+   position which the character should occupy is free, and if it is free,
+   it calls MoveCaracter
+   IN: newchr_x, newchr_y
+   OUT: N/A  	
+
+12.Label Ghost
+   It checks if the time period divides by speed and it chooses a priority
+   movement for every ghost and it calls DetDirection and it calls 
+   SignPosGhost and it calls PosGhost
+
+13.Label Delay
+   It contains a while instruction with which wait while delay>t
+   where t=Gettimer and delay=gettimer+500 at one moment of time.       
+
+14.Label DetDirection
+   After I choose a movement priority ,with DetDirection call symbol by symbol
+   from string which had symbols D,L,R,U in order given by the priority. 
+
+15.Label CheckRun
+   It checks if the Packmen can eat the ghosts or can be eaten by the ghosts. 
+   IN: life 
+   OUT:life,posg_x, posg_y  	
+
+16.Label SignPosGhost
+   It has the folowing efects:
+   Restore the  last position ocupied by Ghosts,store the object from 
+   the new position of the ghost and put in the matrix (m-variable which 
+   contains the matrix) "0" in new position 
+   IN: posg_x, posg_y
+   OUT: m
+
+17.Label PosGhost
+   This Label has the role to put on the screen the ghosts on coordonates
+   posg_abs_x,posg_abs_y.
+   IN: posg_x, posg_y
+   OUT: N/A
+
+18.Label D/U/L/R
+   Make Down/Up/Left/Right movement for ghost
+   IN:last_direction[],posg_x,posg_y,makepos
+   OUT:last_direction[],posg_x,posg_y,makepos
+
+19.Label Worm_Hole
+   If the character takes a position ocupied by a worm-hole then the 
+   character position is equal with position of a worm-hole at random
+   minus current worm-hole
+   He contains a loop while instruction which put in a string all worm_hole
+   minus the curent worm-hole and after this I extract from the string one 
+   worm-hole at random and newchr_x,newchr_y is equal with the position 
+   of the worm-hole.      
+   IN: newchr_x, newchr_y
+   OUT:newchr_x, newchr_y  	
+
+20.Label Message
+   It's used for duplicated the movie clip backround in backroun1 and 
+   put on the screen. 
+   IN: N/A
+   OUT:N/A
+
+
+Library Objects
+---------------
+Background (Movie Clip): Used beneath the playing area.
+                         It is animated when starting a game, going to the next level
+                         and so on.
+Character(Movie Clip)  : It's our character ,with him we play the game 
+Ghost(Movie Clip)      : This are some ghosts used in the game, one frame
+smallscore(Movie Clips): It's heart which can be eaten by character and If was eaten 
+                         score become score+1.
+bigscore (Movie Clips) : It's heart which can be eaten by character and If was eaten,
+                         character can eat the ghosts and the life=life+1.
+worm_hole              : It's worm-hole from which the character can be
+                         cast in other position of other worm-hole  on 
+                         the labyrinth 
+
+Button Start (Buttons) : Used when begin a new game or a new level.
+Button Pause (Button)  : Used when you want to freez the game. 
+Button Invisible(Buttons): Used when the character go left,right,up or
+                           down in labyrinth
+Messages (Movie Clip)  : Movie clip used to display 4 different messages.
+                         Click start from an adventure with Packman,Click Start for next 
+                         level,Congratulation You Win Click Start for a new game
+                        ,The Game is Over
+Wall (Movie Clip)      : This is the labyrinth with all objects from game
+
+Score (textfield)      : This is a texfield where apear the cotains of score variable 
+Life  (textfield)      : Lists the highest 10 scores, variables are taken from /highscore

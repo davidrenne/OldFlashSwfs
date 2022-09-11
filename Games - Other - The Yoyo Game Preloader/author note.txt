@@ -1,0 +1,11 @@
+Hi there...
+
+as you will see, the movie is really simple. It might look like a complex programming but not at all. I know nothing about actionscripting and all these things. The game itself is just a "goto" concept. It's only a little time wasting game. You can use it as a preloader. Just ad a "On frame loaded" to get to your main content.
+
+It IS FREE!!! THE ONLY THING I AM ASKING YOU, IF YOU USE IT, IS TO LEAVE MY NAME AND EMAIL AT THE BOTTOM OF THE MOVIE.
+
+If you have any other suggestions, i'll be happy to work with you.
+
+
+Yan Theriault
+yanbuzz@hotmail.com

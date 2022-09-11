@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<TITLE>Shockwave</TITLE>
+</HEAD>
+<BODY bgcolor="#000000" onload="init()">
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+temp  = '<SCRIPT LANGUAGE="VBScript"\> \n'
+temp += '<!--\n'
+temp += 'Sub firefly_FSCommand(ByVal cmd, ByVal arg) \n'
+temp += 'call firefly_DoFSCommand(cmd, arg) \n'
+temp += 'end sub \n'
+temp += 'Sub init() \n'
+temp += 'call init() \n'
+temp += 'end sub \n'
+temp += 'Sub butts(ByVal x, ByVal y) \n'
+temp += 'call butts() \n'
+temp += 'end sub \n'
+temp += 'Sub update() \n'
+temp += 'call update() \n'
+temp += 'end sub \n'
+temp += '-->\n'
+temp += '</SCRIPT\> \n'
+document.write(temp);
+
+var InternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+var bugbutts = new Array(5);
+var counter;
+
+function init(){
+	bugbutts[0] = new Array(5);
+	bugbutts[1] = new Array(5);
+	bugbutts[2] = new Array(5);
+	bugbutts[3] = new Array(5);
+	bugbutts[4] = new Array(5);
+	counter=0;
+	for (x=0;x<5;++x){
+		for (y=0;y<5;++y){
+			bugbutts[x][y]=Math.round(Math.random());
+		}
+	}
+}
+
+function update(){
+  	var fireflyObj = InternetExplorer ? firefly : document.firefly;
+	for (x=0;x<5;++x){
+		for (y=0;y<5;++y){
+			fireflyObj.TGotoFrame("_flash0/bug"+x+y, bugbutts[x][y]);
+		}
+	}
+}
+
+function butts(xpos, ypos){
+	if ((bugbutts[xpos][ypos])==0){
+		bugbutts[xpos][ypos]=1;
+	}else{
+		bugbutts[xpos][ypos]=0;
+	}
+	if (xpos>0){
+		bugbutts[xpos-1][ypos]=(bugbutts[xpos-1][ypos])-1;
+		if (bugbutts[xpos-1][ypos]==-1){
+			bugbutts[xpos-1][ypos]=1;
+		}
+	}
+	if (ypos>0){
+		bugbutts[xpos][ypos-1]=(bugbutts[xpos][ypos-1])-1;
+		if (bugbutts[xpos][ypos-1]==-1){
+			bugbutts[xpos][ypos-1]=1;
+		}
+	}
+	if (xpos<4){
+		bugbutts[xpos+1][ypos]=(bugbutts[xpos+1][ypos])-1;
+		if (bugbutts[xpos+1][ypos]==-1){
+			bugbutts[xpos+1][ypos]=1;
+		}
+	}
+	if (ypos<4){
+		bugbutts[xpos][ypos+1]=(bugbutts[xpos][ypos+1])-1;		
+		if (bugbutts[xpos][ypos+1]==-1){
+			bugbutts[xpos][ypos+1]=1;
+		}
+	}
+}
+
+// Handle all the the FSCommand messages in a FutureSplash movie
+function firefly_DoFSCommand(command, args) {
+  var fireflyObj = InternetExplorer ? firefly : document.firefly;
+	var temp1 = 0;
+	var temp2 = 0;
+	if (command=="update"){
+		update();
+	}
+	if (command=="togglebug"){
+		butts(parseInt(String(args).charAt(0)), parseInt(String(args).charAt(1)));
+		update();	
+	}
+  // Place your code here...
+}
+//-->
+</SCRIPT>
+
+<!-- Aftershock firefly.swf 3=450 4=300 5 32 40 26 -->
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=3,0,0,0"
+ ID=firefly WIDTH=450 HEIGHT=300>
+  <PARAM NAME=movie VALUE="firefly.swf"> 
+  <PARAM NAME=quality VALUE=high> 
+  <PARAM NAME=bgcolor VALUE=#000000> 
+<EMBED SRC="firefly.swf"
+ NAME=firefly swLiveConnect=TRUE WIDTH=450 HEIGHT=300
+ QUALITY=high BGCOLOR=#000000
+ TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+</EMBED></OBJECT><!-- EndAftershock firefly.swf -->
+</BODY>
+</HTML>

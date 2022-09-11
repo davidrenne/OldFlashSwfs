@@ -1,0 +1,1 @@
+timeout=10&numBanners=4&banner1URL=blockbuster.com&banner2URL=launch.com&banner3URL=casino.com&banner4URL=real.com&result=okay

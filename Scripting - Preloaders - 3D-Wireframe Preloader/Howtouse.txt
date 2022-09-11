@@ -1,0 +1,40 @@
+Author: Roland Schär 	
+E-Mail: roele33@hotmail.com	
+Date:	14.09.00	
+Page: www.go.to/roele
+
+
+
+
+
+How to use ?
+
+
+Kopiere das fla file in das Verzeichnis  
+     ---------------------------------------------
+     c:\Program Files\Macromedia\Flash 5\Libraries
+     ---------------------------------------------
+
+2. Während du in Flash5 bist starte das menu :
+     ---------------------------------------------
+     Window > Common Libraries > 'Preloader v5' [will appear if step 1 done]
+     ---------------------------------------------
+     ------------
+    see "pic1.gif" 
+     ------------
+
+3a. lasse das 1 Frame als 'blank keyframe' . 
+ 
+ b. markiere frame 1, ziehe den clip 'Preloader v1' 
+     ------------
+    see "pic2.gif"
+     ------------
+    in deine Arbeitsebene
+    [füge dem  frame 1 die Aktion  = 'stop' hinzu]
+   
+4.  
+     ------------
+    see "pic3.gif"
+     ------------
+
+5. that's all

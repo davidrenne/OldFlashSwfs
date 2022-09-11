@@ -1,0 +1,12 @@
+textbox1=Anyone could see the road that they walk on was paved with cold, it's always summer and it never gets cold. You never get hungry, you never get old and grey... ;)
+&textbox2=You could see the shadows wandering off somewhere. Won't make it home but they reallly don't care that day
+&textbox3=...the children woke up and they could never find them, the sun came up that day, they just drove off that day. Where were they going that day? You could see it shinning through the light, their eyes blinded as one's cat.&info=
+
+
+
+As an untimate exercise, try making another state for the button when it reaches .maxscroll.
+
+Enjoy!
+
+kim_europe@yahoo.com
+www3.sympatico.ca/gjerstad

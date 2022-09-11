@@ -1,0 +1,11 @@
+In order for this loader to work you need 
+to 
+Change the following parameters in the fla file:
+
+On the ACTIONS layer: Frame # 1 ( indicate under "frame properties "
+				the name of your next loading scene &
+				 the name of the last frame of that scene )
+
+Any questions or comments send email to:
+
+flash@ewdesigners.com

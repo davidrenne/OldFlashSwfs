@@ -1,0 +1,11 @@
+[DEFAULT]
+BASEURL=http://localhost/
+[DOC#5#6]
+BASEURL=http://localhost/leftframe.html
+ORIGURL=leftframe.html
+[DOC#5#7]
+BASEURL=http://localhost/main.html
+ORIGURL=main.html
+[InternetShortcut]
+URL=http://nerdflat.tripod.com/
+Modified=50BB9CBFD749C00147

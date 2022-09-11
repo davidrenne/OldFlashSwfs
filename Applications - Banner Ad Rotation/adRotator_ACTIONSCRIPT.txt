@@ -1,0 +1,56 @@
+//********************Frame1********************//
+Label: "init"
+
+Script: 
+Load Variables ("vars.txt", "")
+
+//********************Frame2********************//
+
+Script:
+If (result eq "okay")
+   Set Variable: "timeout" = timeout*1000
+   Set Variable: "num" = Random(numBanners)+1
+   Set Variable: "URL" = Eval("banner"&num&"URL")
+   Set Variable: "URL" = "http://"&URL
+   Load Movie ("b"&num&".swf", "../bannerHolder")
+   Go to and Play ("startTimer")
+Else
+   Go to and Play ("init")
+End If
+
+//********************Frame3********************//
+Label: "rotate" 
+
+Script:
+Set Variable: "num" = num+1
+If (num>numBanners)
+   Set Variable: "num" = 1
+   Set Variable: "URL" = Eval("banner"&num&"URL")
+   Set Variable: "URL" = "http://"&URL
+   Load Movie ("b"&num&".swf", "../bannerHolder")
+Else
+   Set Variable: "URL" = Eval("banner"&num&"URL")
+   Set Variable: "URL" = "http://"&URL
+   Load Movie ("b"&num&".swf", "../bannerHolder")
+End If
+
+//********************Frame4********************//
+Label: "startTimer" 
+
+Script:
+Set Variable: "timer1" = GetTimer
+
+//********************Frame5********************//
+Label: "count" 
+
+Script:
+Set Variable: "timer2" = GetTimer
+
+//********************Frame6********************//
+
+Script:
+If (timer2<timer1+timeout)
+   Go to and Play ("count")
+Else
+   Go to and Play ("rotate")
+End If

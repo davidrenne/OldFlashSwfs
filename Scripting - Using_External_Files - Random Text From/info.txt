@@ -1,0 +1,7 @@
+spruch1= Cybercollege - Text Generator
+&spruch2= Just a Random Text Generator
+&spruch3= How are you ?
+&spruch4= Just kidding !
+&spruch5= Merry Christmas and a Happy New Year
+&spruch6= Millenium Bug - Get a gun to kill it !
+&numvars=6

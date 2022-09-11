@@ -1,0 +1,1 @@
+&info=This is a demonstration of using an external text file and then presenting it like a ticker style text box.

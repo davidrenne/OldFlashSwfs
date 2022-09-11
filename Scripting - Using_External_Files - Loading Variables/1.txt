@@ -1,0 +1,12 @@
+var1=This is an example of how to load multiple variables into one variable without having to make duplicate frames and variables.  Complete with adjustable length and size, which is done through variable checking (If statements).  This is so you don't end up having blank content. This is similar to sorting through array's.
+Use the buttons at the bottom to scroll through the content.
+&var2=This is an example of the amplification system used on www.molototvbliss.com visit the page by click on the button above.  
+If your having problems with spacing when doing carriage returns in the text file to format.  I suggest downloading a small application (freeware) called, ToX v1.0.  It will allow you to encode a text file into UNIX format so you won't get the double carriage returns.  You can download this small application at http://simtel.saix.net/pub/simtelnet/win95/txtutl/tox.zip
+&var3=When editing the text file and adding more or less variables be sure and update the numvars variable located in the text file that the variables are loaded from. Open up 1.txt, add a var like so, var5=blah Then update the numvars=5.  Be sure and put the and symbol (SHIFT+7) in front of your variables.
+&var4=If are you needing to scroll through the content (ie. your text gets cutoff) use the arrow keys to the right. This is done by setting a variable like so: var.scroll = var.scroll plus 2 or minus 2.  
+Use the buttons to the right now.
+
+
+See how it scrolls through the content?
+Find any of this useful, let me know boomer@molotovbliss.com
+&numvars=4

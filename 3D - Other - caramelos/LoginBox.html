@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<TITLE>Flash 5:  Password Protection:  Multiple Users:  External File</TITLE>
+<!-- Flash 5 Login Box By:  Richard Alanis 5/31/2001 raalanis@hotmail.com -->
+<!-- If you use this page and the LoginBox.swf, please pass credit my way... -->
+</HEAD>
+<SCRIPT LANGUAGE=JavaScript>
+function initMovieVars(){
+	// Make sure you give the FLASH object an 'ID'; in this case I used 'LoginBox'.
+	var flashLogin=(document.all?window.LoginBox:document.LoginBox); // need 'document.' part for Netscape. For some reason, in Netscape, you have to hit 'RELOAD' a couple of time for this movie to work...
+	flashLogin=(document.all?window.LoginBox:document.LoginBox); // need 'document.' part for Netscape. For some reason, in Netscape, you have to hit 'RELOAD' a couple of time for this movie to work...
+
+	flashLogin.SetVariable("msgBoxText", "\nMembers-Only\nArea!"); // Text that appears in MsgBox area; use '\n' for carriage return...
+	flashLogin.SetVariable("startX", "150");
+	flashLogin.SetVariable("startY", "100");
+	flashLogin.SetVariable("xScale", "2");
+	flashLogin.SetVariable("yScale", "2");
+	flashLogin.SetVariable("maxDelay", "4000"); // delay before redirection...
+	flashLogin.SetVariable("redirectSite", "http://www.netscape.com");  // if login fails, send them here...
+	flashLogin.focus(); // sets focus to MC so textbox will accept keystrokes...
+}
+</SCRIPT>
+
+<BODY bgcolor="#FFFFFF" onLoad=initMovieVars();>
+<center>
+<BASEFONT>
+<TABLE BORDER=0 WIDTH=500 CELLPADDING=3 CELLSPACING=0>
+	<tr>
+		<td>
+			<font FACE="helvetica, arial, geneva"> Rather not have one password for access to the "Members-Only" section of your site?  Well, along comes this little&nbsp;Flash 5&nbsp;gem.  You can set up a separate username and password for as many members as you want, and even give them a different page to go to after logging in!
+			<br><hr></font>
+		</td>
+	</tr>
+</TABLE>
+</BASEFONT>
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+   codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0"
+ ID=LoginBox WIDTH=300 HEIGHT=200>
+ <PARAM NAME=movie VALUE="LoginBox.swf">
+ <PARAM NAME=loop VALUE=false>
+ <PARAM NAME=menu VALUE=false>
+ <PARAM NAME=quality VALUE=high>
+ <!--PARAM NAME=bgcolor VALUE=#CCCCCC-->
+ <!--EMBED NAME=LoginBox src="LoginBox.swf" loop=false menu=false quality=high bgcolor=#CCCCCC WIDTH=300 HEIGHT=200 TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED-->
+ <EMBED name=LoginBox src="LoginBox.swf" loop=false menu=false quality=high wmode=transparent swLiveConnect=true WIDTH=300 HEIGHT=200 TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED>
+</OBJECT>
+</center>
+</BODY>
+</html>

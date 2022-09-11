@@ -1,0 +1,8 @@
+Hey folks - if you've downloaded the zOrder.fla (other fla I posted on FlashKit), 
+I found a few bugs in it right after posting.  
+
+I've also enclosed the new bug-free files for zOrder - the FlashKit guys have the new ones
+as well and are in the process of replacing the old.  Thanks and enjoy :)
+
+-Nathan
+nathand@boxerjam.com

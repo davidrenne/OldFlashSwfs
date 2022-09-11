@@ -1,0 +1,31 @@
+item1=Ireland#Home sweet home, green green and guinness&
+&item2=Germany#Efficent like clockwork&
+&item3=Romania#aaaaaaaaaaaaaagggggghhhhhhhh&
+&item4=Croatia#Newly independent and still war torn&
+&item5=Oman#Oil producing arabian state&
+&item6=Canada#Some strange people from here, mostly lumberjacks too!&
+&item7=Chile#A long thin strip in South America on the pacific and the andes&
+&item8=Japan#The land of the rising sun and electronics galore&
+&item9=Bolivia#Somewhere in South America&
+&item10=Denmark#Peter Smeichael was a good goalie and they said no to Euro&
+&item11=Djbouti#Mythical place in Africa, lots of cannibals&
+&item12=Portugal#Sun soaked beaches, nice holiday destination&
+&item13=England#Bad footballers but still our neighbours&
+&item14=Finland#Scandanavians and thats about it!&
+&item15=France#The Eiffel tower, croissants and some good wine&
+&item16=Austria#Go skiing in the Alps&
+&item17=Holland#Under the sea level, but good footballers&
+&item18=Australia#The land down under where the olympics were held&
+&item19=Italy#The boot, sun drenched mostly, great food and wine&
+&item20=China#Lots and lots and lots and lots of little people&
+&item21=Kenya#Vast plains producing amazing middle-long distance athletes&
+&item22=Laos#Small spot in Aisa, somewhere near vietnam&
+&item23=Madagascar#Island in the india ocean just off Africa's east coast&
+&item24=Norway#Lots of fishing and surprisingly useful if turgid football teams&
+&item25=Brazil#Best footballers in the world, best beach parties and worst slums&
+&item26=Egypt#The pyramids and the nile in the land of the pharoahs&
+&item27=Bermuda#The perfect holiday spot, soak up the sun&
+&num_items=27&
+&itemsfile_loaded=1&
+
+ 

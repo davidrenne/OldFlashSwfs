@@ -1,0 +1,14 @@
+<?xml version="1.0"?><sqltable>
+<entry>
+<date>9/12/2000</date>
+<name>Brent Ziemann</name>
+<email>brent@ribit.com</email>
+<message>Here is my newest creation.  It's a guestbook written with asp, xml, and flash 5.0.Enjoy!</message>
+</entry>
+<entry>
+<date>9/13/00</date>
+<name>Brent Ziemann</name>
+<email>brent@ribit.com</email>
+<message>This is just another record letting you know that the guestbook does work.Have fun with it and learn from it.Brent.</message>
+</entry>
+</sqltable>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<server 
+
+startPosY="" 
+startPosX="" 
+xspace=""
+yspace="18"
+speed="9.2"
+barrierX="228"
+barrierY="370"
+scrollfunc="scrollbars"
+sound="true"
+defaultOverSound = "3"
+defaultClickSound = "4"
+sideScrollYDeviation = "15"
+bottomScrollXDeviation = "-15"
+highlightEnabled = "true"
+visitedLinkColoring = "true"
+udScrollJump="30"
+udScrollJump2="60"
+ssScrollJump2="30"
+defaultIconsEnabled="true"
+defaultFolderIcon="2"
+defaultLinkIcon="3"
+defaultTargetIcon="4"
+defaultMovieIcon="5"
+defaultMP3Icon="6"
+statusLinkDisplay="true"
+
+>
+
+<folder mouseClickSound="5" name="Titles Test">
+
+	<object name=""  />
+	<object name="a" /> 
+	<object name="b" /> 
+	<object name="c" /> 
+	<object name="d" /> 
+	<object name="e" /> 
+	<object name="f" /> 
+
+</folder>
+
+<folder mouseClickSound="5" name="Icons Test">
+
+	<object />
+	<object icon="2" /> 
+	<object icon="3" /> 
+	<object icon="4" />
+	<object icon="5" />
+	<object icon="6" />
+
+</folder>
+
+<folder mouseClickSound="5" name="Sounds Test">
+
+	<object name="No Sound" sound="false"/>
+	<object name="Sound 1" mouseOverSound="3" mouseClickSound="2" />
+	<object name="Sound 2" mouseOverSound="4" mouseClickSound="3" />
+	<object name="Default Sounds"  sound="true"/>
+
+</folder>
+
+<folder mouseClickSound="5" name="Status Bar Test">
+	<object name="Error Test" type="target" errorMsg="ERROR Success!" />
+	<object name="Over Message Test" type="target" statusOverMsg="Over Message Success!" />
+	<object name="Click Message Test" type="target" statusClickMsg="Click Message Success!" />
+</folder>
+
+<folder mouseClickSound="5" name="MP3 Test">
+	<object name="Music Credit: Jeremy Pursell" type="link" url="http://www.studioah.com/" window="_blank" />
+	<object name="not that far samp.mp3" type="mp3" track="1" />
+	<object name="p9(2) samp.mp3" type="mp3" track="2" />
+	<object name="rip samp.mp3" type="mp3" track="3" />
+</folder>
+
+<folder mouseClickSound="5" name="Object Actions Test">
+	<object name="URL Link" type="link" url="http://www.studioah.com/" window="_blank" /> 
+	<object name="Javascript Link" type="link" url="javascript:openWin();" />
+	<object name="Clip Frame Name Target" type="target" clip="dummy" frame="fname" /> 
+	<object name="Clip Frame Number Target" type="target" clip="dummy" frame="2" /> 
+	<object name="Import Movie To Clip" type="movie" file="dummy.swf" clip="dummy" />
+</folder>
+
+<folder mouseClickSound="5" name="Open Folders Test">
+
+	<folder mouseClickSound="5" name="Open Folder Clone" open="true">
+	<folder mouseClickSound="5" name="Open Folder Clone" open="true">
+	<folder mouseClickSound="5" name="Open Folder Clone" open="true">
+	<folder mouseClickSound="5" name="Open Folder Clone" open="true">
+		
+	<folder mouseClickSound="5" name="Open Folder Clone" open="true">
+	<folder mouseClickSound="5" name="Open Folder Clone" open="true">
+	<folder mouseClickSound="5" name="Open Folder Clone" open="true">
+	<folder mouseClickSound="5" name="Open Folder Clone" open="true">
+	<folder mouseClickSound="5" name="Open Folder Clone" open="true">
+	
+	</folder></folder></folder></folder></folder></folder></folder></folder></folder>
+</folder>
+
+<folder mouseClickSound="5" name="Locked Objects Test">
+	<folder mouseClickSound="5" name="Locked Folder" lock="true" open="true">
+		<object name="something..." />
+	</folder>
+	<object name="Locked URL Test" type="link" url="http://www.studioah.com/" window="_blank" lock="true" />
+	<object name="Locked Javascript Link" type="link" url="javascript:openWin();" lock="true" />
+	<object name="Locked Clip Frame Name Target" type="target" clip="dummy" frame="fname" lock="true" /> 
+	<object name="Locked Clip Frame Number Target" type="target" clip="dummy" frame="2" lock="true" /> 
+	<object name="Locked Import Movie To Clip" type="movie" file="dummy.swf" clip="dummy" lock="true" />
+	<object name="Locked MP3" type="mp3" track="1" lock="true" />
+</folder>
+
+<folder mouseClickSound="5" name="Recursive Folder Test" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="Folder Clone" >
+	<folder mouseClickSound="5" name="END" >
+
+	</folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder></folder>
+</folder>
+
+<folder mouseClickSound="5" name="Cool Sites" >
+	<folder mouseClickSound="5" name="Really really cool sites"  open="false">
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 		
+	</folder>
+	<folder mouseClickSound="5" name="Sites about cool stuff" >
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 		
+	</folder>
+	<folder mouseClickSound="5" name="Misc other sites" >
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+		<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 		
+	</folder>
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+	<object name="StudioAH Link" type="link"  url="http://www.studioah.com/" window="_blank" /> 
+</folder>
+
+
+<folder mouseClickSound="5" name="Unsigned Examples" >
+	<folder mouseClickSound="5" /><folder mouseClickSound="5" /><folder mouseClickSound="5" />
+	<object /><object /><object />
+</folder>
+
+
+</server>

@@ -1,0 +1,432 @@
+<HTML>
+<HEAD>
+<TITLE>Active_Search_List</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<font face="Arial"><b><font size="5">Active Search List</font><font size="2">&nbsp;</font></b><font size="2">
+(version 2 : April, 2000)</font><b><font size="5"><br>
+</font></b><font size="2">Updated from previous release to be more
+user-friendly.<br>
+Now also includes tutorial for the workings of the filtering list script.<br>
+Further notes on my variables, what they are for, and how to deal with that
+nagging &quot;200,000 calculation limit in one action list&quot; problem are
+included inside the &quot;FLA&quot;. No-- I know not everyone has encountered
+this problem unless they have programmed an infinite loop but I hit this problem
+frequently. : )</font><b><br>
+</b></font><br>
+<!-- URL's used in the movie-->
+<!-- text used in the movie-->
+<!--Links ? --><OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0"
+ ID=Active_Search_List WIDTH=640 HEIGHT=480>
+ <PARAM NAME=movie VALUE="Active_Search_List.swf"> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#FFFFFF> <EMBED src="Active_Search_List.swf" quality=high bgcolor=#FFFFFF  WIDTH=640 HEIGHT=480 TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED>
+</OBJECT>
+<br>
+<font size="2" face="Arial"><br>
+Actual Flash code shown in<font color="#008000"> green.</font></font><br>
+<br>
+<br>
+<b><font face="Arial" size="4">Introduction</font></b>
+<br>
+<font size="2" face="Arial">This is a partial tutorial. I will cover the logic
+behind the working of the filtering list. If you are familiar with Flash the
+rest of the workings of this project will be relatively easy to grasp. There is
+a &quot;SORT&quot; button -- I have the alphabetical sort routine as a separate
+tutorial. It is only several lines of code in one frame. BUT it is one of my
+worst 200,000 calculation limit offenders. I believe that with two variables
+(the button name and the URL it links to) being sorted at a time you will find
+it crashes at around 90 items. That is why it is a separate option. To enable it
+permanently, simply delete the &quot;SORT&quot; button and set the variable
+&quot;alphabetize&quot; that is in frame 1 of the main timeline to
+&quot;1&quot;.<br>
+<br>
+On with the filtering links list. To start, you will find there are many embedded movie clips. This is necessary.
+To begin, the entire project is only one movie clip. Not only does this leave
+the project tidy and easier to copy and paste into other projects, but it also
+allows it to be a draggable object, which it is.<br>
+<br>
+Inside this complete movie clip, you will find several objects. The only one of
+importance is the &quot;weblinks&quot; object. This contains both the interface
+that allows the user to type into and also the &quot;scrolltarget&quot;. Just
+like we needed a separate object to enable &quot;dragging&quot;, we need a
+separate object to &quot;scroll&quot;. Inside the &quot;scroll&quot; object, we
+find an object called &quot;allbuttons&quot;, which is a container to hold all
+the buttons. (There is only one button until the script runs and starts
+duplicating them).</font>
+<p><font size="2" face="Arial">Now let's look at the button itself. This is
+where all the code is that makes the whole effect work. There are 5 frames. Only
+three have any real code in them. Frame 4 is just a loop and Frame 5 is a
+&quot;call&quot; routine for
+converting to lowercase both the variables and also the user input for purpose
+of ignoring case sensitivity. Since this also may cause too many calculations at
+some point -- or because some people may want to disable the case
+insensitivity... it is also an option. There is a variable on the main timeline.
+Set it to either 0 or 1 depending if you want to be able to type &quot;OnLiNe&quot;
+and have it find &quot;online&quot; and &quot;Online&quot; as correct results or
+not.</font></p>
+<p>&nbsp;</p>
+<p><b><font face="Arial" size="4">Frame 1: Initial Setup</font></b><br>
+<font size="2" face="Arial">In this frame we duplicate the buttons and set the
+text in them for the initial list. This is the only time we run this frame --
+for the initial setup. (It also gets called again if you hit the
+&quot;SORT&quot; button in this demo, or if we ever need to reset the list
+completely... for instance, if the user deletes his input entirely.)<br>
+</font>
+<br>
+<font face="Arial" size="2" color="#008000">Comment: ----------------------------------------------<br>
+Comment: hide original button object<br>
+Comment: ----------------------------------------------<br>
+<br>
+</font><font size="2" face="Arial">Here, we get rid of the initial object. It is
+not used except for creating duplicates.</font>
+<font face="Arial" size="2" color="#008000"><br>
+<br>
+Set Property ("button", X Position) = -1000<br>
+Comment: ----------------------------------------------<br>
+Comment: Show ALL Links<br>
+Comment: ----------------------------------------------<br>
+Set Variable: "q" = 0<br>
+<br>
+</font><font size="2" face="Arial">Now we start counting from 1 to (the number
+of buttons we will have)...</font>
+<font face="Arial" size="2" color="#008000"><br>
+<br>
+Loop While (q&lt;/:total)<br>
+      Set Variable: "q" = q+1<br>
+<br>
+</font><font size="2" face="Arial">Set up a name for our new duplicate button
+&quot;dup&quot; equals &quot;button1, button2, button3...&quot; up to
+&quot;q&quot;</font>
+<font face="Arial" size="2" color="#008000"><br>
+<br>
+      Set Variable: "dup" = "button"&amp;q<br>
+      Duplicate Movie Clip ("button", dup, q)<br>
+<br>
+</font><font size="2" face="Arial">Here we set the &quot;y&quot; position of the
+new button. Since the button is placed correctly to begin with, I position new
+duplicates at (the place of the original one, PLUS the number of the button (1,
+2, 3,... etc) times a variable I called &quot;/:button_spacing&quot;. It helps
+to name things that you can remember what they are for months later when you are
+trying to change your code. Or, as in this case, if it's someone different
+entirely who is trying to read the code than the person who wrote it. People
+will thank you for being clear. Yourself included.</font>
+<font face="Arial" size="2" color="#008000"><br>
+<br>
+      Set Property (dup, Y Position) = (q-1)*/:button_spacing<br>
+<br>
+</font><font size="2" face="Arial">Just in case, I also set a variable for left
+indent. I have no real use for this variable so it's set to zero. But just in
+case and to make the reading of the code clearer, it is a variable with a name.</font>
+<font face="Arial" size="2" color="#008000"><br>
+<br>
+      Set Property (dup, X Position) = /:indent<br>
+<br>
+</font><font size="2" face="Arial">There is a text box on each button called
+&quot;linkname&quot;. Initially it is blank. Here I fill it with the text from
+the variable definitions on frame 1 of the main timeline. That is where all the
+buttons names and URL links live. Since the variable lives on the main timeline
+I can refer to it with a &quot;/:&quot;</font>
+<font face="Arial" size="2" color="#008000"><br>
+<br>
+      Set Variable: dup&amp;":linkname" = Eval("/:text"&amp;q)<br>
+      Set Variable: dup&amp;":link" = Eval("/:link"&amp;q)<br>
+<br>
+</font><font size="2" face="Arial">Because there is no way in Flash 4 to set the
+color of text, and I wanted two colors of text (one for mouseover and one for
+regular display) I created two movie clips with different colored text boxes in
+them. They contain exactly the same text.&nbsp; Just one has a different color.
+For the &quot;mouse Over&quot; text I called the movie clip &quot;over&quot;.</font>
+<font face="Arial" size="2" color="#008000"><br>
+<br>
+      Set Property ("button"&amp;q&amp;"/over", Visibility) = false<br>
+End Loop<br>
+<br>
+</font><font size="2" face="Arial">The scrollbar is only visible of there are
+enough links to require scrolling. But, in case we ever need to reset the list,
+and the scrollbar was set to &quot;not visible&quot;&nbsp; we reset it here.</font>
+<font face="Arial" size="2" color="#008000"><br>
+<br>
+Set Property ("../../../scrollbar", Visibility) = true<br>
+<br>
+</font><font size="2" face="Arial">The variable text box &quot;:active
+links&quot; is just a display so the user can see how many links are in the
+current list (after filtering). Since we haven't filtered yet, and we want the
+list to have an initial value, we set it here.&nbsp;</font>
+<font face="Arial" size="2" color="#008000"><br>
+<br>
+Set Variable: "../../../:active_links" = /:total&amp;" link(s) in list."<br>
+Set Variable: "/:active_links" = /:total<br>
+</font></p>
+<p><b><font face="Arial" size="4">Frame 2: Filter the List<br>
+</font><font face="Arial" size="3">NOTE:</font><font face="Arial" size="4"> </font><font face="Arial" size="3">This
+frame does NOTHING first time around.</font></b><br>
+<font size="2" face="Arial">This is where the link filtering happens. This is
+the only frame in this entire project that is really unique and that I can take
+credit for. Although to be honest, I got the idea from Microsoft's
+&quot;Help&quot; index system, where this same effect happens. I liked it. I
+wanted one. So I made one. There are no really original ideas are there? Just
+new implementations of old ones.<br>
+<br>
+</font><b><font face="Arial" size="4">the LOGIC:<br>
+</font></b><font size="2" face="Arial">Here is where I sat down with pencil and
+paper and pre-thought out exactly what I wanted the script to do in order to
+perform the filtering list. In many cases, I highly recommend sitting down with
+pencil and paper BEFORE touching the computer. You will end up saving yourself a
+LOT of time. It also helps to break large problems into the smallest possible
+pieces. The individual components of how this works were easy to solve. When I
+first though &quot;Hey this is what I want to do...&quot; the overall project
+was to complex for me to solve all at once. So here are the individual
+components I broke the problem down to to be more easily programmed:<br>
+<br>
+I decided:</font></p>
+<p><font size="2" face="Arial">(a) when the user types, I need to keep track of
+what he types live.<br>
+(b) as soon as it changes (not all the time -- to save on CPU processing -- no
+use continually running this code -- ) start checking.<br>
+(c) checking involves the following: comparing the amount of characters that
+have already been typed (say there are five) in five character chunks against
+the items in the list.<br>
+(d) if a match is found, add that item AND ITS LINK to the new list.<br>
+(e) I immediately decided I wanted this to work in a non-case sensitive manner.<br>
+<br>
+Easy, right?<br>
+<br>
+So there are a number of loops going on.<br>
+(a) a continuous loop to check user input.<br>
+(b) if typing has occurred, a loop to start checking items one at a time<br>
+(c) in each item, checking the text (one)* character at a time.<br>
+<br>
+*NOTE: You are not really checking one character at a time. You are checking
+(user input length) characters at a time. Because it's relatively pointless to
+check for one character at a time... (say the user types &quot;e&quot;) -- the
+most common character in the English language... well... pretty much every link
+is still going to be in your list. There's not much point in that... plus it
+uses a lot of processor power. The longer their input the less checking is
+required. SO I set a minimum amount of characters to be checked. (currently 3).
+If the user hasn't typed at least (3) characters nothing is checked.<br>
+<br>
+</font><b><font face="Arial" size="3">VERY IMPORTANT NOTE:</font></b><font size="2" face="Arial">
+I have gone to extensive lengths in much of my scripting to avoid the 200,000
+calculation limit that Flash has. However, in this links list there really is no
+way to avoid it. After you have a certain amount of links, this filtering links
+list will generate a huge amount of calculations. It does already. I have not
+seen the problem personally on this project but I know it will happen for
+someone out there. There are a few things you can do to solve this problem. One
+of them is raising the minimum input requirement before the list starts
+searching. The higher you set it, the fewer calculations this script will
+produce. Even raising it from 3 to 4 will significantly reduce calculations.<br>
+</font></p>
+<p><font face="Arial" size="2" color="#008000">Comment: EXPLANATION of code: This one isn't as complicated as it looks. To start, convert use input to lowercase. Fame 2 checks if the user has typed anything more or less than the last time we checked.... if so, control is passed to frame 1. First, we clear the list. Then, Remember, it is LIVE updated. The variable is constantly changing as the user types. (Trace) it to see. Check all imported link descriptions (from 1 to "/:total") for being at least 3 characters long (no point searching for 1 or 2 character words) Search the text description "/:text"&amp;n from the first letter to the last (minus length of "findit") for the character string "findit". If it is found, then add it to the list via duplicate movie clip. Simple - right?<br>
+<br>
+<br>
+</font><font size="2" face="Arial">In this release of the Active Search List I
+have included a variable on the main timeline as an option to be case sensitive
+or not. This, again, may or may not be useful to your users, I cannot offhand
+think of a case where you would WANT the list to be case sensitive. But it would
+reduce a monstrous amount of calculations to do so. This is one more option you
+can disable if your list is long enough that it DOES exceed the 200,000
+calculation limit. That is the only reason I have set it as a separate variable.<br>
+</font><font face="Arial" size="2" color="#008000"><br>
+If (not(/:case_sensitive))<br>
+      Comment: ----------------------------------------------<br>
+      Comment: convert entry to lower case<br>
+      Comment: ----------------------------------------------<br>
+      Set Variable: "input" = findit<br>
+      Call ("convert_to_lowercase")<br>
+      Set Variable: "findit" = output<br>
+End If<br>
+<br>
+</font><font size="2" face="Arial">You will find the fifth frame is the one
+titled &quot;convert_to_lowercase&quot;. Once again, it helps to name things
+that make sense. There are a number of tutorials on the net that deal with this
+topic to varying degrees of competency so I will not cover them here. Just
+accept that it works -- it does.&nbsp; : )&nbsp;</font><font face="Arial" size="2" color="#008000"><br>
+<br>
+Comment: ----------------------------------------------<br>
+Comment: initialize counters<br>
+Comment: ----------------------------------------------<br>
+Set Variable: "m" = 0<br>
+Set Variable: "n" = 0<br>
+Set Variable: "p" = 0<br>
+<br>
+</font><font size="2" face="Arial">We need three counters. Remember I mentioned
+there were three loops going on: One to keep detecting new user input (this is
+done via a &quot;Frame&quot; go to action. Another loop to count through the
+list of links. And another to step through the characters in each link. The last
+variable you see here &quot;p&quot; is used as a counter to count how many items
+match our user's input.&nbsp;</font><font face="Arial" size="2" color="#008000"><br>
+<br>
+Comment: ----------------------------------------------<br>
+Comment: start counting (up to total links)<br>
+Comment: ----------------------------------------------<br>
+Loop While (n&lt;/:total)<br>
+      Set Variable: "n" = n+1<br>
+<br>
+</font><font size="2" face="Arial">'n' is our counter to keep track of which
+link we are on. We only cycle through 'n' one time. In other words, n counts
+from 1 up to the total amount of links in the list, then we're done.&nbsp;</font><font face="Arial" size="2" color="#008000"><br>
+<br>
+      Comment: ----------------------------------------------<br>
+      Comment: wait for enough characters<br>
+      Comment: ----------------------------------------------<br>
+      If (Length(findit)>=/:minimum_search)<br>
+            Set Variable: "text" = Eval("/:text"&amp;n)<br>
+<br>
+</font><font size="2" face="Arial">Here we wait for the user input to be at
+least &quot;minimum_search&quot; characters long. (The reasons for this were
+stated above.)&nbsp;</font><font face="Arial" size="2" color="#008000"><br>
+</font><font size="2" face="Arial">We have to check to see if we need to convert
+the links list entry to lowercase just like we checked above to see if we needed
+to convert the user's input to lower case.&nbsp;</font><font face="Arial" size="2" color="#008000"><br>
+<br>
+            If (not(/:case_sensitive))<br>
+                  Comment: ----------------------------------------------<br>
+                  Comment: convert our search list to l.c.<br>
+                  Comment: ----------------------------------------------<br>
+                  Set Variable: "input" = text<br>
+                  Call ("convert_to_lowercase")<br>
+                  Set Variable: "text" = output<br>
+            End If<br>
+<br>
+</font><font size="2" face="Arial">Now we start checking the text itself. But
+there's no point in checking the text if the text in our link is shorter than
+what the user has typed in. In that case there's no possible way it could be a
+match, so we skip it right away...&nbsp;</font><font face="Arial" size="2" color="#008000"><br>
+<br>
+            If (Length(findit)&lt;=Length(text))<br>
+<br>
+</font><font size="2" face="Arial">'m' counts from the leftmost character in the
+link text all the way to the right... MINUS the length of the search string...<br>
+<br>
+<b><u>SAMPLE:</u></b><br>
+<b>text='Microsoft's Online Web Site'<br>
+user input=&quot;online&quot;<br>
+Searches from &quot;M&quot; through to the &quot;b&quot; on the word
+&quot;Web&quot;.<br>
+<br>
+</b>After that point, there's no way the search string could match so we save
+ourselves precious calculations by stopping searching that link text at that
+point.<br>
+<br>
+</font><font face="Arial" size="2" color="#008000"><br>
+                  Set Variable: "m" = 0<br>
+                  Loop While (m&lt;=(Length(text)-Length(findit)))<br>
+                        Set Variable: "m" = m+1<br>
+                        If (Substring (text,m,Length(findit)) eq findit)<br>
+<br>
+</font><font size="2" face="Arial">However, as soon as we have a match we stop
+checking that link. (In the case of the above sample, that would happen after
+only 13 comparisons...)<br>
+Since we have a match, we can now add this link to the new list. (We cleared the
+list to prepare for the new list already... that happens in the next frame,
+where we check for user input... so we can now start duplicating new buttons
+again... exactly the same code as the previous frame...)</font><font face="Arial" size="2" color="#008000"><br>
+<br>
+                              Set Variable: "p" = p+1<br>
+                              Set Variable: "dup" = "button"&amp;p<br>
+                              Duplicate Movie Clip ("button", dup, p)<br>
+                              Set Property (dup, Y Position) = p*/:button_spacing<br>
+                              Set Property (dup, X Position) = /:indent<br>
+                              Set Variable: dup&amp;":linkname" = Eval("/:text"&amp;n)<br>
+                              Set Variable: dup&amp;":link" = Eval("/:link"&amp;n)<br>
+                              Set Property (dup&amp;"/over", Visibility) = false<br>
+                        End If<br>
+<br>
+</font><font size="2" face="Arial">Once all the loop checking is done, we update
+the amount of found links. Since the variable &quot;p&quot; was ONLY increased
+if we foud a match, 'p' is the amount of links found in the list matching the
+user's input.</font><font size="2" face="Arial"><br>
+</font><font face="Arial" size="2" color="#008000"><br>
+                        Set Variable: "../../../:active_links" = p&amp;" link(s) in list."<br>
+                        Set Variable: "/:active_links" = p<br>
+                        If (p&lt;/:list_height)<br>
+                              Set Property ("../../../scrollbar", Visibility) = false<br>
+                        End If<br>
+                  End Loop<br>
+            End If<br>
+      End If<br>
+End Loop<br>
+</font></p>
+<p><b><font face="Arial" size="4">Frame 3: Wait for User Input</font></b><br>
+<font size="2" face="Arial">Here we check to see if the user has changed what
+s/he typed since the last time we checked. If the have, we clear the list (by
+removing all the duplicate buttons--except the original one). We also set the
+position of the scrolltarget (the single object which is a movieclip containing
+ALL the buttons, whether they are duplicated or not.) We set it back to 0. We do
+this because... say you shows ALL links. Then you scrolled way down to the
+bottom of that list. Now you start typing and filter the links down to only two
+or three. They will be way above your viewing area... way up off the top
+somewhere and you will get a blank list. You'd have to scroll way up to see
+them. To work around this I simply reset the scroll to the very top item each
+time the user types anything.</font></p>
+<p><font face="Arial" size="2" color="#008000">Comment: ----------------------------------------------<br>
+Comment:       frames 3&amp;4 loop<br>
+Comment:       until you type or delete<br>
+Comment: ----------------------------------------------<br>
+If ((findit ne oldsearch) and Length(findit)&gt;=/:minimum_search)<br>
+<br>
+</font><font size="2" face="Arial">This only runs if we have more than (minimum
+allowed) characters. Otherwise... (see below) we simply show the entire list.</font><font face="Arial" size="2" color="#008000"><br>
+<br>
+      Comment: ----------------------------------------------<br>
+      Comment:       process typing/deleting (more than (minimum_search) characters<br>
+      Comment: ----------------------------------------------<br>
+      Comment: Clear the List First<br>
+      Set Variable: "q" = 0<br>
+      Loop While (q&lt;/:total)<br>
+            Set Variable: "q" = q+1<br>
+            Remove Movie Clip ("button"&amp;q)<br>
+      End Loop<br>
+      Set Property ("../../scrolltarget2", Y Position) = /:smin<br>
+<br>
+</font><font size="2" face="Arial">We go to Frame 2, the filtering script, and
+see if the new input (whether more or less than the previous input) has any
+matches. This way it doesn't matter if you are typing or deleting it will work
+either way.<br>
+</font><font face="Arial" size="2" color="#008000"><br>
+      Go to and Play (2)<br>
+Else<br>
+      Comment: ----------------------------------------------<br>
+      Comment:       process deleting to less than (minimum_search) characters<br>
+      Comment: ----------------------------------------------<br>
+<br>
+</font><font size="2" face="Arial">We show the entire list by going back to
+Frame 1, where we initially set up the entire list.</font><font face="Arial" size="2" color="#008000"><br>
+<br>
+      If ((findit ne oldsearch))<br>
+            Go to and Play (1)<br>
+      End If<br>
+End If<br>
+Set Variable: "oldsearch" = findit<br>
+<br>
+</font><b><font face="Arial" size="4"><br>
+Frame 4: Active_Search or Manual Press Button?</font></b><br>
+<font size="2" face="Arial">Here we check if &quot;active_search&quot; is set to
+1. If not, we don't do anything at all. Look at the actions in the button that
+says &quot;GO&quot;. Yuo will find it tells this timeline to start playing again
+in Frame 2 -- the filtering script. That's all there is to it.</font></p>
+<p><font color="#008000" face="Arial" size="2">If (/:active_search)<br>
+      Go to and Play (3)<br>
+Else<br>
+      Stop<br>
+End If</font><br>
+</p>
+<p><font size="2" face="Arial">Since this seems to be one of my most popular
+Flash Toys and it was also one of my original ones -- it was not a very easy to
+read piece of code nor was it very well documented. As a result I have had
+numerous emails asking for explanations... I hope to cut those down by offering
+this semi-tutorial, which covers most of the tricky parts of this routine. I
+also put some effort into making the code cleaner and more easily understandable
+by using variable names that make clear sense.<br>
+<br>
+Enjoy.</font></p>
+<p><font face="Arial">: )</font></p>
+<p><font face="Arial"><b>by:
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" ID="FlashJunkie" WIDTH="90" HEIGHT="30">
+  <param NAME="movie" VALUE="FlashJunkie.swf">
+  <param NAME="quality" VALUE="high">
+  <param NAME="bgcolor" VALUE="#9966FF"><embed src="FlashJunkie.swf" quality="high" bgcolor="#9966FF" WIDTH="90" HEIGHT="30" TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+</object>
+</b></font></p>
+</BODY>
+</HTML>

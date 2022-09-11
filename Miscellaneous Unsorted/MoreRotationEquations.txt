@@ -1,0 +1,7 @@
+Xsa = PosX*Math.sin(MouRotY)
+Yca = PosY*Math.cos(MouRotY)
+XcaYsa = (PosX+PosY)*(Math.cos(MouRotY)+Math.sin(MouRotY)) - Xsa - Yca
+PosXr = Yca - Xsa
+PosYr = PosZ*Math.cos(MouRotX) - Math.sin(MouRotX)*XcaYsa
+PosZr = 60 - PosZ*Math.sin(MouRotX) - Math.cos(MouRotX)*XcaYsa
+

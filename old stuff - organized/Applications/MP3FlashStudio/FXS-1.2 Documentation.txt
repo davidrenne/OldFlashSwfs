@@ -1,0 +1,364 @@
+//////////////// Flash XML Server /////////////
+//////////////////// v. 1.2 ///////////////////
+///////////////// DOCUMENTATION ///////////////
+////                                        ///
+////Best viewed in TextPad (www.textpad.com)///
+////                                        ///
+
+// Changelog 1.2 at the bottom
+
+// Intro to FXS
+
+	Hi. Flash XML Server is basically just an advanced menu system with some added features and flashy graphics and movement. To name a few: a cool ass tree system, a bunch of components for customizing it, features and programming optimized to preform well with other server side applications like PHP, ASP and Perl to build incredibly flexible Flash applications, or dynamic web forums, chatrooms, etc, with great ease of use. 
+	
+	FXS 1.x is tree based. FXS 2.x is more icon based, but also had the added functionality of tabs. On version 3 of the AH site, FXS 1.x is used only as an mp3 playlist. But, I suspect FXS 1.x will be much more useful to the majority of developers.
+
+
+// Speed and user appreciation
+
+	It's easier to use than HTML. and it can carry a large number of links in an incredibly small area. saving time and making the user experience all that much easier. 
+
+	Controlling the speed and spacing attributes provided can also add to a specific user experience. As well as multimedia functions, like sound and video.
+	
+	It looks and feels MUCH more impressive than static link interfaces.
+
+
+// Customizable
+
+	FXS is customizable in every way. The flash file and script are included. it is completely open-source. You can do with it what you please. Change the fonts, the colors, the icons, whatever. 
+	
+	See Interface Integration Guide
+	
+	
+// FXS Use as MP3 playlist
+
+	FXS v.1.2 comes integrated with the Catalist Radio from CatalistCreative (http://www.catalistcreative.com/flashradio/). Using and integrated XML tag "mp3" it can easily become a powerful, organized playlist tool. It is used exclusively to play the playlist of JP(||recur) on the studioAH site (http://www.studioah.com/)
+
+
+// FXS Use with Server-Side Languages
+
+	I implemented some neat little tags that could work well with flash web forums or whatever else. in particular the <folder /> tag contains the OPEN attribute, which allows you to specify the default state of the folder, already open? or closed? Also there is a LOCK attribute which allows you to lock a folder in it's current state (open or closed). Would be great for a SlashDot like ordeal.
+
+	Also implemented into the Objects <object /> tag are the TYPE, CLIP, FRAME, URL and WINDOW attributes. Type is usually type="link" or type="mp3", but modifying the relatively simple code that deals with parameters would allow you to do anything with this. URL, to the link type, is the URL to get, and WINDOW is the name of the window the link will be browsed in. most of the time I set window="_blank". Internal (to flash) links are handled by the target type <object type="target" /> // see FXS XML Syntax Documentation
+
+
+// FXS Techie Talk
+
+	Much faster than HTML, Javascript or DHTML. In development and in usage.
+
+	Flash XML Server is recursive. Meaning, it can support an infinite number of folders and levels. The only limitation would be the speed of the computer it is running on.
+
+	Network Permissions: there is an attribute in the <server> tag that appears to do nothing. This is just a meager attempt at looking into the future. I figured that it might be cool to have a network of Flash XML servers. It wouldn't be hard, you'd just open another flash file and tell where to import the xml from. I will probably end up developing a utility for it, if this thing gets popular. Who knows. :o)
+	
+
+// Open-Source
+
+	Flash XML Server is bound by the GNU License (www.gnu.org). Use freely but if you add to the code please report it back and the Flash XML Server Architecture Review Board (a.k.a. me and my studioAH buddies) will look over it and determine if we want to include it in the next studioAH version. Or feature the way you've used it. Either way, you're free to use and distribute it however you wish, even make your own version!, as long as you report back what you're doing with it, just cause I'm curious and would like to know where it ends up :) 
+	
+	If you'd like to know what I'm specifically looking for in the next version see new_version_notes.txt or mail me cyte@studioah.com
+	
+	Also, please give credit where credit is due to the XMLNitro crew (the xmlnitro.as file included) and StudioAH (or myself, Cyte, for creating the original FXS-server_script.as, and .fla) in the code somewhere if you distribute your own version.
+	
+	A link to StudioAH would also be greatly appreciated with it's use. But, of course, is not required.
+
+
+
+
+// FXS Component Documentation
+
+title component - 	takes it's text by default from the xml attribute name="". But can be changed at any time using the title.text = ""; command. // See "Universals" in XML Syntax Documentation
+
+icon component - 	has an ImageList clip inside which you'll find frames containing various icons. This way you can easily design icons, implement them, and assign them to objects by calling their frame's number using the default xml attribute icon="". but can also be changed at any time with this command: icon.ImageList.gotoAndStop(insert number here); // See "Universals" in XML Syntax Documentation
+
+	Also, dynamic icons added in 1.2. You can specify a different icon after the tree node has been selected or deselected. Folders, by default, feature this option. Use the folder icon as a template for other icons you wish to be dynamic. The server will automatically sense that they are dynamic and act appropriately.
+
+multimedia component - 		in this version, it only includes the sound component. which is exactly like the icon component only it allows you to specify which sounds are fired when the mouse is over the link or has clicked the link. access is sound="(true or false)" mouseOverSound="(soundlist frame num)" mouseClickSound="(soundlist frame num)" or can be changed at any time by this command: multimedia.SoundList.gotoAndStop(number here); // See "Universals" in XML Syntax Documentation
+
+scrolling components -		there are two options for scrolling in FXS. Mouse or Scrollbars. This component's value is set at server setup time. By default it is set to "scrollbars". "mouse" means that scrolling will be done automatically depending on where the mouse is on the clip. However, in very large trees, this can get aggravating, so there is also an option for a scrollbar. 
+ALOSE NOTE: "mouse" mode is disabled by default in 1.2 because it hits the CPU significantly more than scrollbars. To re-enable it follow the instructions in frame3, layer "main actions".
+The command is: scrollfunc = "mouse" or scrollfunc = "scrollbars"
+and it is in the <server> tag. EXAMPLE: <server scrollfunc="scrollbars"></server>
+
+up/down arrows and scrollmargin jump thing - 		I kind of retrofitted the 1.2 version with some extra scrolling components. It is not as well integrated as in 2.0, but it works well for the structure I chose for this server.
+
+statusbar component - 	this is an outlet for system messages. You can specify what message to output in the XML. Something to also note should be that it differentiates between regular messages and errors by the ignition of an error sound, which can be specified by double clicking on the musical notes in the status bar clip. You can specify errors vs status messages in the XML or use the API function to call an error, which is _root.statusbar.write("error message",true); as opposed to a simple message: _root.statusbar.write("simple message");
+
+MP3 Player - 	this is essentially my integration of the Catalist MP3 radio from CatalistCreative (http://www.catalistcreative.com/flashradio/). Many people asked me how I did it on my site, so i integrated an MP3 xml tag and added a sample playlist. JP from studioAH also contributed some peachy music samples.
+
+interface - 	I integrated a sample interface as a template, many people have asked me how to do this. Well, there ya go! :)
+
+ALSO NOTE: For optimal performance under "scrollbars" mode, delete a section of code in the _root.moveit movieclip actions panel. the section of code is indicated there. this is very important if you want to have smooth scrolling with multiple FXS servers or one large server.
+
+
+
+
+// FXS Interface Integration Guide
+
+
+NOTE: rootClip is the object that acts as a template for all the little tree nodes.
+
+INTERFACE ELEMENTS
+
+	An amazing number of people have asked me how to make interface graphics and other stuff reside above the tree. It's simple:
+
+	Just take all the stuff you want to put above the tree, encapsulate them in a clip. And in the clip's actions add this code:
+
+	onClipEvent(load){
+	    this.swapDepths(9999999);
+	}
+
+	or some other really large number. There is no numeric limit that I have found.
+
+
+COLORS
+
+	Colors are usually specified by boxy clips I have tinted to the colors of my choosing. When FXS loads, it will check these boxes for the appropriate color changes.
+
+
+ICONS
+
+	Icons can be changed only within the imagelist within the icon component. This resides in _root.rootClip.icon.ImageList. Add or change frames within this clip to add or change icons. The number of the frame in which an icon resides is also the number you will specify in your icon tags.
+
+
+SOUNDS
+
+	Sounds can be added or deleted in _root.rootClip.multimedia.SoundList. Essentially the same concept as Icons.
+
+
+UNICODE SUPPORT
+
+	By default, FXS does not support Unicode, because it is incompatible with the Flash 5 player. However, if you wish to add it, FXS user Huguette Dupont (huguette.dupont@videotron.ca) recommends:
+
+	By default, Flash MX and Player 6 will treat text as Unicode (it is a universal way to treat special characters and multilanguage). So :
+ 
+		1) Make sure the script does not contain "System.useCodepage = true" since Flash will treat it as the old Flash 5 way - mixed multibite encoding (ok with xml server, command not found in code since it was coded for Player 5)
+		2) Change the xml tag in the .xml document for :
+		<?xml version="1.0" encoding="UTF-8"?> (that's the default for flash mx if encoding not found)
+		3) "Save as" the xml file as "text unicode" format
+
+		Have a look to the ActionScript Dictionary or at 
+		http://www.macromedia.com/support/flash/ts/documents/unicode.htm
+
+
+
+
+// FXS Catalist MP3 Integration Guide
+
+
+	mp3 tracks communicate with an integrated version of the Catalist radio (http://www.catalistcreative.com/flashradio/). To add to the playlist, you must edit the playlist.xml file included with FXS v.1.2. Specify track names and mp3 files. Then, using this mp3 type object you can give the user an organized "playlist" of your mp3 collections.
+
+	See FXS XML Syntax Documentation for MP3 XML object tag information
+
+
+
+
+
+// FXS XML Syntax Documentation
+
+
+
+	I think everything here is pretty self explanatory. The Server tag is required. It can also help you set options and user preferences dynamically. Things such as speed, spacing, movieclip size, screen position, scrolling and sound. If you leave everything blank, or leave everything out completely, it will work with the default settings. However, the base <server> tag is still required.
+
+/////////////  ROOT
+
+<server>
+
+</server>
+
+NOTE: //'s and everything after //'s must not be present in the XML file for it to function properly. they are here merely for explanation purposes.
+
+<server 
+
+startPosY=""                // start y position, usually set in Flash, but can also be set here
+startPosX=""                // start x position, usually set in Flash, but can also be set here
+xspace=""                   // horizontal
+yspace=""                   // vertical spacing
+speed=""                    // 1 - 10 10, being the fastest. NOTE: over 10 will produce errors 
+barrierX=""                 // can be the width of your movie
+barrierY=""                 // can be the height of your movie
+scrollfunc=""               // the scrolling mechanism ("mouse" or "scrollbars")
+sound=""                    // default enablement of sound (true or false)
+defaultOverSound = ""       // default sound that fires when mouse is over link
+defaultClickSound = ""      // default sound that fire when mouse has clicked a link
+networkpermissions="true"   // See Techie Talk
+sideScrollYDeviation = "15" // This is part of my retro-fitting of the up/down arrows to the server.
+bottomScrollXDeviation = "-15" // This allows for a margin that doesnt affect the scrollbar's position
+highlightEnabled = "true"   // The highlight object enabled/disabled
+visitedLinkColoring = "true"// Standard visited link coloring indicated history of link selections
+udScrollJump="30"           // The number of pixels the scrollbar will jump upon up/down arrow clicks
+udScrollJump2="60"          // The number of pixels scrollbar jumps upon scrollmargin hit
+ssScrollJump2="30"          // The number of pixels scrollbar jumps upon scrollmargin hit of bottom scroller
+defaultIconsEnabled="true"  // Default icons allow you to save space specifying icons in the xml file
+defaultFolderIcon="2"       // self explanitory "
+defaultLinkIcon="3"         // "
+defaultTargetIcon="4"       
+defaultMovieIcon="5"
+defaultMP3Icon="6"
+statusLinkDisplay="true"    // When the user mouses over an object of type "link" it will display the url being linked, if set to true
+
+>
+</server>
+
+
+
+/////////////  FOLDERS
+
+
+<folder />
+
+<folder>
+</folder>
+
+<folder name="Trash Bin" icon="2" open="true" lock="true">
+
+
+	Folders are easy to make and control in FXS. simply putting <folder /> will suffice. That would be an empty folder though. This would be a folder with a sterile object inside:
+
+<folder>
+	<object />
+</folder>
+
+
+	Attributes can add more flavor to folder, however. Check it:
+
+name is obvious, when empty or left out it will be <untitled> by default.
+
+icon - 		this references the number that is in your icon ImageList. See // FXS Components
+
+open - 		boolean statement (true or false) as to whether or not you want the folder to be open by default or closed by default. If no open attribute is specified or just left out completely, the folder will be closed by default.
+
+lock - 		boolean statement as to whether or not you want the user to be able to control whether the folder is open or closed by clicking on it. If no lock attribute is specified the folder will not be locked by default
+
+
+
+/////////////  OBJECTS AND ACTIONS
+
+
+</object type="" />
+
+	that's the only way to specify an object. Attributes include:
+
+
+type :
+
+
+type = "link"
+
+	URL - the URL.
+
+	window - specifies the window the url goes into. usually window="_blank"
+	
+	EXAMPLE: 
+	
+	<object type="link" URL="http://www.studioah.com/" window="_blank" />
+	
+		
+type = "target"
+
+	Clip - the name of the clip to target. assume that _root. is already there. So if you wanted to target a clip on the main screen named "dummy" it would be clip="dummy". if you wanted to target something within dummy it would be clip="dummy.something"
+	
+	Frame - the frame number or frame name to target. frame="fname" or frame="2"
+	
+	EXAMPLE: 
+	
+	<object type="target" clip="dummy" frame="2" />
+
+type = "movie"
+
+	file - the name of the file and where it is located. Example: dummy.swf. Example 2: http://www.studioah.com/dummy.swf.
+	
+	clip - the target clip to import the movie into.
+	
+	EXAMPLE:
+	
+	<object type="movie" file="dummy.swf" clip="dummy" />
+	
+	NOTE: You are not able to import a movie to a LEVEL because the script already uses level sorting. Not to mention any additional interface elements. This would be a good feature to add if you feel like messing with the code yourself, but it would be hard to eliminate all potential for error.
+
+type = "mp3"
+
+	track - track in the playlist.xml file that is to be played upon selection
+
+	EXAMPLE: 
+	
+	<object type="mp3" track="4" />
+	
+	NOTE: mp3 tracks communicate with an integrated version of the Catalist radio (http://www.catalistcreative.com/flashradio/). To add to the playlist, you must edit the playlist.xml file included with FXS v.1.2. Specify track names and mp3 files. Then, using this mp3 type object you can give the user an organized "playlist" of your mp3 collections.
+
+
+///////////////  UNIVERSALS
+
+	Universals are what I call the attributes that apply to every type of XML node (except the root <server> node). They are as follows:
+	
+		name=""
+		icon=""
+		sound=""
+		mouseOverSound=""
+		mouseClickSound=""
+		lock=""
+		statusOverMsg=""
+		statusClickMsg=""
+		errorMsg=""
+	
+	Here are some examples of how these can be used with different nodes:
+	
+		<folder name="Universals Test" icon="3" sound="true" mouseOverSound="2" mouseClickSound="3" />
+
+		<folder name="Universals Test" icon="3" open="true" lock="false" sound="true" mouseOverSound="2" mouseClickSound="3" />
+
+		<object name="Universals Test" icon="3" sound="true" mouseOverSound="2" mouseClickSound="3" statusOverMsg="Universals Test" />
+
+		<object type="link" URL="http://www.studioah.com/" window="_blank" name="Universals Test" icon="3" sound="true" mouseOverSound="2" mouseClickSound="3" />
+
+		<object type="target" clip="dummy" frame="2" name="Universals Test" icon="3" sound="true" mouseOverSound="2" mouseClickSound="3" errorMsg="ERROR: universal error" />	
+
+
+
+ALL OF THIS WILL BE CLEAR AND EASY ONCE YOU OPEN server.xml and the examples included within AND TAKE A LOOK. IT'S REALLY QUITE SIMPLE. 
+
+Much faster than html or javascript.
+
+Enjoy! And remember to give feedback!
+
+
+
+
+
+//CHANGELOG 1.2_11.24.02:
+
+	Multiple XML files specifiable for the same flash SWF file. Specify xml serverfile in the URL of the swf. mymovie.swf?x=server5.xml (check documentation)
+
+	Fixed 2 deep, nasty scroll bugs. I don't want to talk about it.
+
+	Dynamic Icons. (can change upon selection. Folders by default)
+
+	Default Icon list.
+
+	Improved scroll engine. Takes less memory and less CPU.
+
+	MP3 XML Tag added with sample integration of Catalist XML mp3 radio
+
+	MAC-like "Aqua" interface integration sample
+
+	Node Highlighter
+
+	"Visited Link" color added
+
+	Up/Down arrows.
+
+	Scrollmargin scroll-jumping
+
+	New locking strategy. Every XML node can now be locked. Making folders un-openable and objects unusable.
+
+	Status bar integration to intercept system messages.
+
+	Status bar integration with XML tags. new attributes statusOverMsg, statusClickMsg and errorMsg
+
+
+
+
+
+
+
+
+

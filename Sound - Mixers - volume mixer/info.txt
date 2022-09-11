@@ -1,0 +1,4 @@
+author kadazuro
+email  kadazuro@kardouz.com
+website http://www.kardouz.com
+Description: a dragable volume mixer, allows to mix music loops controlling also its volume.

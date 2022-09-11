@@ -1,0 +1,3 @@
+Although it works fine, there are probably more elegant ways of creating
+random letters, so I apologise for the rather cumbersome Random Letter movie with all its repetition - if you have a better way of doing this I'd be grateful
+for any feedback (peter.colley@virgin.net).

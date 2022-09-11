@@ -1,0 +1,11 @@
+fireworks.fla
+by Ombra
+flashstuff2000@hotmail.com
+
+This is my first attempt at using ActionScript, and I know it's loaded with repetitive code and probably even a few mistakes, but as I said it's my first attempt.  I'm happy with the end result 
+I'd love it if you send me your modifications so I can see better ways to do what I've done, so feel free to email them to me at the above address.
+
+Use this for whatever you want.
+
+credits:
+The intro is just a slightly modified version of Preloader(Plug&Play) v1.0 by CTLeang http://www.CTLeang.com

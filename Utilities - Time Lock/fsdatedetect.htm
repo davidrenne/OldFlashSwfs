@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<TITLE>movie</TITLE>
+</HEAD>
+<BODY bgcolor="#000000">
+<div align="center">
+  <SCRIPT LANGUAGE=JavaScript>
+<!--
+var InternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+// Handle all the the FSCommand messages in a Flash movie
+function movie_DoFSCommand(command, args) {
+  var movieObj = InternetExplorer ? movie : document.movie;
+  //
+{if(command=="getdate"){setdate()}}
+function setdate()
+{var movie = window.document.movie;
+var now = new Date();
+var year = now.getFullYear();
+var month = now.getMonth();
+movie.SetVariable("month", month+1);
+movie.SetVariable("year", year);
+movie.GotoFrame(9);
+movie.Play();
+}
+// End -->
+  //
+}
+// Hook for Internet Explorer 
+if (navigator.appName && navigator.appName.indexOf("Microsoft") != -1 && 
+	  navigator.userAgent.indexOf("Windows") != -1 && navigator.userAgent.indexOf("Windows 3.1") == -1) {
+	document.write('<SCRIPT LANGUAGE=VBScript\> \n');
+	document.write('on error resume next \n');
+	document.write('Sub movie_FSCommand(ByVal command, ByVal args)\n');
+	document.write('  call movie_DoFSCommand(command, args)\n');
+	document.write('end sub\n');
+	document.write('</SCRIPT\> \n');
+
+}
+//-->
+</SCRIPT>
+  <!-- URL's used in the movie--> <A HREF=FSCommand:getdate></A> <A HREF=mailto:mikeybyker@sinisterwaltz.com></A> 
+  <OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0"
+ ID=movie WIDTH=550 HEIGHT=400 name="movie">
+    <PARAM NAME=movie VALUE="fsdate.swf">
+    <PARAM NAME=quality VALUE=high>
+    <PARAM NAME=bgcolor VALUE=#000000>
+    <EMBED src="fsdate.swf" quality=high bgcolor=#000000  WIDTH=550 HEIGHT=400	swLiveConnect=true
+ TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" name="movie">
+    </EMBED> 
+  </OBJECT> </div>
+</BODY>
+</HTML>
